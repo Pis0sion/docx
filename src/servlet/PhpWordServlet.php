@@ -1,0 +1,151 @@
+<?php
+
+
+namespace Pis0sion\Docx\servlet;
+
+use PhpOffice\PhpWord\Element\Section;
+use PhpOffice\PhpWord\PhpWord;
+use PhpOffice\PhpWord\Settings;
+use PhpOffice\PhpWord\SimpleType\DocProtect;
+use Pis0sion\Docx\component\PropertiesGenerator;
+
+/**
+ * Class PhpWordServlet
+ * @package Pis0sion\Docx\servlet
+ */
+class PhpWordServlet
+{
+    /**
+     * @var PhpWord
+     */
+    protected $phpWord;
+
+    /**
+     * PhpWordServlet constructor.
+     */
+    public function __construct()
+    {
+        $this->initialize();
+        $this->phpWord = new PhpWord();
+    }
+
+    /**
+     * initialize global settings
+     */
+    protected function initialize()
+    {
+        // XML Writer兼容性 默认为 true  开发建议 false
+        Settings::setCompatibility(false);
+        // 输出转义
+        Settings::setOutputEscapingEnabled(true);
+    }
+
+    /**
+     * 初始化phpWord
+     */
+    public function init()
+    {
+        $this->setAccessPermissionsForDocuments();
+        $this->setPropertiesOfDocument();
+        $this->setGlobalSettingsOfDocument();
+        $this->setStyleOfVariousHeadings();
+    }
+
+    /**
+     * 设置文档的访问权限
+     */
+    protected function setAccessPermissionsForDocuments()
+    {
+        $documentProtection = $this->phpWord->getSettings()->getDocumentProtection();
+        $documentProtection->setEditing(DocProtect::READ_ONLY);
+    }
+
+    /**
+     * 设置文档的全局属性
+     */
+    protected function setPropertiesOfDocument()
+    {
+        (new PropertiesGenerator($this->phpWord))->setAttributeOfDocument();
+    }
+
+    /**
+     * 设置文档的全局设置
+     * @param int $defaultFontSize
+     * @param float $lineHeight
+     * @param int $paragraphSize
+     */
+    protected function setGlobalSettingsOfDocument(int $defaultFontSize = 11, float $lineHeight = 1.5, int $paragraphSize = 12)
+    {
+        // 强制更新文档中的动态的字面量
+        $this->phpWord->getSettings()->setUpdateFields(true);
+        // 拼写和语法检查
+        $this->phpWord->getSettings()->setHideGrammaticalErrors(true);
+        $this->phpWord->getSettings()->setHideSpellingErrors(true);
+        // 设置全局的字体大小
+        $this->phpWord->setDefaultFontSize($defaultFontSize);
+        // 设置全局的行高还有段落字体
+        $this->phpWord->setDefaultParagraphStyle(['lineHeight' => $lineHeight, 'size' => $paragraphSize]);
+    }
+
+    /**
+     * 设置各类标题的样式
+     */
+    protected function setStyleOfVariousHeadings()
+    {
+        // 默认设置四级标题
+        // 每类标题的字体大小
+        $this->setNumberingStyle('hNum',
+            [
+                array('pStyle' => 'Heading1', 'format' => 'decimal', 'text' => '%1'),
+                array('pStyle' => 'Heading2', 'format' => 'decimal', 'text' => '%1.%2'),
+                array('pStyle' => 'Heading3', 'format' => 'decimal', 'text' => '%1.%2.%3'),
+            ]
+        );
+
+        // 设置四级标题
+        // 设置一级标题
+        $this->phpWord->addTitleStyle(null, array('size' => 20, 'bold' => true, 'spacing' => 8, 'lineHeight' => 1.8));
+        // 设置二级标题
+        $this->phpWord->addTitleStyle(1, array('size' => 18, 'color' => '333333', 'bold' => true, 'lineHeight' => 1), array('numStyle' => 'hNum', 'numLevel' => 0));
+        // 设置三级标题
+        $this->phpWord->addTitleStyle(2, array('size' => 14, 'color' => '333333', 'bold' => true, 'lineHeight' => 1), array('numStyle' => 'hNum', 'numLevel' => 1));
+        // 设置四级标题
+        $this->phpWord->addTitleStyle(3, array('size' => 12, 'color' => '333333', 'lineHeight' => 1), array('numStyle' => 'hNum', 'numLevel' => 2));
+    }
+
+    /**
+     * 设置列表编号
+     * @param string $attributeName
+     * @param array $levels
+     */
+    public function setNumberingStyle(string $attributeName, array $levels)
+    {
+        $this->phpWord->addNumberingStyle(
+            $attributeName,
+            [
+                'type' => 'multilevel',
+                'levels' => $levels,
+            ]
+        );
+    }
+
+    /**
+     * 创建 section
+     * @param array $style
+     * @return Section
+     */
+    public function newSection(array $style = []): Section
+    {
+        return $this->phpWord->addSection($style);
+    }
+
+    /**
+     * 保存文档
+     * @param string $filePath
+     */
+    public function saveAs(string $filePath)
+    {
+        $this->phpWord->save($filePath);
+    }
+
+}

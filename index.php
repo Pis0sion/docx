@@ -353,6 +353,13 @@ $section->addTextBreak(1);
 for ($count = 3; $count--;) {
     $section->addTitle('获取用户信息接口', 3);
     $section->addTextBreak(1);
+    $section->addText("接口地址：http://www.gaoqiaoxue.com/user", null, ['indentation' => ['left' => 480]]);
+    $section->addText("返回格式：JSON", null, ['indentation' => ['left' => 480]]);
+    $section->addText("请求方式：HTTP/GET", null, ['indentation' => ['left' => 480]]);
+    $section->addText("接口备注：的方法滴滴答答滴滴答答滴滴答答滴滴答答顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶", null, ['indentation' => ['left' => 480]]);
+    $section->addText("调试工具：POSTMAN", null, ['indentation' => ['left' => 480]]);
+    $section->addTextBreak();
+    $section->addText("请求参数说明：", null, ['indentation' => ['left' => 480]]);
     $render = [
         [
             'param' => "name",
@@ -422,7 +429,79 @@ for ($count = 3; $count--;) {
         '必填' => 1200,
         '参数说明' => 3500,
     ], $render);
-
+    $section->addTextBreak();
+    $section->addText("返回参数说明：", null, ['indentation' => ['left' => 480]]);
+    $render = [
+        [
+            'param' => "name",
+            'namely' => "你好",
+            'isBool' => "必填",
+            'desc' => "等方式尽快发货大",
+        ],
+        [
+            'param' => "name",
+            'namely' => "你好",
+            'isBool' => "必填",
+            'desc' => "等方式尽快发货大",
+        ],
+        [
+            'param' => "name",
+            'namely' => "你好",
+            'isBool' => "必填",
+            'desc' => "等方式尽快发货大",
+        ],
+        [
+            'param' => "name",
+            'namely' => "你好",
+            'isBool' => "必填",
+            'desc' => "等方式尽快发货大",
+        ],
+        [
+            'param' => "name",
+            'namely' => "你好",
+            'isBool' => "必填",
+            'desc' => "等方式尽快发货大",
+        ],
+    ];
+    $tableGenerator = new TableGenerator($section,
+        [
+            'layout' => \PhpOffice\PhpWord\Style\Table::LAYOUT_FIXED,
+            'borderColor' => '282c34',
+            'borderSize' => 7,
+            'cellMargin' => 50,
+            'alignment' => 'center'
+        ]);
+    $tableGenerator->setFirstCellStyle([
+        'valign' => 'center',
+        'bgColor' => 'd8d8d8',
+    ]);
+    $tableGenerator->setHeaderFStyle([
+        'size' => '11',
+        'bold' => true
+    ]);
+    $tableGenerator->setHeaderPStyle([
+        'align' => 'center',
+        'lineHeight' => 1,
+    ]);
+    $tableGenerator->setCellStyle([
+        'valign' => 'center'
+    ]);
+    $tableGenerator->setFStyle([
+        'size' => '10.5'
+    ]);
+    $tableGenerator->setPStyle([
+        'align' => 'center',
+        'lineHeight' => 1,
+    ]);
+    $tableGenerator->setExactHeight(false);
+    $tableGenerator->generateTable([
+        '参数' => 1500,
+        '示例值' => 1800,
+        '必填' => 1200,
+        '参数说明' => 3500,
+    ], $render);
+    $section->addTextBreak();
+    $section->addText("返回示例：", null, ['indentation' => ['left' => 480]]);
     $section->addTextBreak(1);
 }
 
@@ -431,7 +510,7 @@ for ($count = 3; $count--;) {
 // 然后解析 html 塞入该元素中
 $section->addTitle('获取用户列表接口', 3);
 $section->addTextBreak(1);
-$textRun = $section->addTable(['spacing' => 80, 'indentation' => ['left' => 800], 'bgColor' => 'D8D8D8']);
+$textRun = $section->addTextRun(['spacing' => 80, 'indentation' => ['left' => 800]]);
 $result = json_encode(['name' => 'pis0sion', 'age' => 12, 'user' => ['id' => 5, 'nick_name' => 'gaoqiaoxue']], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 $result = nl2br($result);
 \PhpOffice\PhpWord\Shared\Html::addHtml($textRun, $result, false, false);
@@ -474,7 +553,7 @@ $phpWord->addNumberingStyle(
 );
 $section->addTitle("如何获取公钥和私钥", 2);
 $section->addTextBreak(1);
-$section->addText("登录系统服务上的后台，或者联系相关的技术指导人员进行获取。", null, ['indentation' => ['firstLine' => 480]]);
+$section->addText("登录系统服务商的后台，或者联系相关的技术指导人员进行获取。", null, ['indentation' => ['firstLine' => 480]]);
 $section->addText("（关于密钥的保管：贵公司一定要保证密钥仅能被少数可靠的授权人知晓，严防密钥被不可信的人获取，如密钥泄露需立即进行修改同时替换程序中的密钥。）", ['color' => 'ff0000'], ['indentation' => ['firstLine' => 480]]);
 
 $section->addTextBreak(1);
