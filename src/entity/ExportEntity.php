@@ -13,6 +13,11 @@ use Pis0sion\Docx\layer\AbsBaseEntity;
 class ExportEntity extends AbsBaseEntity
 {
     /**
+     * @var int
+     */
+    public $priority = 6 ;
+
+    /**
      * 处理导入
      * @return mixed|void
      */

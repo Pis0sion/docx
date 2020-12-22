@@ -13,6 +13,11 @@ use Pis0sion\Docx\layer\AbsBaseEntity;
 class ProductionEntity extends AbsBaseEntity
 {
     /**
+     * @var int
+     */
+    public $priority = 5 ;
+
+    /**
      * 生产环境资料
      * @return mixed|void
      */

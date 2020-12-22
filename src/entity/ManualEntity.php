@@ -13,6 +13,11 @@ use Pis0sion\Docx\layer\AbsBaseEntity;
 class ManualEntity extends AbsBaseEntity
 {
     /**
+     * @var int
+     */
+    public $priority = 2;
+
+    /**
      * 创建使用流程
      */
     public function run()

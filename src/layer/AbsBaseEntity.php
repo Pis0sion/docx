@@ -13,6 +13,11 @@ use PhpOffice\PhpWord\Element\Section;
 abstract class AbsBaseEntity implements IEntityInterface
 {
     /**
+     * @var int
+     */
+    public $priority;
+
+    /**
      * @var Section
      */
     protected $section;

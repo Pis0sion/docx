@@ -4,13 +4,7 @@
 namespace Pis0sion\Docx;
 
 use PhpOffice\PhpWord\Element\Section;
-use Pis0sion\Docx\entity\ApisEntity;
-use Pis0sion\Docx\entity\AppendixEntity;
-use Pis0sion\Docx\entity\DescriptionEntity;
-use Pis0sion\Docx\entity\ExportEntity;
-use Pis0sion\Docx\entity\IntroductionEntity;
-use Pis0sion\Docx\entity\ManualEntity;
-use Pis0sion\Docx\entity\ProductionEntity;
+
 use Pis0sion\Docx\layer\IEntityInterface;
 use SplObjectStorage;
 
@@ -39,20 +33,17 @@ class Core
      */
     protected function initialize(Section $section)
     {
-        $introduction = new IntroductionEntity($section);
-        $this->appendObject2Queue($introduction);
-        $manual = new ManualEntity($section);
-        $this->appendObject2Queue($manual);
-        $description = new DescriptionEntity($section);
-        $this->appendObject2Queue($description);
-        $apis = new ApisEntity($section);
-        $this->appendObject2Queue($apis);
-        $production = new ProductionEntity($section);
-        $this->appendObject2Queue($production);
-        $export = new ExportEntity($section);
-        $this->appendObject2Queue($export);
-        $appendix = new AppendixEntity($section);
-        $this->appendObject2Queue($appendix);
+        $entitiesArr = glob("./src/entity/*.php");
+        $sortAttr = [];
+        foreach ($entitiesArr as $entity) {
+            $className = $this->getClassName($entity);
+            $entityObj = new $className($section);
+            $sortAttr[$entityObj->priority] = $entityObj;
+        }
+        ksort($sortAttr);
+        foreach ($sortAttr as $value) {
+            $this->appendObject2Queue($value);
+        }
     }
 
     /**
@@ -73,5 +64,14 @@ class Core
     protected function appendObject2Queue(IEntityInterface $IEntity)
     {
         $this->objectStorage->enqueue($IEntity);
+    }
+
+    /**
+     * @param string $filepath
+     * @return string
+     */
+    protected function getClassName(string $filepath): string
+    {
+        return "\\Pis0sion\\Docx\\entity\\" . pathinfo($filepath, PATHINFO_FILENAME);
     }
 }

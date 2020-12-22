@@ -13,6 +13,11 @@ use Pis0sion\Docx\servlet\TableServlet;
 class AppendixEntity extends AbsBaseEntity
 {
     /**
+     * @var int
+     */
+    public $priority = 7 ;
+
+    /**
      * 处理附录
      * @return mixed|void
      */

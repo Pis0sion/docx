@@ -13,6 +13,11 @@ use Pis0sion\Docx\layer\AbsBaseEntity;
 class ApisEntity extends AbsBaseEntity
 {
     /**
+     * @var int
+     */
+    public $priority = 4;
+
+    /**
      * 生成api接口
      * @return mixed|void
      */

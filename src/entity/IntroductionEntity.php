@@ -15,6 +15,11 @@ use Pis0sion\Docx\servlet\TableServlet;
 class IntroductionEntity extends AbsBaseEntity
 {
     /**
+     * @var int
+     */
+    public $priority = 1 ;
+
+    /**
      * 创建简介
      */
     public function run()

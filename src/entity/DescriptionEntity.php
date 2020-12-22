@@ -13,6 +13,11 @@ use Pis0sion\Docx\layer\AbsBaseEntity;
 class DescriptionEntity extends AbsBaseEntity
 {
     /**
+     * @var int
+     */
+    public $priority = 3 ;
+
+    /**
      * 创建接口说明
      */
     public function run()
