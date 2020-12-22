@@ -424,6 +424,7 @@ for ($count = 3; $count--;) {
         'align' => 'center',
         'lineHeight' => 1,
     ]);
+
     $tableGenerator->setExactHeight(false);
     $tableGenerator->generateTable([
         '参数' => 1500,
