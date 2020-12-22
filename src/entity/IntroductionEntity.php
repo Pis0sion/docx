@@ -5,6 +5,7 @@ namespace Pis0sion\Docx\entity;
 
 use PhpOffice\PhpWord\Element\Section;
 use Pis0sion\Docx\layer\AbsBaseEntity;
+use Pis0sion\Docx\servlet\TableServlet;
 
 /**
  * 简介
@@ -51,7 +52,7 @@ class IntroductionEntity extends AbsBaseEntity
                     'namely' => "本系统中模块中的耦合关系。",
                 ],
             ];
-            (new CommonTableEntity($section))->run([
+            (new TableServlet($section))->run([
                 '名词缩写' => 2500,
                 '名词定义' => 5500,
             ], $glossary);

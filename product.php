@@ -1,9 +1,9 @@
 <?php
 
-use Pis0sion\Docx\entity\CommonTableEntity;
 use Pis0sion\Docx\servlet\FooterServlet;
 use Pis0sion\Docx\servlet\HeaderServlet;
 use Pis0sion\Docx\servlet\PhpWordServlet;
+use Pis0sion\Docx\servlet\TableServlet;
 use Pis0sion\Docx\servlet\TocServlet;
 
 require "./vendor/autoload.php";
@@ -71,7 +71,7 @@ $version = [
         'desc' => "",
     ],
 ];
-(new CommonTableEntity($section))->run([
+(new TableServlet($section))->run([
     '日期' => 1800,
     '版本' => 1500,
     '说明' => 4000,

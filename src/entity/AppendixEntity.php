@@ -4,6 +4,7 @@
 namespace Pis0sion\Docx\entity;
 
 use Pis0sion\Docx\layer\AbsBaseEntity;
+use Pis0sion\Docx\servlet\TableServlet;
 
 /**
  * Class AppendixEntity
@@ -53,7 +54,7 @@ class AppendixEntity extends AbsBaseEntity
                     'namely' => "",
                 ],
             ];
-            (new CommonTableEntity($section))->run([
+            (new TableServlet($section))->run([
                 '返回码' => 2000,
                 '说明' => 7000,
             ], $appendix);
