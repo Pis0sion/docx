@@ -1,13 +1,6 @@
 <?php
 
-use Pis0sion\Docx\entity\ApisEntity;
-use Pis0sion\Docx\entity\AppendixEntity;
 use Pis0sion\Docx\entity\CommonTableEntity;
-use Pis0sion\Docx\entity\DescriptionEntity;
-use Pis0sion\Docx\entity\ExportEntity;
-use Pis0sion\Docx\entity\IntroductionEntity;
-use Pis0sion\Docx\entity\ManualEntity;
-use Pis0sion\Docx\entity\ProductionEntity;
 use Pis0sion\Docx\servlet\FooterServlet;
 use Pis0sion\Docx\servlet\HeaderServlet;
 use Pis0sion\Docx\servlet\PhpWordServlet;
@@ -89,32 +82,7 @@ $section->addPageBreak();
 // 创建目录
 (new TocServlet($section))->setTOC();
 
-// 创建文章简介
-// 简介 Introduction
-(new IntroductionEntity($section))->run();
-
-// 创建使用流程
-// 使用 Manual
-(new ManualEntity($section))->run();
-
-// 创建接口说明
-// 说明 Description
-(new DescriptionEntity($section))->run();
-
-// 创建接口列表
-(new ApisEntity($section))->run();
-
-// 生产环境资料
-// 生产 production
-(new ProductionEntity($section))->run();
-
-// 接入导入
-// 导入 export
-(new ExportEntity($section))->run();
-
-// 附录
-// appendix
-(new AppendixEntity($section))->run();
+(new \Pis0sion\Docx\Core())->run($section);
 
 // 保存文件
 $phpWordServlet->saveAs("./pis0sion.docx");
