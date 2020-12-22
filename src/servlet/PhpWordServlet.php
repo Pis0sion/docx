@@ -49,6 +49,13 @@ class PhpWordServlet
         $this->setPropertiesOfDocument();
         $this->setGlobalSettingsOfDocument();
         $this->setStyleOfVariousHeadings();
+        $this->registerReadObjectStyle();
+        $this->registerSignatureStyle();
+        $this->registerCallbackStyle();
+        $this->registerManualStyle();
+        $this->registerDescriptionStyle();
+        $this->registerAccessStyle();
+        $this->registerResolveStyle();
     }
 
     /**
@@ -111,6 +118,99 @@ class PhpWordServlet
         $this->phpWord->addTitleStyle(2, array('size' => 14, 'color' => '333333', 'bold' => true, 'lineHeight' => 1), array('numStyle' => 'hNum', 'numLevel' => 1));
         // 设置四级标题
         $this->phpWord->addTitleStyle(3, array('size' => 12, 'color' => '333333', 'lineHeight' => 1), array('numStyle' => 'hNum', 'numLevel' => 2));
+    }
+
+    /**
+     * 默认注册readObject样式
+     */
+    protected function registerReadObjectStyle()
+    {
+        $this->setNumberingStyle(
+            'readObject',
+            [
+                ['format' => 'decimal', 'text' => '%1.', 'left' => 1080, 'hanging' => 360, 'tabPos' => 720]
+            ]
+        );
+    }
+
+    /**
+     * 默认注册signature样式
+     */
+    protected function registerSignatureStyle()
+    {
+        $this->setNumberingStyle(
+            'signature',
+            [
+                ['format' => 'decimal', 'text' => '%1.', 'left' => 1080, 'hanging' => 360, 'tabPos' => 720],
+                ['format' => 'decimalEnclosedCircle', 'text' => '%2.', 'left' => 1440, 'hanging' => 360, 'tabPos' => 720],
+            ]
+        );
+    }
+
+    /**
+     * 默认注册callback样式
+     */
+    protected function registerCallbackStyle()
+    {
+        $this->setNumberingStyle(
+            'callback',
+            [
+                ['format' => 'decimal', 'text' => '%1.', 'left' => 1080, 'hanging' => 360, 'tabPos' => 720],
+            ]
+        );
+    }
+
+    /**
+     * 默认注册manual样式
+     */
+    protected function registerManualStyle()
+    {
+        $this->setNumberingStyle(
+            'manual',
+            [
+                ['format' => 'decimal', 'text' => '%1.', 'left' => 720, 'hanging' => 360, 'tabPos' => 720],
+                ['format' => 'upperLetter', 'text' => '%2.', 'left' => 1080, 'hanging' => 360, 'tabPos' => 720],
+            ]
+        );
+    }
+
+    /**
+     * 默认注册description样式
+     */
+    protected function registerDescriptionStyle()
+    {
+        $this->setNumberingStyle(
+            'description',
+            [
+                ['format' => 'decimal', 'text' => '%1.', 'left' => 720, 'hanging' => 360, 'tabPos' => 720],
+            ]
+        );
+    }
+
+    /**
+     * 默认注册access样式
+     */
+    protected function registerAccessStyle()
+    {
+        $this->setNumberingStyle(
+            'access',
+            [
+                ['format' => 'decimalEnclosedCircle', 'text' => '%1.', 'left' => 900, 'hanging' => 360, 'tabPos' => 720],
+            ]
+        );
+    }
+
+    /**
+     * 默认注册resolve样式
+     */
+    protected function registerResolveStyle()
+    {
+        $this->setNumberingStyle(
+            'resolve',
+            [
+                ['format' => 'decimalEnclosedCircle', 'text' => '%1.', 'left' => 900, 'hanging' => 360, 'tabPos' => 720],
+            ]
+        );
     }
 
     /**

@@ -17,7 +17,7 @@ Settings::setOutputEscapingEnabled(true);
 $phpWord = new PhpWord();
 //
 $documentProtection = $phpWord->getSettings()->getDocumentProtection();
-$documentProtection->setEditing(DocProtect::READ_ONLY);
+$documentProtection->setEditing(DocProtect::NONE);
 
 $properties = $phpWord->getDocInfo();
 $properties->setCreator('Gaoqiaoxue');
@@ -46,6 +46,7 @@ $section = $phpWord->addSection(['borderColor' => '161616', 'borderSize' => 6]);
 $fontStyle12 = array('spacing' => 8, 'lineHeight' => 1.5, 'size' => 12);
 $styleToc = ['tabLeader' => TOC::TAB_LEADER_DOT, 'indent' => 100];
 
+// 封面要用
 $header = $section->addHeader();
 $header->firstPage();
 
@@ -166,6 +167,7 @@ $section->addTextBreak(1);                   // 空两行
 
 $section->addPageBreak();                          // 分页
 
+// TODO
 $section->addTitle('文档简介', 1);       // 添加主题，并且写入目录
 $section->addTextBreak(1);
 
@@ -510,9 +512,23 @@ for ($count = 3; $count--;) {
 // 然后解析 html 塞入该元素中
 $section->addTitle('获取用户列表接口', 3);
 $section->addTextBreak(1);
-$textRun = $section->addTextRun(['spacing' => 80, 'indentation' => ['left' => 800]]);
+//$textRun = $section->addTextRun(['spacing' => 80, 'indentation' => ['left' => 800]]);
+
+$TableCell = $section->addTable([
+    'layout' => \PhpOffice\PhpWord\Style\Table::LAYOUT_FIXED,
+    /*    'borderColor' => '212529',
+        'borderSize' => 8,*/
+    'cellMargin' => 50,
+    'alignment' => 'center'
+]);
+$TableCell->addRow(1000);
+$cell = $TableCell->addCell(9000, [
+    'valign' => 'center',
+    'bgColor' => '4BACC6',
+]);
+$textRun = $cell->addTextRun(['lineHeight' => 1.5]);
 $result = json_encode(['name' => 'pis0sion', 'age' => 12, 'user' => ['id' => 5, 'nick_name' => 'gaoqiaoxue']], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-$result = nl2br($result);
+$result = "<div style='font-size: 12px;color: black;background: aqua'>" . nl2br($result) . "</div>";
 \PhpOffice\PhpWord\Shared\Html::addHtml($textRun, $result, false, false);
 $section->addTextBreak(1);
 
