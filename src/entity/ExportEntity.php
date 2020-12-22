@@ -3,29 +3,19 @@
 
 namespace Pis0sion\Docx\entity;
 
-use Closure;
 use PhpOffice\PhpWord\Element\Section;
+use Pis0sion\Docx\layer\AbsBaseEntity;
 
 /**
  * Class ExportEntity
  * @package Pis0sion\Docx\entity
  */
-class ExportEntity
+class ExportEntity extends AbsBaseEntity
 {
     /**
-     * @var Section
+     * 处理导入
+     * @return mixed|void
      */
-    protected $section;
-
-    /**
-     * DescriptionEntity constructor.
-     * @param Section $section
-     */
-    public function __construct(Section $section)
-    {
-        $this->section = $section;
-    }
-
     public function run()
     {
         $this->addCategoriesTitle("接入导入", 1);
@@ -49,18 +39,5 @@ class ExportEntity
             $section->addListItem('生成请求参数后，涉及中文的参数的值不能是乱码，当前仅支持UTF-8的编码格式。', 0, null, 'resolve');
             $section->addPageBreak();
         });
-    }
-
-    /**
-     * 设置分类主题的目录
-     * @param string $titleName
-     * @param int $depth
-     * @param Closure|null $render
-     */
-    protected function addCategoriesTitle(string $titleName, int $depth, Closure $render = null)
-    {
-        $this->section->addTitle($titleName, $depth);       // 添加主题，并且写入目录
-        $this->section->addTextBreak(1);
-        ($render instanceof Closure) && $render($this->section);
     }
 }

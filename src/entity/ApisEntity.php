@@ -3,29 +3,19 @@
 
 namespace Pis0sion\Docx\entity;
 
-use Closure;
 use PhpOffice\PhpWord\Element\Section;
+use Pis0sion\Docx\layer\AbsBaseEntity;
 
 /**
  * Class ApisEntity
  * @package Pis0sion\Docx\entity
  */
-class ApisEntity
+class ApisEntity extends AbsBaseEntity
 {
     /**
-     * @var Section
+     * 生成api接口
+     * @return mixed|void
      */
-    protected $section;
-
-    /**
-     * ApisEntity constructor.
-     * @param Section $section
-     */
-    public function __construct(Section $section)
-    {
-        $this->section = $section;
-    }
-
     public function run()
     {
         $this->addCategoriesTitle("接口列表", 1, function ($section) {
@@ -36,18 +26,5 @@ class ApisEntity
             $section->addTextBreak(1);
             $section->addTextBreak(1);
         });
-    }
-
-    /**
-     * 设置分类主题的目录
-     * @param string $titleName
-     * @param int $depth
-     * @param Closure|null $render
-     */
-    protected function addCategoriesTitle(string $titleName, int $depth, Closure $render = null)
-    {
-        $this->section->addTitle($titleName, $depth);       // 添加主题，并且写入目录
-        $this->section->addTextBreak(1);
-        ($render instanceof Closure) && $render($this->section);
     }
 }

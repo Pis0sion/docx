@@ -3,33 +3,19 @@
 
 namespace Pis0sion\Docx\entity;
 
-use Closure;
 use PhpOffice\PhpWord\Element\Section;
+use Pis0sion\Docx\layer\AbsBaseEntity;
 
 /**
  * Class ManualEntity
  * @package Pis0sion\Docx\entity
  */
-class ManualEntity
+class ManualEntity extends AbsBaseEntity
 {
-    /**
-     * @var Section
-     */
-    protected $section;
-
-    /**
-     * ManualEntity constructor.
-     * @param Section $section
-     */
-    public function __construct(Section $section)
-    {
-        $this->section = $section;
-    }
-
     /**
      * 创建使用流程
      */
-    public function createManual()
+    public function run()
     {
         $this->addCategoriesTitle("使用流程", 1, function ($section) {
             /** @var Section $section */
@@ -47,18 +33,4 @@ class ManualEntity
             $section->addTextBreak(1);
         });
     }
-
-    /**
-     * 设置分类主题的目录
-     * @param string $titleName
-     * @param int $depth
-     * @param Closure|null $render
-     */
-    protected function addCategoriesTitle(string $titleName, int $depth, Closure $render = null)
-    {
-        $this->section->addTitle($titleName, $depth);       // 添加主题，并且写入目录
-        $this->section->addTextBreak(1);
-        ($render instanceof Closure) && $render($this->section);
-    }
-
 }

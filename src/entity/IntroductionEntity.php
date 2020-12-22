@@ -3,35 +3,20 @@
 
 namespace Pis0sion\Docx\entity;
 
-use Closure;
 use PhpOffice\PhpWord\Element\Section;
-use Pis0sion\Docx\servlet\PhpWordServlet;
+use Pis0sion\Docx\layer\AbsBaseEntity;
 
 /**
  * 简介
  * Class IntroductionEntity
  * @package Pis0sion\Docx\entity
  */
-class IntroductionEntity
+class IntroductionEntity extends AbsBaseEntity
 {
-    /**
-     * @var Section
-     */
-    protected $section;
-
-    /**
-     * IntroductionEntity constructor.
-     * @param Section $section
-     */
-    public function __construct(Section $section)
-    {
-        $this->section = $section;
-    }
-
     /**
      * 创建简介
      */
-    public function createIntroduction()
+    public function run()
     {
         $this->addCategoriesTitle("文档简介", 1);
         $this->addCategoriesTitle("特别声明", 2, function ($section) {
@@ -92,18 +77,4 @@ class IntroductionEntity
             $section->addTextBreak(1);
         });
     }
-
-    /**
-     * 设置分类主题的目录
-     * @param string $titleName
-     * @param int $depth
-     * @param Closure|null $render
-     */
-    protected function addCategoriesTitle(string $titleName, int $depth, Closure $render = null)
-    {
-        $this->section->addTitle($titleName, $depth);       // 添加主题，并且写入目录
-        $this->section->addTextBreak(1);
-        ($render instanceof Closure) && $render($this->section);
-    }
-
 }

@@ -91,15 +91,15 @@ $section->addPageBreak();
 
 // 创建文章简介
 // 简介 Introduction
-(new IntroductionEntity($section))->createIntroduction();
+(new IntroductionEntity($section))->run();
 
 // 创建使用流程
 // 使用 Manual
-(new ManualEntity($section))->createManual();
+(new ManualEntity($section))->run();
 
 // 创建接口说明
 // 说明 Description
-(new DescriptionEntity($section))->createDescription();
+(new DescriptionEntity($section))->run();
 
 // 创建接口列表
 (new ApisEntity($section))->run();

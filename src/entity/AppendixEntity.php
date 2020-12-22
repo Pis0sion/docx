@@ -3,29 +3,18 @@
 
 namespace Pis0sion\Docx\entity;
 
-use Closure;
-use PhpOffice\PhpWord\Element\Section;
+use Pis0sion\Docx\layer\AbsBaseEntity;
 
 /**
  * Class AppendixEntity
  * @package Pis0sion\Docx\entity
  */
-class AppendixEntity
+class AppendixEntity extends AbsBaseEntity
 {
     /**
-     * @var Section
+     * 处理附录
+     * @return mixed|void
      */
-    protected $section;
-
-    /**
-     * IntroductionEntity constructor.
-     * @param Section $section
-     */
-    public function __construct(Section $section)
-    {
-        $this->section = $section;
-    }
-
     public function run()
     {
         $this->addCategoriesTitle("附录", 1);
@@ -70,18 +59,5 @@ class AppendixEntity
             ], $appendix);
             $section->addTextBreak(1);
         });
-    }
-
-    /**
-     * 设置分类主题的目录
-     * @param string $titleName
-     * @param int $depth
-     * @param Closure|null $render
-     */
-    protected function addCategoriesTitle(string $titleName, int $depth, Closure $render = null)
-    {
-        $this->section->addTitle($titleName, $depth);       // 添加主题，并且写入目录
-        $this->section->addTextBreak(1);
-        ($render instanceof Closure) && $render($this->section);
     }
 }

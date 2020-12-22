@@ -3,29 +3,19 @@
 
 namespace Pis0sion\Docx\entity;
 
-use Closure;
 use PhpOffice\PhpWord\Element\Section;
+use Pis0sion\Docx\layer\AbsBaseEntity;
 
 /**
  * Class ProductionEntity
  * @package Pis0sion\Docx\entity
  */
-class ProductionEntity
+class ProductionEntity extends AbsBaseEntity
 {
     /**
-     * @var Section
+     * 生产环境资料
+     * @return mixed|void
      */
-    protected $section;
-
-    /**
-     * DescriptionEntity constructor.
-     * @param Section $section
-     */
-    public function __construct(Section $section)
-    {
-        $this->section = $section;
-    }
-
     public function run()
     {
         $this->addCategoriesTitle("生产环境资料", 1);
@@ -41,18 +31,5 @@ class ProductionEntity
             $section->addTextBreak(1);
             $section->addTextBreak(1);
         });
-    }
-
-    /**
-     * 设置分类主题的目录
-     * @param string $titleName
-     * @param int $depth
-     * @param Closure|null $render
-     */
-    protected function addCategoriesTitle(string $titleName, int $depth, Closure $render = null)
-    {
-        $this->section->addTitle($titleName, $depth);       // 添加主题，并且写入目录
-        $this->section->addTextBreak(1);
-        ($render instanceof Closure) && $render($this->section);
     }
 }
