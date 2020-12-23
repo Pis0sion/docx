@@ -65,6 +65,7 @@ class PhpWordServlet
     {
         $documentProtection = $this->phpWord->getSettings()->getDocumentProtection();
         $documentProtection->setEditing(DocProtect::READ_ONLY);
+        $documentProtection->setPassword("123456");
     }
 
     /**

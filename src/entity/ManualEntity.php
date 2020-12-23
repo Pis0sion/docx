@@ -19,8 +19,9 @@ class ManualEntity extends AbsBaseEntity
 
     /**
      * 创建使用流程
+     * @param array|null $params
      */
-    public function run()
+    public function run(?array $params)
     {
         $this->addCategoriesTitle("使用流程", 1, function ($section) {
             /** @var Section $section */

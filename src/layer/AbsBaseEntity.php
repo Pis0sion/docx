@@ -33,9 +33,10 @@ abstract class AbsBaseEntity implements IEntityInterface
 
     /**
      * 处理逻辑
+     * @param array|null $params
      * @return mixed
      */
-    abstract public function run();
+    abstract public function run(?array $params);
 
     /**
      * 设置分类主题的目录

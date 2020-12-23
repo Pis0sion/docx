@@ -15,13 +15,14 @@ class AppendixEntity extends AbsBaseEntity
     /**
      * @var int
      */
-    public $priority = 7 ;
+    public $priority = 7;
 
     /**
      * 处理附录
+     * @param array|null $params
      * @return mixed|void
      */
-    public function run()
+    public function run(?array $params)
     {
         $this->addCategoriesTitle("附录", 1);
         $this->addCategoriesTitle("返回码列表", 2, function ($section) {

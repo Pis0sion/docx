@@ -49,12 +49,13 @@ class Core
     /**
      * 运行
      * @param Section $section
+     * @param array $params
      */
-    public function run(Section $section)
+    public function run(Section $section, array $params)
     {
         $this->initialize($section);
         while (!$this->objectStorage->isEmpty()) {
-            $this->objectStorage->dequeue()->run();
+            $this->objectStorage->dequeue()->run($params);
         }
     }
 

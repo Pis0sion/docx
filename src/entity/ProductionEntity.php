@@ -15,13 +15,14 @@ class ProductionEntity extends AbsBaseEntity
     /**
      * @var int
      */
-    public $priority = 5 ;
+    public $priority = 5;
 
     /**
      * 生产环境资料
+     * @param array|null $params
      * @return mixed|void
      */
-    public function run()
+    public function run(?array $params)
     {
         $this->addCategoriesTitle("生产环境资料", 1);
         $this->addCategoriesTitle("如何获取服务器地址", 2, function ($section) {

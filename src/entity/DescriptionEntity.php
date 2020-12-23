@@ -15,12 +15,13 @@ class DescriptionEntity extends AbsBaseEntity
     /**
      * @var int
      */
-    public $priority = 3 ;
+    public $priority = 3;
 
     /**
      * 创建接口说明
+     * @param array|null $params
      */
-    public function run()
+    public function run(?array $params)
     {
         $this->addCategoriesTitle("接口说明", 1, function ($section) {
             /** @var Section $section */

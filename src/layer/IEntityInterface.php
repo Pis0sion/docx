@@ -10,7 +10,8 @@ namespace Pis0sion\Docx\layer;
 interface IEntityInterface
 {
     /**
+     * @param array|null $params
      * @return mixed
      */
-    public function run();
+    public function run(?array $params);
 }

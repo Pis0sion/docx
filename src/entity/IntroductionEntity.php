@@ -17,12 +17,13 @@ class IntroductionEntity extends AbsBaseEntity
     /**
      * @var int
      */
-    public $priority = 1 ;
+    public $priority = 1;
 
     /**
      * 创建简介
+     * @param array|null $params
      */
-    public function run()
+    public function run(?array $params)
     {
         $this->addCategoriesTitle("文档简介", 1);
         $this->addCategoriesTitle("特别声明", 2, function ($section) {

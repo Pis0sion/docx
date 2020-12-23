@@ -15,13 +15,14 @@ class ExportEntity extends AbsBaseEntity
     /**
      * @var int
      */
-    public $priority = 6 ;
+    public $priority = 6;
 
     /**
      * 处理导入
+     * @param array|null $params
      * @return mixed|void
      */
-    public function run()
+    public function run(?array $params)
     {
         $this->addCategoriesTitle("接入导入", 1);
         $this->addCategoriesTitle("如何快速导入", 2, function ($section) {
