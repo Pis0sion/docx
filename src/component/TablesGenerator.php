@@ -290,5 +290,28 @@ class TablesGenerator
         }
     }
 
+    /**
+     * 生成合并单元格的处理无响应数据
+     * @param array $tableHeaders
+     * @param string $renderDatum
+     */
+    public function generateUnresponsiveTable(array $tableHeaders, string $renderDatum)
+    {
+        // 首行
+        $this->table->addRow(350, $this->firstRowStyle ?? null);
+
+        // 渲染表头
+        foreach ($tableHeaders as $tableContent => $header) {
+            $this->table->addCell(intval($header) ?? 2000, $this->getFirstCellStyle() ?? null)
+                ->addText($tableContent, $this->getHeaderFStyle(), $this->getHeaderPStyle());
+        }
+
+        // 合并单元格
+        $cellStyle = $this->getCellStyle();
+        $cellStyle['gridSpan'] = (int)count($tableHeaders);
+        $this->table->addRow(350, ['exactHeight' => $this->isExactHeight()]);
+        $this->table->addCell(null, $cellStyle)->addText($renderDatum, $this->getFStyle(), $this->getPStyle());
+    }
+
 
 }

@@ -12,7 +12,6 @@ $postmanApis = $postmanArr['item'];
 
 $projectVars = [];
 $module_name = "默认项目列表";
-$module_list = [];
 // 对数据进行分类
 foreach ($postmanApis as $postmanApi) {
     // 判断是否为模块

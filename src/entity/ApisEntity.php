@@ -8,6 +8,7 @@ use PhpOffice\PhpWord\Shared\Html;
 use PhpOffice\PhpWord\Style\Table;
 use Pis0sion\Docx\layer\AbsBaseEntity;
 use Pis0sion\Docx\servlet\TableServlet;
+use function Composer\Autoload\includeFile;
 
 /**
  * Class ApisEntity
@@ -82,18 +83,30 @@ class ApisEntity extends AbsBaseEntity
                         '参数说明' => 3000,
                     ], $render);
                     $section->addTextBreak();
+                    $responseBody = $apiList['response']['body'];
+                    // 内容为数组
+                    // 如果为空需要处理
                     $this->renderText($section, "返回参数说明：");
-                    $render = $apiList['response']['body'];
-                    (new TableServlet($section))->run([
-                        '参数名称' => 2000,
-                        '示例值' => 1800,
-                        '类型' => 1200,
-                        '参数说明' => 3000,
-                    ], $render);
+                    if (count($responseBody) == true) {
+                        (new TableServlet($section))->run([
+                            '参数名称' => 2000,
+                            '示例值' => 1800,
+                            '类型' => 1200,
+                            '参数说明' => 3000,
+                        ], $responseBody);
+                    } else {
+                        (new TableServlet($section))->runEmptyForm([
+                            '参数名称' => 2000,
+                            '示例值' => 1800,
+                            '类型' => 1200,
+                            '参数说明' => 3000,
+                        ], "无响应数据");
+                    }
                     $section->addTextBreak(1);
+                    // 响应结果如果是文件
+                    // 暂时不做处理
                     $this->renderText($section, "返回示例：");
-                    $prettyJsonString = $apiList['response']['raw'] ?? "暂无响应示例";
-                    $this->renderRawPrettyJson($section, $prettyJsonString);
+                    $this->renderRawPrettyJson($section, $apiList['response']['raw']);
                     $section->addTextBreak(1);
                     $section->addTextBreak(1);
                 });

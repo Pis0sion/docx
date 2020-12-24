@@ -53,7 +53,7 @@ class TableServlet
     }
 
     /**
-     * 生成版本列表
+     * 生成普通表格
      * @param array $obstruction
      * @param array $render
      */
@@ -61,4 +61,16 @@ class TableServlet
     {
         return $this->generation()->generateTable($obstruction, $render);
     }
+
+    /**
+     * 生成空表格
+     * @param array $obstruction
+     * @param string $renderDatum
+     */
+    public function runEmptyForm(array $obstruction, string $renderDatum)
+    {
+        return $this->generation()->generateUnresponsiveTable($obstruction, $renderDatum);
+    }
+
+
 }

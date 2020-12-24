@@ -1,72 +1,43 @@
 {
-  "info": {
-    "_postman_id": "19a87afb-6a2f-4a3e-afb5-c2d8240ace66",
-    "name": "ApiPostFront",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
+  "name": "用户模块",
   "item": [
     {
-      "name": "用户模块",
-      "item": [
-        {
-          "name": "注销接口",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "token",
-                "value": "{{token}}",
-                "type": "text"
-              },
-              {
-                "key": "terminal",
-                "value": "{{terminal}}",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{domain}}/{{version}}/logout.action",
-              "host": [
-                "{{domain}}"
-              ],
-              "path": [
-                "{{version}}",
-                "logout.action"
-              ]
-            }
+      "name": "注销接口",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "token",
+            "value": "{{token}}",
+            "type": "text"
           },
-          "response": []
-        }
-      ],
-      "event": [
-        {
-          "listen": "prerequest",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              ""
-            ]
+          {
+            "key": "terminal",
+            "value": "{{terminal}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
           }
         },
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              ""
-            ]
-          }
+        "url": {
+          "raw": "{{domain}}\/{{version}}\/logout.action",
+          "host": [
+            "{{domain}}"
+          ],
+          "path": [
+            "{{version}}",
+            "logout.action"
+          ]
         }
-      ]
+      },
+      "response": []
     },
     {
       "name": "团队模块",
@@ -97,7 +68,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/team/init.action",
+              "raw": "{{domain}}\/{{version}}\/team\/init.action",
               "host": [
                 "{{domain}}"
               ],
@@ -135,7 +106,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/team/init.action",
+                  "raw": "{{domain}}\/{{version}}\/team\/init.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -152,7 +123,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -160,7 +131,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -172,7 +143,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -226,7 +197,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/team/update.action",
+              "raw": "{{domain}}\/{{version}}\/team\/update.action",
               "host": [
                 "{{domain}}"
               ],
@@ -264,7 +235,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/team/create.action",
+                  "raw": "{{domain}}\/{{version}}\/team\/create.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -281,7 +252,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -289,7 +260,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -301,7 +272,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -355,7 +326,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/team/create.action",
+              "raw": "{{domain}}\/{{version}}\/team\/create.action",
               "host": [
                 "{{domain}}"
               ],
@@ -393,7 +364,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/team/create.action",
+                  "raw": "{{domain}}\/{{version}}\/team\/create.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -410,7 +381,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -418,7 +389,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -430,7 +401,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -487,7 +458,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/manage/teams.action",
+              "raw": "{{domain}}\/{{version}}\/manage\/teams.action",
               "host": [
                 "{{domain}}"
               ],
@@ -525,7 +496,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/manage/teams.action",
+                  "raw": "{{domain}}\/{{version}}\/manage\/teams.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -542,7 +513,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -550,7 +521,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -562,7 +533,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -619,7 +590,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/join/teams.action",
+              "raw": "{{domain}}\/{{version}}\/join\/teams.action",
               "host": [
                 "{{domain}}"
               ],
@@ -657,7 +628,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/join/teams.action",
+                  "raw": "{{domain}}\/{{version}}\/join\/teams.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -674,7 +645,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -682,7 +653,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -694,7 +665,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -739,7 +710,7 @@
               }
             ],
             "url": {
-              "raw": "{{domain}}/{{version}}/team/my/info.action?team_id=1",
+              "raw": "{{domain}}\/{{version}}\/team\/my\/info.action?team_id=1",
               "host": [
                 "{{domain}}"
               ],
@@ -775,7 +746,7 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{domain}}/{{version}}/team/my/info.action?team_id=1",
+                  "raw": "{{domain}}\/{{version}}\/team\/my\/info.action?team_id=1",
                   "host": [
                     "{{domain}}"
                   ],
@@ -799,7 +770,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -807,7 +778,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -819,7 +790,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -843,7 +814,7 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"team_id\": 1,\n        \"name\": \"pis0sion的团队\",\n        \"user_id\": 1,\n        \"create_dtime\": \"2020-11-04 12:37:04\",\n        \"invitecode_upgrade\": -1,\n        \"fee_expire_dtime\": 0,\n        \"status\": 1,\n        \"score_upgrade\": 0,\n        \"is_administrator\": 1,\n        \"ownPlace\": [\n            {\n                \"id\": 4,\n                \"team_id\": 1,\n                \"user_id\": 1,\n                \"is_admin\": 1,\n                \"bind_dtime\": \"2020-11-04 12:37:04\",\n                \"is_present\": 0,\n                \"status\": 1,\n                \"nick_name\": \"pis0sion\",\n                \"email\": \"zihuang2010@126.com\",\n                \"portrait\": \"https://img.cdn.apipost.cn/user/default/default-portrait.png\"\n            },\n            {\n                \"id\": 5,\n                \"team_id\": 1,\n                \"user_id\": 0,\n                \"is_admin\": -1,\n                \"bind_dtime\": 0,\n                \"is_present\": 0,\n                \"status\": 1,\n                \"nick_name\": null,\n                \"email\": null,\n                \"portrait\": null\n            },\n            {\n                \"id\": 6,\n                \"team_id\": 1,\n                \"user_id\": 0,\n                \"is_admin\": -1,\n                \"bind_dtime\": 0,\n                \"is_present\": 0,\n                \"status\": 1,\n                \"nick_name\": null,\n                \"email\": null,\n                \"portrait\": null\n            }\n        ]\n    }\n}"
+              "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"team_id\": 1,\n        \"name\": \"pis0sion的团队\",\n        \"user_id\": 1,\n        \"create_dtime\": \"2020-11-04 12:37:04\",\n        \"invitecode_upgrade\": -1,\n        \"fee_expire_dtime\": 0,\n        \"status\": 1,\n        \"score_upgrade\": 0,\n        \"is_administrator\": 1,\n        \"ownPlace\": [\n            {\n                \"id\": 4,\n                \"team_id\": 1,\n                \"user_id\": 1,\n                \"is_admin\": 1,\n                \"bind_dtime\": \"2020-11-04 12:37:04\",\n                \"is_present\": 0,\n                \"status\": 1,\n                \"nick_name\": \"pis0sion\",\n                \"email\": \"zihuang2010@126.com\",\n                \"portrait\": \"https:\/\/img.cdn.apipost.cn\/user\/default\/default-portrait.png\"\n            },\n            {\n                \"id\": 5,\n                \"team_id\": 1,\n                \"user_id\": 0,\n                \"is_admin\": -1,\n                \"bind_dtime\": 0,\n                \"is_present\": 0,\n                \"status\": 1,\n                \"nick_name\": null,\n                \"email\": null,\n                \"portrait\": null\n            },\n            {\n                \"id\": 6,\n                \"team_id\": 1,\n                \"user_id\": 0,\n                \"is_admin\": -1,\n                \"bind_dtime\": 0,\n                \"is_present\": 0,\n                \"status\": 1,\n                \"nick_name\": null,\n                \"email\": null,\n                \"portrait\": null\n            }\n        ]\n    }\n}"
             }
           ]
         },
@@ -873,7 +844,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/team/set/administrator.action",
+              "raw": "{{domain}}\/{{version}}\/team\/set\/administrator.action",
               "host": [
                 "{{domain}}"
               ],
@@ -912,7 +883,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/team/set/administrator.action",
+                  "raw": "{{domain}}\/{{version}}\/team\/set\/administrator.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -930,7 +901,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -938,7 +909,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -950,7 +921,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -1004,7 +975,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/team/cancel/administrator.action",
+              "raw": "{{domain}}\/{{version}}\/team\/cancel\/administrator.action",
               "host": [
                 "{{domain}}"
               ],
@@ -1043,7 +1014,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/team/cancel/administrator.action",
+                  "raw": "{{domain}}\/{{version}}\/team\/cancel\/administrator.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -1061,7 +1032,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -1069,7 +1040,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -1081,7 +1052,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -1135,7 +1106,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/team/bind/member.action",
+              "raw": "{{domain}}\/{{version}}\/team\/bind\/member.action",
               "host": [
                 "{{domain}}"
               ],
@@ -1174,7 +1145,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/team/bind/member.action",
+                  "raw": "{{domain}}\/{{version}}\/team\/bind\/member.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -1192,7 +1163,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -1200,7 +1171,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -1212,7 +1183,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -1266,7 +1237,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/team/unbind/member.action",
+              "raw": "{{domain}}\/{{version}}\/team\/unbind\/member.action",
               "host": [
                 "{{domain}}"
               ],
@@ -1305,7 +1276,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/team/unbind/member.action",
+                  "raw": "{{domain}}\/{{version}}\/team\/unbind\/member.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -1323,7 +1294,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -1331,7 +1302,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -1343,7 +1314,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -1402,7 +1373,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/project/save.action",
+              "raw": "{{domain}}\/{{version}}\/project\/save.action",
               "host": [
                 "{{domain}}"
               ],
@@ -1440,7 +1411,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}//project/save.action",
+                  "raw": "{{domain}}\/{{version}}\/\/project\/save.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -1458,7 +1429,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -1466,7 +1437,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -1478,7 +1449,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -1532,7 +1503,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/project/edit.action",
+              "raw": "{{domain}}\/{{version}}\/project\/edit.action",
               "host": [
                 "{{domain}}"
               ],
@@ -1570,7 +1541,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/project/edit.action",
+                  "raw": "{{domain}}\/{{version}}\/project\/edit.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -1587,7 +1558,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -1595,7 +1566,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -1607,7 +1578,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -1661,7 +1632,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/manage/projects.action",
+              "raw": "{{domain}}\/{{version}}\/manage\/projects.action",
               "host": [
                 "{{domain}}"
               ],
@@ -1699,7 +1670,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/manage/projects.action",
+                  "raw": "{{domain}}\/{{version}}\/manage\/projects.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -1716,7 +1687,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -1724,7 +1695,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -1736,7 +1707,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -1790,7 +1761,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/project/set/lock.action",
+              "raw": "{{domain}}\/{{version}}\/project\/set\/lock.action",
               "host": [
                 "{{domain}}"
               ],
@@ -1829,7 +1800,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/project/set/lock.action",
+                  "raw": "{{domain}}\/{{version}}\/project\/set\/lock.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -1847,7 +1818,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -1855,7 +1826,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -1867,7 +1838,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -1921,7 +1892,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/project/set/lock.action",
+              "raw": "{{domain}}\/{{version}}\/project\/set\/lock.action",
               "host": [
                 "{{domain}}"
               ],
@@ -1960,7 +1931,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/project/set/lock.action",
+                  "raw": "{{domain}}\/{{version}}\/project\/set\/lock.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -1978,7 +1949,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -1986,7 +1957,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -1998,7 +1969,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -2052,7 +2023,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/join/projects.action",
+              "raw": "{{domain}}\/{{version}}\/join\/projects.action",
               "host": [
                 "{{domain}}"
               ],
@@ -2090,7 +2061,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/join/projects.action",
+                  "raw": "{{domain}}\/{{version}}\/join\/projects.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -2107,7 +2078,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -2115,7 +2086,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -2127,7 +2098,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -2181,7 +2152,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/project/info.action",
+              "raw": "{{domain}}\/{{version}}\/project\/info.action",
               "host": [
                 "{{domain}}"
               ],
@@ -2219,7 +2190,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/project/info.action",
+                  "raw": "{{domain}}\/{{version}}\/project\/info.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -2236,7 +2207,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -2244,7 +2215,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -2256,7 +2227,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -2310,7 +2281,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/project/users.action",
+              "raw": "{{domain}}\/{{version}}\/project\/users.action",
               "host": [
                 "{{domain}}"
               ],
@@ -2348,7 +2319,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/project/users.action",
+                  "raw": "{{domain}}\/{{version}}\/project\/users.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -2365,7 +2336,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -2373,7 +2344,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -2385,7 +2356,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -2439,7 +2410,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/project/delete.action",
+              "raw": "{{domain}}\/{{version}}\/project\/delete.action",
               "host": [
                 "{{domain}}"
               ],
@@ -2477,7 +2448,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/project/delete.action",
+                  "raw": "{{domain}}\/{{version}}\/project\/delete.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -2494,7 +2465,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -2502,7 +2473,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -2514,7 +2485,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -2573,7 +2544,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/project/share.action",
+              "raw": "{{domain}}\/{{version}}\/project\/share.action",
               "host": [
                 "{{domain}}"
               ],
@@ -2611,7 +2582,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/project/share.action",
+                  "raw": "{{domain}}\/{{version}}\/project\/share.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -2628,7 +2599,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -2636,7 +2607,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -2648,7 +2619,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -2672,7 +2643,7 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"project\": {\n            \"project_id\": 2,\n            \"team_id\": 2,\n            \"name\": \"gaoqiaoxue的团队默认个人项目\",\n            \"create_dtime\": \"2020-12-01 01:37:01\",\n            \"status\": 1,\n            \"is_lock\": -1\n        },\n        \"shareUrl\": {\n            \"share_id\": 1,\n            \"target_type\": \"project\",\n            \"target_id\": 2,\n            \"url\": \"https://docs.apipost.cn/view/ae79c5240f6a604e\",\n            \"create_dtime\": \"2020-12-02 05:54:11\",\n            \"expire_days\": -1,\n            \"password\": \"\",\n            \"is_md5\": -1\n        },\n        \"expireDays\": {\n            \"7\": \"7天有效期\",\n            \"30\": \"30天有效期\",\n            \"-99\": \"关闭分享\",\n            \"-1\": \"永久有效期\"\n        }\n    }\n}"
+              "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"project\": {\n            \"project_id\": 2,\n            \"team_id\": 2,\n            \"name\": \"gaoqiaoxue的团队默认个人项目\",\n            \"create_dtime\": \"2020-12-01 01:37:01\",\n            \"status\": 1,\n            \"is_lock\": -1\n        },\n        \"shareUrl\": {\n            \"share_id\": 1,\n            \"target_type\": \"project\",\n            \"target_id\": 2,\n            \"url\": \"https:\/\/docs.apipost.cn\/view\/ae79c5240f6a604e\",\n            \"create_dtime\": \"2020-12-02 05:54:11\",\n            \"expire_days\": -1,\n            \"password\": \"\",\n            \"is_md5\": -1\n        },\n        \"expireDays\": {\n            \"7\": \"7天有效期\",\n            \"30\": \"30天有效期\",\n            \"-99\": \"关闭分享\",\n            \"-1\": \"永久有效期\"\n        }\n    }\n}"
             },
             {
               "name": "项目分享接口",
@@ -2700,7 +2671,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/project/share.action",
+                  "raw": "{{domain}}\/{{version}}\/project\/share.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -2717,7 +2688,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -2725,7 +2696,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -2737,7 +2708,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -2761,7 +2732,7 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"project\": {\n            \"project_id\": 2,\n            \"team_id\": 2,\n            \"name\": \"gaoqiaoxue的团队默认个人项目\",\n            \"create_dtime\": \"2020-12-01 01:37:01\",\n            \"status\": 1,\n            \"is_lock\": -1\n        },\n        \"shareUrl\": {\n            \"share_id\": 1,\n            \"target_type\": \"project\",\n            \"target_id\": 2,\n            \"url\": \"https://docs.apipost.cn/view/ae79c5240f6a604e\",\n            \"create_dtime\": \"2020-12-02 05:54:11\",\n            \"expire_days\": -1,\n            \"password\": \"\",\n            \"is_md5\": -1\n        },\n        \"expireDays\": {\n            \"7\": \"7天有效期\",\n            \"30\": \"30天有效期\",\n            \"-99\": \"关闭分享\",\n            \"-1\": \"永久有效期\"\n        }\n    }\n}"
+              "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"project\": {\n            \"project_id\": 2,\n            \"team_id\": 2,\n            \"name\": \"gaoqiaoxue的团队默认个人项目\",\n            \"create_dtime\": \"2020-12-01 01:37:01\",\n            \"status\": 1,\n            \"is_lock\": -1\n        },\n        \"shareUrl\": {\n            \"share_id\": 1,\n            \"target_type\": \"project\",\n            \"target_id\": 2,\n            \"url\": \"https:\/\/docs.apipost.cn\/view\/ae79c5240f6a604e\",\n            \"create_dtime\": \"2020-12-02 05:54:11\",\n            \"expire_days\": -1,\n            \"password\": \"\",\n            \"is_md5\": -1\n        },\n        \"expireDays\": {\n            \"7\": \"7天有效期\",\n            \"30\": \"30天有效期\",\n            \"-99\": \"关闭分享\",\n            \"-1\": \"永久有效期\"\n        }\n    }\n}"
             }
           ]
         },
@@ -2791,7 +2762,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/project/set/expire.action",
+              "raw": "{{domain}}\/{{version}}\/project\/set\/expire.action",
               "host": [
                 "{{domain}}"
               ],
@@ -2830,7 +2801,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/project/set/expire.action",
+                  "raw": "{{domain}}\/{{version}}\/project\/set\/expire.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -2848,7 +2819,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -2856,7 +2827,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -2868,7 +2839,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -2922,7 +2893,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/project/set/password.action",
+              "raw": "{{domain}}\/{{version}}\/project\/set\/password.action",
               "host": [
                 "{{domain}}"
               ],
@@ -2961,7 +2932,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/project/set/password.action",
+                  "raw": "{{domain}}\/{{version}}\/project\/set\/password.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -2979,7 +2950,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -2987,7 +2958,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -2999,7 +2970,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -3053,7 +3024,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/project/cancel/password.action",
+              "raw": "{{domain}}\/{{version}}\/project\/cancel\/password.action",
               "host": [
                 "{{domain}}"
               ],
@@ -3092,7 +3063,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/project/cancel/password.action",
+                  "raw": "{{domain}}\/{{version}}\/project\/cancel\/password.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -3110,7 +3081,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -3118,7 +3089,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -3130,7 +3101,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -3184,7 +3155,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/api/share.action",
+              "raw": "{{domain}}\/{{version}}\/api\/share.action",
               "host": [
                 "{{domain}}"
               ],
@@ -3222,7 +3193,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/api/share.action",
+                  "raw": "{{domain}}\/{{version}}\/api\/share.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -3239,7 +3210,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -3247,7 +3218,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -3259,7 +3230,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -3283,7 +3254,7 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"shareUrl\": {\n            \"share_id\": 2,\n            \"target_type\": \"api\",\n            \"target_id\": 2,\n            \"url\": \"https://docs.apipost.cn/view/5e3f44a7af4ec481\",\n            \"create_dtime\": \"2020-12-02 10:22:48\",\n            \"expire_days\": -1,\n            \"password\": \"\",\n            \"is_md5\": -1\n        },\n        \"expireDays\": {\n            \"7\": \"7天有效期\",\n            \"30\": \"30天有效期\",\n            \"-99\": \"关闭分享\",\n            \"-1\": \"永久有效期\"\n        },\n        \"api\": {\n            \"target_id\": 2,\n            \"project_id\": 2,\n            \"name\": \"12312313\"\n        }\n    }\n}"
+              "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"shareUrl\": {\n            \"share_id\": 2,\n            \"target_type\": \"api\",\n            \"target_id\": 2,\n            \"url\": \"https:\/\/docs.apipost.cn\/view\/5e3f44a7af4ec481\",\n            \"create_dtime\": \"2020-12-02 10:22:48\",\n            \"expire_days\": -1,\n            \"password\": \"\",\n            \"is_md5\": -1\n        },\n        \"expireDays\": {\n            \"7\": \"7天有效期\",\n            \"30\": \"30天有效期\",\n            \"-99\": \"关闭分享\",\n            \"-1\": \"永久有效期\"\n        },\n        \"api\": {\n            \"target_id\": 2,\n            \"project_id\": 2,\n            \"name\": \"12312313\"\n        }\n    }\n}"
             }
           ]
         },
@@ -3313,7 +3284,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/api/set/expire.action",
+              "raw": "{{domain}}\/{{version}}\/api\/set\/expire.action",
               "host": [
                 "{{domain}}"
               ],
@@ -3359,7 +3330,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/api/set/expire.action",
+                  "raw": "{{domain}}\/{{version}}\/api\/set\/expire.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -3384,7 +3355,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -3392,7 +3363,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -3404,7 +3375,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -3458,7 +3429,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/api/set/password.action",
+              "raw": "{{domain}}\/{{version}}\/api\/set\/password.action",
               "host": [
                 "{{domain}}"
               ],
@@ -3497,7 +3468,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/api/set/password.action",
+                  "raw": "{{domain}}\/{{version}}\/api\/set\/password.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -3515,7 +3486,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -3523,7 +3494,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -3535,7 +3506,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -3589,7 +3560,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/folder/share.action",
+              "raw": "{{domain}}\/{{version}}\/folder\/share.action",
               "host": [
                 "{{domain}}"
               ],
@@ -3627,7 +3598,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/folder/share.action",
+                  "raw": "{{domain}}\/{{version}}\/folder\/share.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -3644,7 +3615,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -3652,7 +3623,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -3664,7 +3635,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -3688,7 +3659,7 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"shareUrl\": {\n            \"target_type\": \"folder\",\n            \"target_id\": \"1\",\n            \"url\": \"https://docs.apipost.cn/view/8edb4eaf059aa8a4\",\n            \"expire_days\": -1,\n            \"password\": \"\"\n        },\n        \"expireDays\": {\n            \"7\": \"7天有效期\",\n            \"30\": \"30天有效期\",\n            \"-99\": \"关闭分享\",\n            \"-1\": \"永久有效期\"\n        },\n        \"folder\": {\n            \"target_id\": 1,\n            \"project_id\": 2,\n            \"name\": \"ceshi\"\n        }\n    }\n}"
+              "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"shareUrl\": {\n            \"target_type\": \"folder\",\n            \"target_id\": \"1\",\n            \"url\": \"https:\/\/docs.apipost.cn\/view\/8edb4eaf059aa8a4\",\n            \"expire_days\": -1,\n            \"password\": \"\"\n        },\n        \"expireDays\": {\n            \"7\": \"7天有效期\",\n            \"30\": \"30天有效期\",\n            \"-99\": \"关闭分享\",\n            \"-1\": \"永久有效期\"\n        },\n        \"folder\": {\n            \"target_id\": 1,\n            \"project_id\": 2,\n            \"name\": \"ceshi\"\n        }\n    }\n}"
             }
           ]
         },
@@ -3718,7 +3689,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/folder/set/expire.action",
+              "raw": "{{domain}}\/{{version}}\/folder\/set\/expire.action",
               "host": [
                 "{{domain}}"
               ],
@@ -3757,7 +3728,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/folder/set/expire.action",
+                  "raw": "{{domain}}\/{{version}}\/folder\/set\/expire.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -3775,7 +3746,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -3783,7 +3754,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -3795,7 +3766,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -3849,7 +3820,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/folder/set/password.action",
+              "raw": "{{domain}}\/{{version}}\/folder\/set\/password.action",
               "host": [
                 "{{domain}}"
               ],
@@ -3888,7 +3859,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/folder/set/password.action",
+                  "raw": "{{domain}}\/{{version}}\/folder\/set\/password.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -3906,7 +3877,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -3914,7 +3885,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -3926,7 +3897,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -3985,7 +3956,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/folder/new.action",
+              "raw": "{{domain}}\/{{version}}\/folder\/new.action",
               "host": [
                 "{{domain}}"
               ],
@@ -4023,7 +3994,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/folder/new.action",
+                  "raw": "{{domain}}\/{{version}}\/folder\/new.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -4040,7 +4011,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -4048,7 +4019,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -4060,7 +4031,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -4114,7 +4085,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/folder/edit.action",
+              "raw": "{{domain}}\/{{version}}\/folder\/edit.action",
               "host": [
                 "{{domain}}"
               ],
@@ -4152,7 +4123,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/folder/edit.action",
+                  "raw": "{{domain}}\/{{version}}\/folder\/edit.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -4169,7 +4140,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -4177,7 +4148,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -4189,7 +4160,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -4243,7 +4214,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/folder/sort.action",
+              "raw": "{{domain}}\/{{version}}\/folder\/sort.action",
               "host": [
                 "{{domain}}"
               ],
@@ -4281,7 +4252,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/folder/sort.action",
+                  "raw": "{{domain}}\/{{version}}\/folder\/sort.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -4298,7 +4269,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -4306,7 +4277,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -4318,7 +4289,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -4372,7 +4343,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/folder/project.action",
+              "raw": "{{domain}}\/{{version}}\/folder\/project.action",
               "host": [
                 "{{domain}}"
               ],
@@ -4410,7 +4381,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/folder/project.action",
+                  "raw": "{{domain}}\/{{version}}\/folder\/project.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -4427,7 +4398,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -4435,7 +4406,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -4447,7 +4418,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -4501,7 +4472,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/folder/detail.action",
+              "raw": "{{domain}}\/{{version}}\/folder\/detail.action",
               "host": [
                 "{{domain}}"
               ],
@@ -4539,7 +4510,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{domain}}/{{version}}/folder/detail.action",
+                  "raw": "{{domain}}\/{{version}}\/folder\/detail.action",
                   "host": [
                     "{{domain}}"
                   ],
@@ -4556,7 +4527,7 @@
               "header": [
                 {
                   "key": "Server",
-                  "value": "nginx/1.19.2"
+                  "value": "nginx\/1.19.2"
                 },
                 {
                   "key": "Date",
@@ -4564,7 +4535,7 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json; charset=utf-8"
+                  "value": "application\/json; charset=utf-8"
                 },
                 {
                   "key": "Transfer-Encoding",
@@ -4576,7 +4547,7 @@
                 },
                 {
                   "key": "X-Powered-By",
-                  "value": "PHP/7.4.12"
+                  "value": "PHP\/7.4.12"
                 },
                 {
                   "key": "Access-Control-Allow-Credentials",
@@ -4625,7 +4596,7 @@
           }
         },
         "url": {
-          "raw": "{{domain}}/{{version}}/login.action",
+          "raw": "{{domain}}\/{{version}}\/login.action",
           "host": [
             "{{domain}}"
           ],
@@ -4651,7 +4622,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/login.action",
+              "raw": "{{domain}}\/{{version}}\/login.action",
               "host": [
                 "{{domain}}"
               ],
@@ -4667,7 +4638,7 @@
           "header": [
             {
               "key": "Server",
-              "value": "nginx/1.19.2"
+              "value": "nginx\/1.19.2"
             },
             {
               "key": "Date",
@@ -4675,7 +4646,7 @@
             },
             {
               "key": "Content-Type",
-              "value": "application/json; charset=utf-8"
+              "value": "application\/json; charset=utf-8"
             },
             {
               "key": "Transfer-Encoding",
@@ -4687,7 +4658,7 @@
             },
             {
               "key": "X-Powered-By",
-              "value": "PHP/7.4.12"
+              "value": "PHP\/7.4.12"
             },
             {
               "key": "Access-Control-Allow-Credentials",
@@ -4711,7 +4682,7 @@
             }
           ],
           "cookie": [],
-          "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"data\": {\n            \"token\": \"token:11dgmox_dfccd7534a6b6a7aa6d147cb64732abe-1_1606737586\",\n            \"user\": {\n                \"portrait\": \"https://img.cdn.apipost.cn/user/default/default-portrait.png\",\n                \"nick_name\": \"pis0sion\",\n                \"email\": \"zih****2010@126.com\",\n                \"mobile\": null,\n                \"reg_dtime\": \"2020-11-04 12:37:04\",\n                \"login_dtime\": \"2020-11-30 19:59:46\"\n            }\n        }\n    }\n}"
+          "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"data\": {\n            \"token\": \"token:11dgmox_dfccd7534a6b6a7aa6d147cb64732abe-1_1606737586\",\n            \"user\": {\n                \"portrait\": \"https:\/\/img.cdn.apipost.cn\/user\/default\/default-portrait.png\",\n                \"nick_name\": \"pis0sion\",\n                \"email\": \"zih****2010@126.com\",\n                \"mobile\": null,\n                \"reg_dtime\": \"2020-11-04 12:37:04\",\n                \"login_dtime\": \"2020-11-30 19:59:46\"\n            }\n        }\n    }\n}"
         }
       ]
     },
@@ -4730,7 +4701,7 @@
           }
         },
         "url": {
-          "raw": "{{domain}}/{{version}}/register.action",
+          "raw": "{{domain}}\/{{version}}\/register.action",
           "host": [
             "{{domain}}"
           ],
@@ -4756,7 +4727,7 @@
               }
             },
             "url": {
-              "raw": "{{domain}}/{{version}}/register.action",
+              "raw": "{{domain}}\/{{version}}\/register.action",
               "host": [
                 "{{domain}}"
               ],
@@ -4772,7 +4743,7 @@
           "header": [
             {
               "key": "Server",
-              "value": "nginx/1.19.2"
+              "value": "nginx\/1.19.2"
             },
             {
               "key": "Date",
@@ -4780,7 +4751,7 @@
             },
             {
               "key": "Content-Type",
-              "value": "application/json; charset=utf-8"
+              "value": "application\/json; charset=utf-8"
             },
             {
               "key": "Transfer-Encoding",
@@ -4792,7 +4763,7 @@
             },
             {
               "key": "X-Powered-By",
-              "value": "PHP/7.4.12"
+              "value": "PHP\/7.4.12"
             },
             {
               "key": "Access-Control-Allow-Credentials",
@@ -4816,7 +4787,7 @@
             }
           ],
           "cookie": [],
-          "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"data\": {\n            \"token\": \"token:11cglru_dfccd7534a6b6a7aa6d147cb64732abe-2_1606737813\",\n            \"user\": {\n                \"email\": \"zih****2010@gmail.com\",\n                \"nick_name\": \"gaoqiaoxue\",\n                \"portrait\": \"https://img.cdn.apipost.cn/user/default/default-portrait.png\",\n                \"reg_dtime\": \"2020-11-30 20:03:33\",\n                \"login_dtime\": \"2020-11-30 20:03:33\"\n            },\n            \"team_id\": \"2\",\n            \"project_id\": \"2\"\n        }\n    }\n}"
+          "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"data\": {\n            \"token\": \"token:11cglru_dfccd7534a6b6a7aa6d147cb64732abe-2_1606737813\",\n            \"user\": {\n                \"email\": \"zih****2010@gmail.com\",\n                \"nick_name\": \"gaoqiaoxue\",\n                \"portrait\": \"https:\/\/img.cdn.apipost.cn\/user\/default\/default-portrait.png\",\n                \"reg_dtime\": \"2020-11-30 20:03:33\",\n                \"login_dtime\": \"2020-11-30 20:03:33\"\n            },\n            \"team_id\": \"2\",\n            \"project_id\": \"2\"\n        }\n    }\n}"
         }
       ]
     }
