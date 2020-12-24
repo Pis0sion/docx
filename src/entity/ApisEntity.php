@@ -5,10 +5,10 @@ namespace Pis0sion\Docx\entity;
 
 use PhpOffice\PhpWord\Element\Section;
 use PhpOffice\PhpWord\Shared\Html;
+use PhpOffice\PhpWord\Style\Font;
 use PhpOffice\PhpWord\Style\Table;
 use Pis0sion\Docx\layer\AbsBaseEntity;
 use Pis0sion\Docx\servlet\TableServlet;
-use function Composer\Autoload\includeFile;
 
 /**
  * Class ApisEntity
@@ -36,56 +36,36 @@ class ApisEntity extends AbsBaseEntity
             foreach ($apiModule['module_list'] as $apiList) {
                 $this->addCategoriesTitle($apiList['name'], 3, function ($section) use ($apiList) {
                     /** @var Section $section */
-                    $this->renderText($section, "接口地址：{$apiList['request']['api_url']}");
-                    $this->renderText($section, "返回格式：{$apiList['request']['contentType']}");
-                    $this->renderText($section, "请求方式：{$apiList['request']['method']}");
-                    $this->renderText($section, "接口备注：{$apiList['request']['description']}");
-                    $this->renderText($section, "调试工具：POSTMAN");
-
+                    $this->renderText($section, "接口地址：", $apiList['request']['api_url']);
+                    $this->renderText($section, "返回格式：", $apiList['request']['contentType']);
+                    $this->renderText($section, "请求方式：", strtolower($apiList['request']['method']));
+                    $this->renderText($section, "接口备注：", $apiList['request']['description']);
+                    $this->renderText($section, "调试工具：", "postman");
                     $section->addTextBreak();
                     $this->renderText($section, "请求参数说明：");
-                    $render = [
-                        [
-                            'param' => "name",
-                            'namely' => "你好",
-                            'isBool' => "必填",
-                            'desc' => "等方式尽快发货大",
-                        ],
-                        [
-                            'param' => "name",
-                            'namely' => "你好",
-                            'isBool' => "必填",
-                            'desc' => "等方式尽快发货大",
-                        ],
-                        [
-                            'param' => "name",
-                            'namely' => "你好",
-                            'isBool' => "必填",
-                            'desc' => "等方式尽快发货大",
-                        ],
-                        [
-                            'param' => "name",
-                            'namely' => "你好",
-                            'isBool' => "必填",
-                            'desc' => "等方式尽快发货大",
-                        ],
-                        [
-                            'param' => "name",
-                            'namely' => "你好",
-                            'isBool' => "必填",
-                            'desc' => "等方式尽快发货大",
-                        ],
-                    ];
-                    (new TableServlet($section))->run([
-                        '参数名称' => 2000,
-                        '示例值' => 1800,
-                        '类型' => 1200,
-                        '参数说明' => 3000,
-                    ], $render);
+                    $requestParameters = $apiList['request']['parameters'];
+                    if (count($requestParameters) == true) {
+                        (new TableServlet($section))->run([
+                            '参数名称' => 2000,
+                            '示例值' => 1800,
+                            '类型' => 1200,
+                            '参数说明' => 3000,
+                        ], $requestParameters);
+                    } else {
+                        (new TableServlet($section))->runEmptyForm([
+                            '参数名称' => 2000,
+                            '示例值' => 1800,
+                            '类型' => 1200,
+                            '参数说明' => 3000,
+                        ], "无请求参数 KEY/VALUE 类型");
+                    }
                     $section->addTextBreak();
+                    if (!empty($apiList['request']['raws'])) {
+                        $this->renderText($section, "请求示例：");
+                        $this->renderRawPrettyJson($section, $apiList['request']['raws'],'EEDEEE');
+                        $section->addTextBreak();
+                    }
                     $responseBody = $apiList['response']['body'];
-                    // 内容为数组
-                    // 如果为空需要处理
                     $this->renderText($section, "返回参数说明：");
                     if (count($responseBody) == true) {
                         (new TableServlet($section))->run([
@@ -100,15 +80,15 @@ class ApisEntity extends AbsBaseEntity
                             '示例值' => 1800,
                             '类型' => 1200,
                             '参数说明' => 3000,
-                        ], "无响应数据");
+                        ], "无响应参数 KEY/VALUE 类型");
                     }
-                    $section->addTextBreak(1);
+                    $section->addTextBreak();
                     // 响应结果如果是文件
                     // 暂时不做处理
                     $this->renderText($section, "返回示例：");
                     $this->renderRawPrettyJson($section, $apiList['response']['raw']);
-                    $section->addTextBreak(1);
-                    $section->addTextBreak(1);
+                    $section->addTextBreak();
+                    $section->addTextBreak();
                 });
             }
         }
@@ -116,19 +96,25 @@ class ApisEntity extends AbsBaseEntity
 
     /**
      * @param Section $section
+     * @param string $apiType
      * @param string $text
      */
-    protected function renderText(Section $section, string $text)
+    protected function renderText(Section $section, string $apiType, string $text = '')
     {
-        $section->addText($text, null, ['indentation' => ['left' => 480]]);
+        $textRun = $section->addTextRun(['indentation' => ['left' => 480]]);
+        $textRun->addText($apiType);
+        if (!empty($text)) {
+            $textRun->addText($text, ['italic' => true, 'underline' => Font::UNDERLINE_SINGLE]);
+        }
     }
 
     /**
      * 渲染 Raw
      * @param Section $section
      * @param string|null $prettyDatum
+     * @param string $bgColor
      */
-    protected function renderRawPrettyJson(Section $section, ?string $prettyDatum)
+    protected function renderRawPrettyJson(Section $section, ?string $prettyDatum, string $bgColor = 'DDEDFB')
     {
         $TableCell = $section->addTable([
             'layout' => Table::LAYOUT_FIXED,
@@ -138,10 +124,10 @@ class ApisEntity extends AbsBaseEntity
         $TableCell->addRow(500);
         $cell = $TableCell->addCell(8000, [
             'valign' => 'center',
-            'bgColor' => 'DDEDFB',
+            'bgColor' => $bgColor,
         ]);
-        $textRun = $cell->addTextRun(['lineHeight' => 1.5]);
-        $result = "<div style='font-size: 12px;color: black;'>" . nl2br($prettyDatum) . "</div>";
+        $textRun = $cell->addTextRun(['lineHeight' => 1.2]);
+        $result = " <div style='font-size: 12px;color: black;' >" . nl2br($prettyDatum) . "</div> ";
         Html::addHtml($textRun, $result, false, false);
     }
 

@@ -1,5 +1,8 @@
 <?php
 
+use Pis0sion\Docx\categories\postman\ApisPostManParser;
+use Pis0sion\Docx\Core;
+use Pis0sion\Docx\servlet\CoverServlet;
 use Pis0sion\Docx\servlet\FooterServlet;
 use Pis0sion\Docx\servlet\HeaderServlet;
 use Pis0sion\Docx\servlet\PhpWordServlet;
@@ -16,6 +19,9 @@ $phpWordServlet->init();
 // 创建页面
 // 设置页面边框大小颜色
 $section = $phpWordServlet->newSection(['borderColor' => '161616', 'borderSize' => 6]);
+
+
+(new CoverServlet($section))->createCover();
 // 创建页眉页脚
 (new HeaderServlet($section->addHeader()))->setHeader();
 (new FooterServlet($section->addFooter()))->setFooter();
@@ -85,13 +91,13 @@ $section->addPageBreak();
 // 获取json数据
 $postmanJson = file_get_contents("./postman.json");
 
-$projectVars = (new \Pis0sion\Docx\categories\postman\ApisPostManParser())->parse2RenderDocx($postmanJson);
+$projectVars = (new ApisPostManParser())->parse2RenderDocx($postmanJson);
 
 $apis = [
     "apis" => $projectVars,
 ];
 // 生成文档
-(new \Pis0sion\Docx\Core())->run($section, $apis);
+(new Core())->run($section, $apis);
 
 // 保存文件
 $phpWordServlet->saveAs("./pis0sion.docx");

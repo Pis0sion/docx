@@ -4,6 +4,7 @@
 namespace Pis0sion\Docx\servlet;
 
 use PhpOffice\PhpWord\Element\Section;
+use PhpOffice\PhpWord\IOFactory;
 use PhpOffice\PhpWord\PhpWord;
 use PhpOffice\PhpWord\Settings;
 use PhpOffice\PhpWord\SimpleType\DocProtect;
@@ -90,6 +91,7 @@ class PhpWordServlet
         $this->phpWord->getSettings()->setHideGrammaticalErrors(true);
         $this->phpWord->getSettings()->setHideSpellingErrors(true);
         // 设置全局的字体大小
+        $this->phpWord->setDefaultFontName("Calibri");
         $this->phpWord->setDefaultFontSize($defaultFontSize);
         // 设置全局的行高还有段落字体
         $this->phpWord->setDefaultParagraphStyle(['lineHeight' => $lineHeight, 'size' => $paragraphSize]);

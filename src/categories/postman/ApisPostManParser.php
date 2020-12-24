@@ -41,9 +41,7 @@ class ApisPostManParser implements IParserInterface
             if (array_key_exists("item", $postmanApi)) {
                 $projectVars[] = [
                     'module_name' => $postmanApi['name'],
-                    // TODO: 支持两级目录
-                    // 防止多级目录需要做递归
-                    'module_list' => $postmanApi['item'],
+                    'module_list' => $this->multiLevelAcquisition($postmanApi['item']),
                 ];
                 continue;
             }
@@ -70,14 +68,15 @@ class ApisPostManParser implements IParserInterface
             foreach ($moduleApis as &$moduleApi) {
                 // 新增字段
                 $apiRequest = &$moduleApi['request'];
-                $apiRequest['api_url'] = $moduleApi['request']['url']['raw'];
-                $apiRequest['contentType'] = "application/json";
-                $apiRequest['description'] = ApiDefaultDescription;
+                $apiRequest['api_url'] = ($moduleApi['request']['url']['raw'] == true) ? $moduleApi['request']['url']['raw'] : ApiDefaultEmptyUrl;
+                $apiRequest['contentType'] = $this->obtainContentType2ApiVars($apiRequest);
+                $apiRequest['description'] = $apiRequest['description'] ?? ApiDefaultDescription;
+                $apiRequest['parameters'] = $this->obtainKVRequestParameters($apiRequest);
+                $apiRequest['raws'] = $this->obtainRawRequestParameters($apiRequest);
 
                 $apiResponse = &$moduleApi['response'];
                 $apiResponse['body'] = [];
                 $apiResponse['raw'] = SuccessPostManRaw;
-
                 if (count($moduleApi['response']) == true) {
                     $apiResponseArr = $this->obtainResponse2Success($moduleApi['response']);
                     $apiResponse['body'] = $apiResponseArr['body'] ?? [];
@@ -131,7 +130,7 @@ class ApisPostManParser implements IParserInterface
 
             if (is_array($value)) {
                 $re[$handleKey] = new stdClass();
-                $re = array_merge($re, recursionArr($value, $handleKey));
+                $re = array_merge($re, $this->recursionArr($value, $handleKey));
                 continue;
             }
             $re[$handleKey] = $value;
@@ -156,4 +155,132 @@ class ApisPostManParser implements IParserInterface
         }
         return $retResult;
     }
+
+    /**
+     * 获取多层级接口
+     * @param array $apiVars
+     * @return array
+     */
+    protected function multiLevelAcquisition(array $apiVars): array
+    {
+        $module_list = [];
+        foreach ($apiVars as $apiVar) {
+            if (!array_key_exists('item', $apiVar)) {
+                $module_list[] = $apiVar;
+                continue;
+            }
+            $module_list = array_merge($this->multiLevelAcquisition($apiVar['item']));
+        }
+        return $module_list;
+    }
+
+    /**
+     * 获取contentType类型
+     * @param array $apiVars
+     * @return string
+     * 首先判断 body 是否存在
+     * 获取body中的 mode 参数
+     * 根据 mode 的值来获取 contentType
+     */
+    protected function obtainContentType2ApiVars(array $apiVars): string
+    {
+        $defaultContentType = DefaultContentType;
+        if (!isset($apiVars['body'])) {
+            return $defaultContentType;
+        }
+        if (!isset($apiVars['body']['mode'])) {
+            return $defaultContentType;
+        }
+        $requestBody = $apiVars['body'];
+        if (array_key_exists($requestBody['mode'], ContentTypeMap)) {
+            return ContentTypeMap[$requestBody['mode']];
+        }
+        // 处理 contentType 为 Raw
+        if ($requestBody['mode'] == 'raw') {
+            // 当 mode == raw 时 判断option是否存在 如果存在取option的值
+            $defaultContentType = DefaultRawContentType;
+            if (isset($requestBody['options']) && isset($requestBody['options']['raw'])
+                && isset($requestBody['options']['raw']['language'])) {
+                return ContentTypeMap[$requestBody['options']['raw']['language']];
+            }
+        }
+
+        return $defaultContentType;
+    }
+
+    /**
+     * 获取具有KV类型的请求参数
+     * @param array $apiVars
+     * @return array
+     */
+    protected function obtainKVRequestParameters(array $apiVars): array
+    {
+        // 考虑到多数的请求参数为KV
+        // 故默认的请求参数
+        $requestDefaultParameters = [];
+        if (!isset($apiVars['body'])) {
+            return $requestDefaultParameters;
+        }
+        if (!isset($apiVars['body']['mode'])) {
+            return $requestDefaultParameters;
+        }
+
+        $requestBody = $apiVars['body'];
+        if ($requestBody['mode'] == 'urlencoded' || $requestBody['mode'] == 'formdata') {
+            $requestDefaultParameters = $this->dealingSortProblemOfKV($requestBody[$requestBody['mode']]);
+        }
+        // 判断如果 mode=raw  并且 raw 有值
+        if (($requestBody['mode'] == 'raw') && $requestBody['raw'] != "") {
+            // 判断是否是json
+            $rawDatum = json_decode($requestBody['raw'], true);
+            if (json_last_error() == JSON_ERROR_NONE) {
+                // 证明是json数据
+                $requestDefaultParameters = $this->organizeDatum2Kv($this->recursionArr($rawDatum, null));
+            }
+        }
+
+        return $requestDefaultParameters;
+    }
+
+    /**
+     * 处理KV的排序问题
+     * @param array $KVArr
+     * @return array
+     */
+    protected function dealingSortProblemOfKV(array $KVArr): array
+    {
+        $sortKVArr = [];
+        foreach ($KVArr as $KVValue) {
+            $sortKV['key'] = $KVValue['key'];
+            // 处理上传文件的问题
+            if ($KVValue['type'] == 'file') {
+                $sortKV['value'] = $sortKV['src'] ?? '';
+            } else {
+                $sortKV['value'] = $KVValue['value'];
+            }
+
+            $sortKV['type'] = $KVValue['type'];
+            $sortKV['description'] = $KVValue['description'] ?? "暂无描述";
+            $sortKVArr[] = $sortKV;
+        }
+        return $sortKVArr;
+    }
+
+    /**
+     * 获取参数中的raw
+     * @param array $apiVars
+     * @return string
+     */
+    protected function obtainRawRequestParameters(array $apiVars): string
+    {
+        $requestDefaultRaw = "";
+        if (!isset($apiVars['body'])) {
+            return $requestDefaultRaw;
+        }
+        if (!isset($apiVars['body']['raw'])) {
+            return $requestDefaultRaw;
+        }
+        return $apiVars['body']['raw'];
+    }
+
 }
