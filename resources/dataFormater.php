@@ -29,7 +29,7 @@
                                 'type' => "text"
                             ]
                         ],
-                        'body' => [
+                        'parameters' => [
                             [
                                 'key' => 'token',
                                 'value' => 'dfsfdsfdsaf',
@@ -41,6 +41,7 @@
                                 'type' => "text"
                             ]
                         ],
+                        'raws' => '',
                     ],
                     "response" => [
                         'body' => [],

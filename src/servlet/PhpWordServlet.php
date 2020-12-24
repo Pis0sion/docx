@@ -4,7 +4,6 @@
 namespace Pis0sion\Docx\servlet;
 
 use PhpOffice\PhpWord\Element\Section;
-use PhpOffice\PhpWord\IOFactory;
 use PhpOffice\PhpWord\PhpWord;
 use PhpOffice\PhpWord\Settings;
 use PhpOffice\PhpWord\SimpleType\DocProtect;
@@ -65,7 +64,7 @@ class PhpWordServlet
     protected function setAccessPermissionsForDocuments()
     {
         $documentProtection = $this->phpWord->getSettings()->getDocumentProtection();
-        $documentProtection->setEditing(DocProtect::NONE);
+        $documentProtection->setEditing(DocProtect::READ_ONLY);
         $documentProtection->setPassword("123456");
     }
 
