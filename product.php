@@ -84,7 +84,7 @@ $section->addPageBreak();
 
 
 // 获取json数据
-$postmanJson = file_get_contents("./postman.json");
+$postmanJson = file_get_contents("./burg.json");
 $postmanArr = json_decode($postmanJson, true);
 
 // 获取接口数据
@@ -100,6 +100,8 @@ foreach ($postmanApis as $postmanApi) {
     if (array_key_exists("item", $postmanApi)) {
         $projectVars[] = [
             'module_name' => $postmanApi['name'],
+            // TODO: 支持两级目录
+            // 防止多级目录需要做递归
             'module_list' => $postmanApi['item'],
         ];
         continue;
@@ -108,9 +110,28 @@ foreach ($postmanApis as $postmanApi) {
     $module_list[] = $postmanApi;
 }
 
-// 判断是否为空
+// 添加默认项目列表模块
 if (count($module_list) != 0) {
     array_unshift($projectVars, compact('module_name', 'module_list'));
+}
+
+/**
+ * @param array $successResponseArr
+ * @return array
+ */
+function obtainResponse2Success(array $successResponseArr): array
+{
+    $successRespond = [];
+    foreach ($successResponseArr as $successResponse) {
+        if (isset($successResponse['code']) && $successResponse['code'] == 200) {
+            $successRespond['raw'] = $successResponse['body'] ?? '{}';
+            // 根据 raw 获取body
+            $obtainDatum = json_decode($successRespond['raw'], true);
+            $successRespond['body'] = archiving(recursionArr($obtainDatum, null));
+            break;
+        }
+    }
+    return $successRespond;
 }
 
 // 遍历
@@ -123,6 +144,16 @@ foreach ($projectVars as &$projectVar) {
         $apiRequest['api_url'] = $moduleApi['request']['url']['raw'];
         $apiRequest['contentType'] = "application/json";
         $apiRequest['description'] = "接口描述";
+
+        $apiResponse = &$moduleApi['response'];
+        $apiResponse['body'] = [];
+        $apiResponse['raw'] = "";
+
+        if (count($moduleApi['response']) == true) {
+            $apiResponseArr = obtainResponse2Success($moduleApi['response']);
+            $apiResponse['body'] = $apiResponseArr['body'] ?? [];
+            $apiResponse['raw'] = $apiResponseArr['raw'] ?? '';
+        }
     }
 }
 
@@ -134,3 +165,39 @@ $apis = [
 
 // 保存文件
 $phpWordServlet->saveAs("./pis0sion.docx");
+
+function recursionArr(array $arrDatum, ?string $keyString): array
+{
+    $re = [];
+    foreach ($arrDatum as $key => $value) {
+        $handleKey = $key;
+        if (!empty($keyString)) {
+            if (!is_int($key)) {
+                $handleKey = $keyString . "." . $handleKey;
+            } else {
+                $handleKey = $keyString;
+            }
+        }
+        
+        if (is_array($value)) {
+            $re[$handleKey] = new stdClass();
+            $re = array_merge($re, recursionArr($value, $handleKey));
+            continue;
+        }
+        $re[$handleKey] = $value;
+    }
+    return $re;
+}
+
+function archiving(array $inputArr): array
+{
+    $retResult = [];
+    foreach ($inputArr as $key => $input) {
+        $ret['key'] = $key;
+        $ret['value'] = is_object($input) ? "Object" : $input;
+        $ret['type'] = gettype($input);
+        $ret['description'] = "暂无描述";
+        $retResult[] = $ret;
+    }
+    return $retResult;
+}

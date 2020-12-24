@@ -76,54 +76,24 @@ class ApisEntity extends AbsBaseEntity
                         ],
                     ];
                     (new TableServlet($section))->run([
-                        '参数名称' => 1500,
+                        '参数名称' => 2000,
                         '示例值' => 1800,
-                        '必填' => 1200,
-                        '参数说明' => 3500,
+                        '类型' => 1200,
+                        '参数说明' => 3000,
                     ], $render);
                     $section->addTextBreak();
                     $this->renderText($section, "返回参数说明：");
-                    $render = [
-                        [
-                            'param' => "name",
-                            'namely' => "你好",
-                            'isBool' => "必填",
-                            'desc' => "等方式尽快发货大",
-                        ],
-                        [
-                            'param' => "name",
-                            'namely' => "你好",
-                            'isBool' => "必填",
-                            'desc' => "等方式尽快发货大",
-                        ],
-                        [
-                            'param' => "name",
-                            'namely' => "你好",
-                            'isBool' => "必填",
-                            'desc' => "等方式尽快发货大",
-                        ],
-                        [
-                            'param' => "name",
-                            'namely' => "你好",
-                            'isBool' => "必填",
-                            'desc' => "等方式尽快发货大",
-                        ],
-                        [
-                            'param' => "name",
-                            'namely' => "你好",
-                            'isBool' => "必填",
-                            'desc' => "等方式尽快发货大",
-                        ],
-                    ];
+                    $render = $apiList['response']['body'];
                     (new TableServlet($section))->run([
-                        '参数' => 1500,
+                        '参数名称' => 2000,
                         '示例值' => 1800,
-                        '必填' => 1200,
-                        '参数说明' => 3500,
+                        '类型' => 1200,
+                        '参数说明' => 3000,
                     ], $render);
                     $section->addTextBreak(1);
                     $this->renderText($section, "返回示例：");
-                    $this->renderRawPrettyJson($section, $apiList['response'][0]['body']);
+                    $prettyJsonString = $apiList['response']['raw'] ?? "暂无响应示例";
+                    $this->renderRawPrettyJson($section, $prettyJsonString);
                     $section->addTextBreak(1);
                     $section->addTextBreak(1);
                 });

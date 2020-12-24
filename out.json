@@ -1,6 +1,231 @@
 [
   {
-    "module_name": "user",
+    "module_name": "默认项目列表",
+    "module_list": [
+      {
+        "name": "登录接口",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"email\":\"zihuang2010@126.com\",\r\n    \"password\":\"1234567\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "{{domain}}\/{{version}}\/login.action",
+            "host": [
+              "{{domain}}"
+            ],
+            "path": [
+              "{{version}}",
+              "login.action"
+            ]
+          },
+          "api_url": "{{domain}}\/{{version}}\/login.action",
+          "contentType": "application\/json",
+          "description": "接口描述"
+        },
+        "response": {
+          "0": {
+            "name": "登录接口",
+            "originalRequest": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"email\":\"zihuang2010@126.com\",\r\n    \"password\":\"1234567\"\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "{{domain}}\/{{version}}\/login.action",
+                "host": [
+                  "{{domain}}"
+                ],
+                "path": [
+                  "{{version}}",
+                  "login.action"
+                ]
+              }
+            },
+            "status": "OK",
+            "code": 200,
+            "_postman_previewlanguage": "json",
+            "header": [
+              {
+                "key": "Server",
+                "value": "nginx\/1.19.2"
+              },
+              {
+                "key": "Date",
+                "value": "Mon, 30 Nov 2020 11:59:46 GMT"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application\/json; charset=utf-8"
+              },
+              {
+                "key": "Transfer-Encoding",
+                "value": "chunked"
+              },
+              {
+                "key": "Connection",
+                "value": "keep-alive"
+              },
+              {
+                "key": "X-Powered-By",
+                "value": "PHP\/7.4.12"
+              },
+              {
+                "key": "Access-Control-Allow-Credentials",
+                "value": "true"
+              },
+              {
+                "key": "Access-Control-Max-Age",
+                "value": "1800"
+              },
+              {
+                "key": "Access-Control-Allow-Methods",
+                "value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+              },
+              {
+                "key": "Access-Control-Allow-Headers",
+                "value": "Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-CSRF-TOKEN, X-Requested-With"
+              },
+              {
+                "key": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ],
+            "cookie": [],
+            "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"data\": {\n            \"token\": \"token:11dgmox_dfccd7534a6b6a7aa6d147cb64732abe-1_1606737586\",\n            \"user\": {\n                \"portrait\": \"https:\/\/img.cdn.apipost.cn\/user\/default\/default-portrait.png\",\n                \"nick_name\": \"pis0sion\",\n                \"email\": \"zih****2010@126.com\",\n                \"mobile\": null,\n                \"reg_dtime\": \"2020-11-04 12:37:04\",\n                \"login_dtime\": \"2020-11-30 19:59:46\"\n            }\n        }\n    }\n}"
+          },
+          "body": [],
+          "raw": "{}"
+        }
+      },
+      {
+        "name": "注册接口",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"email\":\"zihuang2010@gmail.com\",\r\n    \"nick_name\":\"gaoqiaoxue\",\r\n    \"password\":\"1234567\",\r\n    \"repassword\":\"1234567\",\r\n    \"is_agree_agreement\":1\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "{{domain}}\/{{version}}\/register.action",
+            "host": [
+              "{{domain}}"
+            ],
+            "path": [
+              "{{version}}",
+              "register.action"
+            ]
+          },
+          "api_url": "{{domain}}\/{{version}}\/register.action",
+          "contentType": "application\/json",
+          "description": "接口描述"
+        },
+        "response": {
+          "0": {
+            "name": "注册接口",
+            "originalRequest": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"email\":\"zihuang2010@gmail.com\",\r\n    \"nick_name\":\"gaoqiaoxue\",\r\n    \"password\":\"1234567\",\r\n    \"repassword\":\"1234567\",\r\n    \"is_agree_agreement\":1\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "{{domain}}\/{{version}}\/register.action",
+                "host": [
+                  "{{domain}}"
+                ],
+                "path": [
+                  "{{version}}",
+                  "register.action"
+                ]
+              }
+            },
+            "status": "OK",
+            "code": 200,
+            "_postman_previewlanguage": "json",
+            "header": [
+              {
+                "key": "Server",
+                "value": "nginx\/1.19.2"
+              },
+              {
+                "key": "Date",
+                "value": "Mon, 30 Nov 2020 12:03:33 GMT"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application\/json; charset=utf-8"
+              },
+              {
+                "key": "Transfer-Encoding",
+                "value": "chunked"
+              },
+              {
+                "key": "Connection",
+                "value": "keep-alive"
+              },
+              {
+                "key": "X-Powered-By",
+                "value": "PHP\/7.4.12"
+              },
+              {
+                "key": "Access-Control-Allow-Credentials",
+                "value": "true"
+              },
+              {
+                "key": "Access-Control-Max-Age",
+                "value": "1800"
+              },
+              {
+                "key": "Access-Control-Allow-Methods",
+                "value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+              },
+              {
+                "key": "Access-Control-Allow-Headers",
+                "value": "Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-CSRF-TOKEN, X-Requested-With"
+              },
+              {
+                "key": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ],
+            "cookie": [],
+            "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"data\": {\n            \"token\": \"token:11cglru_dfccd7534a6b6a7aa6d147cb64732abe-2_1606737813\",\n            \"user\": {\n                \"email\": \"zih****2010@gmail.com\",\n                \"nick_name\": \"gaoqiaoxue\",\n                \"portrait\": \"https:\/\/img.cdn.apipost.cn\/user\/default\/default-portrait.png\",\n                \"reg_dtime\": \"2020-11-30 20:03:33\",\n                \"login_dtime\": \"2020-11-30 20:03:33\"\n            },\n            \"team_id\": \"2\",\n            \"project_id\": \"2\"\n        }\n    }\n}"
+          },
+          "body": [],
+          "raw": "{}"
+        }
+      }
+    ]
+  },
+  {
+    "module_name": "用户模块",
     "module_list": [
       {
         "name": "注销接口",
@@ -41,8 +266,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "注销接口",
             "originalRequest": {
               "method": "POST",
@@ -129,13 +354,15 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"result\": \"退出成功\"\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       }
     ]
   },
   {
-    "module_name": "team",
+    "module_name": "团队模块",
     "module_list": [
       {
         "name": "团队初始化接口",
@@ -177,8 +404,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "团队初始化接口",
             "originalRequest": {
               "method": "POST",
@@ -266,8 +493,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"initializeResult\": {\n            \"envVars\": {\n                \"team_id\": 1,\n                \"project_id\": 1,\n                \"api_id\": -1\n            },\n            \"teamName\": \"pis0sion的团队\",\n            \"projectName\": \"pis0sion的团队默认个人项目\"\n        }\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "更新团队接口",
@@ -309,8 +538,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "更新团队接口",
             "originalRequest": {
               "method": "POST",
@@ -398,8 +627,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"team_id\": \"3\"\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "创建团队接口",
@@ -441,8 +672,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "创建团队接口",
             "originalRequest": {
               "method": "POST",
@@ -530,8 +761,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"team_id\": \"4\"\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "用户管理的团队列表接口",
@@ -576,8 +809,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "用户管理的团队列表",
             "originalRequest": {
               "method": "POST",
@@ -665,8 +898,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"teamList\": [\n            {\n                \"team_id\": 1,\n                \"name\": \"pis0sion的团队\"\n            },\n            {\n                \"team_id\": 3,\n                \"name\": \"项目Test1\"\n            },\n            {\n                \"team_id\": 4,\n                \"name\": \"TestTeam\"\n            }\n        ]\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "用户加入的团队列表接口",
@@ -711,8 +946,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "用户加入的团队",
             "originalRequest": {
               "method": "POST",
@@ -800,8 +1035,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"myJoinTeamList\": [\n            {\n                \"team_id\": 2,\n                \"name\": \"gaoqiaoxue的团队\"\n            }\n        ]\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "获取用户某个团队的信息接口",
@@ -841,8 +1078,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "获取用户某个团队的信息",
             "originalRequest": {
               "method": "GET",
@@ -928,8 +1165,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"team_id\": 1,\n        \"name\": \"pis0sion的团队\",\n        \"user_id\": 1,\n        \"create_dtime\": \"2020-11-04 12:37:04\",\n        \"invitecode_upgrade\": -1,\n        \"fee_expire_dtime\": 0,\n        \"status\": 1,\n        \"score_upgrade\": 0,\n        \"is_administrator\": 1,\n        \"ownPlace\": [\n            {\n                \"id\": 4,\n                \"team_id\": 1,\n                \"user_id\": 1,\n                \"is_admin\": 1,\n                \"bind_dtime\": \"2020-11-04 12:37:04\",\n                \"is_present\": 0,\n                \"status\": 1,\n                \"nick_name\": \"pis0sion\",\n                \"email\": \"zihuang2010@126.com\",\n                \"portrait\": \"https:\/\/img.cdn.apipost.cn\/user\/default\/default-portrait.png\"\n            },\n            {\n                \"id\": 5,\n                \"team_id\": 1,\n                \"user_id\": 0,\n                \"is_admin\": -1,\n                \"bind_dtime\": 0,\n                \"is_present\": 0,\n                \"status\": 1,\n                \"nick_name\": null,\n                \"email\": null,\n                \"portrait\": null\n            },\n            {\n                \"id\": 6,\n                \"team_id\": 1,\n                \"user_id\": 0,\n                \"is_admin\": -1,\n                \"bind_dtime\": 0,\n                \"is_present\": 0,\n                \"status\": 1,\n                \"nick_name\": null,\n                \"email\": null,\n                \"portrait\": null\n            }\n        ]\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "设置团队管理员接口",
@@ -972,8 +1211,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "设置团队管理员接口",
             "originalRequest": {
               "method": "POST",
@@ -1062,8 +1301,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"team_id\": 1\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "撤销团队的管理员接口",
@@ -1106,8 +1347,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "撤销团队的管理员接口",
             "originalRequest": {
               "method": "POST",
@@ -1196,8 +1437,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"team_id\": 1\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "绑定成员到团队接口",
@@ -1240,8 +1483,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "绑定成员到团队接口",
             "originalRequest": {
               "method": "POST",
@@ -1330,8 +1573,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"team_id\": 3\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "解绑成员接口",
@@ -1374,8 +1619,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "解绑成员接口",
             "originalRequest": {
               "method": "POST",
@@ -1464,13 +1709,15 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"team_id\": 3\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       }
     ]
   },
   {
-    "module_name": "project",
+    "module_name": "项目模块",
     "module_list": [
       {
         "name": "创建项目接口",
@@ -1512,8 +1759,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "创建项目接口",
             "originalRequest": {
               "method": "POST",
@@ -1602,8 +1849,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"project_id\": \"8\"\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "编辑项目接口",
@@ -1645,8 +1894,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "编辑项目接口",
             "originalRequest": {
               "method": "POST",
@@ -1734,8 +1983,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"project_id\": 6\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "查看用户管理项目列表接口",
@@ -1777,8 +2028,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "查看用户管理项目列表接口",
             "originalRequest": {
               "method": "POST",
@@ -1866,8 +2117,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": [\n        {\n            \"project_id\": 7,\n            \"name\": \"测试项目\",\n            \"create_dtime\": \"2020-12-02 00:12:25\",\n            \"status\": 1,\n            \"is_lock\": -1,\n            \"projectUserinfo\": [\n                {\n                    \"nick_name\": \"zihuang\",\n                    \"email\": \"zihuang2010@gmail.com\"\n                },\n                {\n                    \"nick_name\": \"gaoqiaoxue\",\n                    \"email\": \"gaoqiaoxue@gmail.com\"\n                }\n            ]\n        },\n        {\n            \"project_id\": 6,\n            \"name\": \"编辑项目\",\n            \"create_dtime\": \"2020-12-01 23:42:31\",\n            \"status\": 1,\n            \"is_lock\": -1,\n            \"projectUserinfo\": [\n                {\n                    \"nick_name\": \"zihuang\",\n                    \"email\": \"zihuang2010@gmail.com\"\n                }\n            ]\n        },\n        {\n            \"project_id\": 5,\n            \"name\": \"测试项目\",\n            \"create_dtime\": \"2020-12-01 23:42:23\",\n            \"status\": 1,\n            \"is_lock\": -1,\n            \"projectUserinfo\": [\n                {\n                    \"nick_name\": \"zihuang\",\n                    \"email\": \"zihuang2010@gmail.com\"\n                }\n            ]\n        },\n        {\n            \"project_id\": 4,\n            \"name\": \"测试项目\",\n            \"create_dtime\": \"2020-12-01 01:46:48\",\n            \"status\": 1,\n            \"is_lock\": -1,\n            \"projectUserinfo\": [\n                {\n                    \"nick_name\": \"zihuang\",\n                    \"email\": \"zihuang2010@gmail.com\"\n                }\n            ]\n        },\n        {\n            \"project_id\": 3,\n            \"name\": \"测试项目\",\n            \"create_dtime\": \"2020-12-01 01:44:46\",\n            \"status\": 1,\n            \"is_lock\": -1,\n            \"projectUserinfo\": [\n                {\n                    \"nick_name\": \"zihuang\",\n                    \"email\": \"zihuang2010@gmail.com\"\n                }\n            ]\n        },\n        {\n            \"project_id\": 1,\n            \"name\": \"zihuang的团队默认个人项目\",\n            \"create_dtime\": \"2020-12-01 01:36:51\",\n            \"status\": 1,\n            \"is_lock\": -1,\n            \"projectUserinfo\": [\n                {\n                    \"nick_name\": \"zihuang\",\n                    \"email\": \"zihuang2010@gmail.com\"\n                }\n            ]\n        }\n    ]\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "锁定某个项目接口",
@@ -1910,8 +2163,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "锁定某个项目接口",
             "originalRequest": {
               "method": "POST",
@@ -2000,8 +2253,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": null\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "解锁某个项目的接口",
@@ -2044,8 +2299,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "解锁某个项目的接口",
             "originalRequest": {
               "method": "POST",
@@ -2134,8 +2389,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": null\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "查看用户加入的项目列表接口",
@@ -2177,8 +2434,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "查看用户加入项目列表接口",
             "originalRequest": {
               "method": "POST",
@@ -2266,8 +2523,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": [\n        {\n            \"project_id\": 7,\n            \"name\": \"测试项目\",\n            \"create_dtime\": \"2020-12-02 00:12:25\",\n            \"status\": 1,\n            \"is_lock\": -1,\n            \"projectUserinfo\": [\n                {\n                    \"nick_name\": \"zihuang\",\n                    \"email\": \"zihuang2010@gmail.com\"\n                },\n                {\n                    \"nick_name\": \"gaoqiaoxue\",\n                    \"email\": \"gaoqiaoxue@gmail.com\"\n                }\n            ]\n        },\n        {\n            \"project_id\": 6,\n            \"name\": \"编辑项目\",\n            \"create_dtime\": \"2020-12-01 23:42:31\",\n            \"status\": 1,\n            \"is_lock\": -1,\n            \"projectUserinfo\": [\n                {\n                    \"nick_name\": \"zihuang\",\n                    \"email\": \"zihuang2010@gmail.com\"\n                }\n            ]\n        },\n        {\n            \"project_id\": 5,\n            \"name\": \"测试项目\",\n            \"create_dtime\": \"2020-12-01 23:42:23\",\n            \"status\": 1,\n            \"is_lock\": -1,\n            \"projectUserinfo\": [\n                {\n                    \"nick_name\": \"zihuang\",\n                    \"email\": \"zihuang2010@gmail.com\"\n                }\n            ]\n        },\n        {\n            \"project_id\": 4,\n            \"name\": \"测试项目\",\n            \"create_dtime\": \"2020-12-01 01:46:48\",\n            \"status\": 1,\n            \"is_lock\": -1,\n            \"projectUserinfo\": [\n                {\n                    \"nick_name\": \"zihuang\",\n                    \"email\": \"zihuang2010@gmail.com\"\n                }\n            ]\n        },\n        {\n            \"project_id\": 3,\n            \"name\": \"测试项目\",\n            \"create_dtime\": \"2020-12-01 01:44:46\",\n            \"status\": 1,\n            \"is_lock\": -1,\n            \"projectUserinfo\": [\n                {\n                    \"nick_name\": \"zihuang\",\n                    \"email\": \"zihuang2010@gmail.com\"\n                }\n            ]\n        },\n        {\n            \"project_id\": 1,\n            \"name\": \"zihuang的团队默认个人项目\",\n            \"create_dtime\": \"2020-12-01 01:36:51\",\n            \"status\": 1,\n            \"is_lock\": -1,\n            \"projectUserinfo\": [\n                {\n                    \"nick_name\": \"zihuang\",\n                    \"email\": \"zihuang2010@gmail.com\"\n                }\n            ]\n        }\n    ]\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "查看某个项目的信息接口",
@@ -2309,8 +2568,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "查看某个项目的信息接口",
             "originalRequest": {
               "method": "POST",
@@ -2398,8 +2657,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"project_id\": 2,\n        \"team_id\": 2,\n        \"name\": \"gaoqiaoxue的团队默认个人项目\",\n        \"create_dtime\": \"2020-12-01 01:37:01\",\n        \"status\": 1,\n        \"is_lock\": -1\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "获取某个项目中指定的人员接口",
@@ -2441,8 +2702,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "获取某个项目中指定的人员接口",
             "originalRequest": {
               "method": "POST",
@@ -2530,8 +2791,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"user_list\": [\n            {\n                \"user_id\": 1,\n                \"nick_name\": \"zihuang\",\n                \"email\": \"zihuang2010@gmail.com\"\n            }\n        ],\n        \"project_info\": {\n            \"project_id\": 7,\n            \"team_id\": 2,\n            \"user_id\": 2,\n            \"name\": \"测试项目\",\n            \"create_dtime\": \"2020-12-02 00:12:25\",\n            \"status\": 1,\n            \"is_lock\": -1,\n            \"projectUserinfo\": [\n                {\n                    \"id\": 10,\n                    \"user_id\": 1,\n                    \"project_id\": 7,\n                    \"status\": 1,\n                    \"sort\": 1,\n                    \"nick_name\": \"zihuang\",\n                    \"email\": \"zihuang2010@gmail.com\"\n                },\n                {\n                    \"user_id\": 2,\n                    \"nick_name\": \"gaoqiaoxue\",\n                    \"email\": \"gaoqiaoxue@gmail.com\"\n                }\n            ]\n        }\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "删除项目接口",
@@ -2573,8 +2836,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "删除项目接口",
             "originalRequest": {
               "method": "POST",
@@ -2662,13 +2925,15 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": null\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       }
     ]
   },
   {
-    "module_name": "share",
+    "module_name": "分享模块",
     "module_list": [
       {
         "name": "项目分享接口",
@@ -2710,8 +2975,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "项目分享接口",
             "originalRequest": {
               "method": "POST",
@@ -2800,7 +3065,7 @@
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"project\": {\n            \"project_id\": 2,\n            \"team_id\": 2,\n            \"name\": \"gaoqiaoxue的团队默认个人项目\",\n            \"create_dtime\": \"2020-12-01 01:37:01\",\n            \"status\": 1,\n            \"is_lock\": -1\n        },\n        \"shareUrl\": {\n            \"share_id\": 1,\n            \"target_type\": \"project\",\n            \"target_id\": 2,\n            \"url\": \"https:\/\/docs.apipost.cn\/view\/ae79c5240f6a604e\",\n            \"create_dtime\": \"2020-12-02 05:54:11\",\n            \"expire_days\": -1,\n            \"password\": \"\",\n            \"is_md5\": -1\n        },\n        \"expireDays\": {\n            \"7\": \"7天有效期\",\n            \"30\": \"30天有效期\",\n            \"-99\": \"关闭分享\",\n            \"-1\": \"永久有效期\"\n        }\n    }\n}"
           },
-          {
+          "1": {
             "name": "项目分享接口",
             "originalRequest": {
               "method": "POST",
@@ -2888,8 +3153,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"project\": {\n            \"project_id\": 2,\n            \"team_id\": 2,\n            \"name\": \"gaoqiaoxue的团队默认个人项目\",\n            \"create_dtime\": \"2020-12-01 01:37:01\",\n            \"status\": 1,\n            \"is_lock\": -1\n        },\n        \"shareUrl\": {\n            \"share_id\": 1,\n            \"target_type\": \"project\",\n            \"target_id\": 2,\n            \"url\": \"https:\/\/docs.apipost.cn\/view\/ae79c5240f6a604e\",\n            \"create_dtime\": \"2020-12-02 05:54:11\",\n            \"expire_days\": -1,\n            \"password\": \"\",\n            \"is_md5\": -1\n        },\n        \"expireDays\": {\n            \"7\": \"7天有效期\",\n            \"30\": \"30天有效期\",\n            \"-99\": \"关闭分享\",\n            \"-1\": \"永久有效期\"\n        }\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "设置项目分享的过期时间接口",
@@ -2932,8 +3199,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "设置项目分享的过期时间接口",
             "originalRequest": {
               "method": "POST",
@@ -3022,8 +3289,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"shareUrl\": 1\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "设置项目访问密码的接口",
@@ -3066,8 +3335,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "设置项目访问密码的接口",
             "originalRequest": {
               "method": "POST",
@@ -3156,8 +3425,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"shareUrl\": 0\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "取消项目分享密码接口",
@@ -3200,8 +3471,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "取消项目分享密码接口",
             "originalRequest": {
               "method": "POST",
@@ -3290,8 +3561,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"shareUrl\": {\n            \"share_id\": 1,\n            \"target_type\": \"project\",\n            \"target_id\": 2,\n            \"url\": \"ae79c5240f6a604e\",\n            \"create_dtime\": \"2020-12-02 08:02:00\",\n            \"expire_days\": 1,\n            \"password\": \"\",\n            \"is_md5\": -1\n        }\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "分享接口链接的接口",
@@ -3333,8 +3606,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "分享接口链接的接口",
             "originalRequest": {
               "method": "POST",
@@ -3422,8 +3695,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"shareUrl\": {\n            \"share_id\": 2,\n            \"target_type\": \"api\",\n            \"target_id\": 2,\n            \"url\": \"https:\/\/docs.apipost.cn\/view\/5e3f44a7af4ec481\",\n            \"create_dtime\": \"2020-12-02 10:22:48\",\n            \"expire_days\": -1,\n            \"password\": \"\",\n            \"is_md5\": -1\n        },\n        \"expireDays\": {\n            \"7\": \"7天有效期\",\n            \"30\": \"30天有效期\",\n            \"-99\": \"关闭分享\",\n            \"-1\": \"永久有效期\"\n        },\n        \"api\": {\n            \"target_id\": 2,\n            \"project_id\": 2,\n            \"name\": \"12312313\"\n        }\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "设置接口分享的有效期接口",
@@ -3473,8 +3748,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "设置接口分享的有限期接口",
             "originalRequest": {
               "method": "POST",
@@ -3570,8 +3845,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"shareUrl\": 1\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "设置接口分享的访问密码接口",
@@ -3614,8 +3891,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "设置接口分享的访问密码接口",
             "originalRequest": {
               "method": "POST",
@@ -3704,8 +3981,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"shareUrl\": 1\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "分享目录链接的接口",
@@ -3747,8 +4026,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "分享目录链接的接口",
             "originalRequest": {
               "method": "POST",
@@ -3836,8 +4115,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"shareUrl\": {\n            \"target_type\": \"folder\",\n            \"target_id\": \"1\",\n            \"url\": \"https:\/\/docs.apipost.cn\/view\/8edb4eaf059aa8a4\",\n            \"expire_days\": -1,\n            \"password\": \"\"\n        },\n        \"expireDays\": {\n            \"7\": \"7天有效期\",\n            \"30\": \"30天有效期\",\n            \"-99\": \"关闭分享\",\n            \"-1\": \"永久有效期\"\n        },\n        \"folder\": {\n            \"target_id\": 1,\n            \"project_id\": 2,\n            \"name\": \"ceshi\"\n        }\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "设置目录分享的有效期接口",
@@ -3880,8 +4161,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "设置目录分享的有效期接口",
             "originalRequest": {
               "method": "POST",
@@ -3970,8 +4251,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"shareUrl\": 1\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "设置目录分享的访问密码接口",
@@ -4014,8 +4297,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "设置目录分享的访问密码接口",
             "originalRequest": {
               "method": "POST",
@@ -4104,13 +4387,15 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"shareUrl\": 1\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       }
     ]
   },
   {
-    "module_name": "folder",
+    "module_name": "文件夹模块",
     "module_list": [
       {
         "name": "创建目录接口",
@@ -4152,8 +4437,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "创建目录接口",
             "originalRequest": {
               "method": "POST",
@@ -4241,8 +4526,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"project_id\": \"2\",\n        \"parent_id\": \"0\",\n        \"user_id\": 2,\n        \"update_day\": 1606838400,\n        \"update_dtime\": 1606872725,\n        \"name\": \"测试\",\n        \"target_type\": \"folder\",\n        \"type_sort\": 2,\n        \"target_id\": \"2\"\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "编辑目录接口",
@@ -4284,8 +4571,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "编辑目录接口",
             "originalRequest": {
               "method": "POST",
@@ -4373,8 +4660,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"target_id\": 2,\n        \"parent_id\": \"0\",\n        \"user_id\": 2,\n        \"project_id\": 2,\n        \"mark\": \"developing\",\n        \"target_type\": \"folder\",\n        \"name\": \"12312313\",\n        \"method\": \"POST\",\n        \"sort\": 0,\n        \"type_sort\": 2,\n        \"update_day\": 1606838400,\n        \"update_dtime\": 1606873467,\n        \"status\": 1\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "目录拖动排序接口",
@@ -4416,8 +4705,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "目录拖动排序接口",
             "originalRequest": {
               "method": "POST",
@@ -4505,8 +4794,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": null\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "获取项目下的目录结构接口",
@@ -4548,8 +4839,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "获取项目下的目录结构接口",
             "originalRequest": {
               "method": "POST",
@@ -4637,8 +4928,10 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"item_list\": [\n            {\n                \"parent_id\": 0,\n                \"target_id\": 4,\n                \"name\": \"gaoqiaoxue\",\n                \"sort\": 0,\n                \"pre_indent\": \"|\",\n                \"level_indent\": 0,\n                \"list\": []\n            },\n            {\n                \"parent_id\": 0,\n                \"target_id\": 5,\n                \"name\": \"gaoqiaoxue\",\n                \"sort\": 0,\n                \"pre_indent\": \"|\",\n                \"level_indent\": 0,\n                \"list\": []\n            },\n            {\n                \"parent_id\": 0,\n                \"target_id\": 6,\n                \"name\": \"gaoqiaoxue\",\n                \"sort\": 0,\n                \"pre_indent\": \"|\",\n                \"level_indent\": 0,\n                \"list\": []\n            },\n            {\n                \"parent_id\": 0,\n                \"target_id\": 7,\n                \"name\": \"gaoqiaoxue\",\n                \"sort\": 0,\n                \"pre_indent\": \"|\",\n                \"level_indent\": 0,\n                \"list\": []\n            },\n            {\n                \"parent_id\": 0,\n                \"target_id\": 8,\n                \"name\": \"gaoqiaoxue\",\n                \"sort\": 0,\n                \"pre_indent\": \"|\",\n                \"level_indent\": 0,\n                \"list\": []\n            },\n            {\n                \"parent_id\": 0,\n                \"target_id\": 9,\n                \"name\": \"gaoqiaoxue\",\n                \"sort\": 0,\n                \"pre_indent\": \"|\",\n                \"level_indent\": 0,\n                \"list\": []\n            },\n            {\n                \"parent_id\": 0,\n                \"target_id\": 10,\n                \"name\": \"gaoqiaoxue\",\n                \"sort\": 0,\n                \"pre_indent\": \"|\",\n                \"level_indent\": 0,\n                \"list\": []\n            },\n            {\n                \"parent_id\": 0,\n                \"target_id\": 11,\n                \"name\": \"gaoqiaoxue\",\n                \"sort\": 0,\n                \"pre_indent\": \"|\",\n                \"level_indent\": 0,\n                \"list\": []\n            },\n            {\n                \"parent_id\": 0,\n                \"target_id\": 1,\n                \"name\": \"ceshi\",\n                \"sort\": 2,\n                \"pre_indent\": \"|\",\n                \"level_indent\": 0,\n                \"list\": [\n                    {\n                        \"parent_id\": 1,\n                        \"target_id\": 3,\n                        \"name\": \"gaoqiaoxue\",\n                        \"sort\": 0,\n                        \"pre_indent\": \"|\",\n                        \"level_indent\": 0,\n                        \"list\": []\n                    },\n                    {\n                        \"parent_id\": 1,\n                        \"target_id\": 2,\n                        \"name\": \"12312313\",\n                        \"sort\": 10,\n                        \"pre_indent\": \"|\",\n                        \"level_indent\": 0,\n                        \"list\": []\n                    }\n                ]\n            }\n        ],\n        \"current_folder_id\": 1\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       },
       {
         "name": "获取目录详情接口",
@@ -4680,8 +4973,8 @@
           "contentType": "application\/json",
           "description": "接口描述"
         },
-        "response": [
-          {
+        "response": {
+          "0": {
             "name": "获取目录详情接口",
             "originalRequest": {
               "method": "POST",
@@ -4769,234 +5062,15 @@
             ],
             "cookie": [],
             "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"current_folder\": {\n            \"parent_id\": 0,\n            \"target_id\": 10,\n            \"name\": \"gaoqiaoxue\",\n            \"sort\": 0\n        },\n        \"other_folder_list\": [\n            {\n                \"parent_id\": 0,\n                \"target_id\": 4,\n                \"name\": \"gaoqiaoxue\",\n                \"sort\": 0,\n                \"pre_indent\": \"\",\n                \"level_indent\": 1,\n                \"list\": []\n            },\n            {\n                \"parent_id\": 0,\n                \"target_id\": 5,\n                \"name\": \"gaoqiaoxue\",\n                \"sort\": 0,\n                \"pre_indent\": \"\",\n                \"level_indent\": 1,\n                \"list\": []\n            },\n            {\n                \"parent_id\": 0,\n                \"target_id\": 6,\n                \"name\": \"gaoqiaoxue\",\n                \"sort\": 0,\n                \"pre_indent\": \"\",\n                \"level_indent\": 1,\n                \"list\": []\n            },\n            {\n                \"parent_id\": 0,\n                \"target_id\": 7,\n                \"name\": \"gaoqiaoxue\",\n                \"sort\": 0,\n                \"pre_indent\": \"\",\n                \"level_indent\": 1,\n                \"list\": []\n            },\n            {\n                \"parent_id\": 0,\n                \"target_id\": 8,\n                \"name\": \"gaoqiaoxue\",\n                \"sort\": 0,\n                \"pre_indent\": \"\",\n                \"level_indent\": 1,\n                \"list\": []\n            },\n            {\n                \"parent_id\": 0,\n                \"target_id\": 9,\n                \"name\": \"gaoqiaoxue\",\n                \"sort\": 0,\n                \"pre_indent\": \"\",\n                \"level_indent\": 1,\n                \"list\": []\n            },\n            {\n                \"parent_id\": 0,\n                \"target_id\": 11,\n                \"name\": \"gaoqiaoxue\",\n                \"sort\": 0,\n                \"pre_indent\": \"\",\n                \"level_indent\": 1,\n                \"list\": []\n            },\n            {\n                \"parent_id\": 0,\n                \"target_id\": 1,\n                \"name\": \"ceshi\",\n                \"sort\": 2,\n                \"pre_indent\": \"\",\n                \"level_indent\": 1,\n                \"list\": [\n                    {\n                        \"parent_id\": 1,\n                        \"target_id\": 3,\n                        \"name\": \"gaoqiaoxue\",\n                        \"sort\": 0,\n                        \"pre_indent\": \"|——\",\n                        \"level_indent\": 2,\n                        \"list\": []\n                    },\n                    {\n                        \"parent_id\": 1,\n                        \"target_id\": 2,\n                        \"name\": \"12312313\",\n                        \"sort\": 10,\n                        \"pre_indent\": \"|——\",\n                        \"level_indent\": 2,\n                        \"list\": []\n                    }\n                ]\n            }\n        ]\n    }\n}"
-          }
-        ]
+          },
+          "body": [],
+          "raw": "{}"
+        }
       }
     ]
   },
   {
-    "module_name": "env",
+    "module_name": "环境模块",
     "module_list": []
-  },
-  {
-    "module_name": "默认项目列表",
-    "module_list": [
-      {
-        "name": "登录接口",
-        "request": {
-          "method": "POST",
-          "header": [],
-          "body": {
-            "mode": "raw",
-            "raw": "{\r\n    \"email\":\"zihuang2010@126.com\",\r\n    \"password\":\"1234567\"\r\n}",
-            "options": {
-              "raw": {
-                "language": "json"
-              }
-            }
-          },
-          "url": {
-            "raw": "{{domain}}\/{{version}}\/login.action",
-            "host": [
-              "{{domain}}"
-            ],
-            "path": [
-              "{{version}}",
-              "login.action"
-            ]
-          },
-          "api_url": "{{domain}}\/{{version}}\/login.action",
-          "contentType": "application\/json",
-          "description": "接口描述"
-        },
-        "response": [
-          {
-            "name": "登录接口",
-            "originalRequest": {
-              "method": "POST",
-              "header": [],
-              "body": {
-                "mode": "raw",
-                "raw": "{\r\n    \"email\":\"zihuang2010@126.com\",\r\n    \"password\":\"1234567\"\r\n}",
-                "options": {
-                  "raw": {
-                    "language": "json"
-                  }
-                }
-              },
-              "url": {
-                "raw": "{{domain}}\/{{version}}\/login.action",
-                "host": [
-                  "{{domain}}"
-                ],
-                "path": [
-                  "{{version}}",
-                  "login.action"
-                ]
-              }
-            },
-            "status": "OK",
-            "code": 200,
-            "_postman_previewlanguage": "json",
-            "header": [
-              {
-                "key": "Server",
-                "value": "nginx\/1.19.2"
-              },
-              {
-                "key": "Date",
-                "value": "Mon, 30 Nov 2020 11:59:46 GMT"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application\/json; charset=utf-8"
-              },
-              {
-                "key": "Transfer-Encoding",
-                "value": "chunked"
-              },
-              {
-                "key": "Connection",
-                "value": "keep-alive"
-              },
-              {
-                "key": "X-Powered-By",
-                "value": "PHP\/7.4.12"
-              },
-              {
-                "key": "Access-Control-Allow-Credentials",
-                "value": "true"
-              },
-              {
-                "key": "Access-Control-Max-Age",
-                "value": "1800"
-              },
-              {
-                "key": "Access-Control-Allow-Methods",
-                "value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
-              },
-              {
-                "key": "Access-Control-Allow-Headers",
-                "value": "Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-CSRF-TOKEN, X-Requested-With"
-              },
-              {
-                "key": "Access-Control-Allow-Origin",
-                "value": "*"
-              }
-            ],
-            "cookie": [],
-            "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"data\": {\n            \"token\": \"token:11dgmox_dfccd7534a6b6a7aa6d147cb64732abe-1_1606737586\",\n            \"user\": {\n                \"portrait\": \"https:\/\/img.cdn.apipost.cn\/user\/default\/default-portrait.png\",\n                \"nick_name\": \"pis0sion\",\n                \"email\": \"zih****2010@126.com\",\n                \"mobile\": null,\n                \"reg_dtime\": \"2020-11-04 12:37:04\",\n                \"login_dtime\": \"2020-11-30 19:59:46\"\n            }\n        }\n    }\n}"
-          }
-        ]
-      },
-      {
-        "name": "注册接口",
-        "request": {
-          "method": "POST",
-          "header": [],
-          "body": {
-            "mode": "raw",
-            "raw": "{\r\n    \"email\":\"zihuang2010@gmail.com\",\r\n    \"nick_name\":\"gaoqiaoxue\",\r\n    \"password\":\"1234567\",\r\n    \"repassword\":\"1234567\",\r\n    \"is_agree_agreement\":1\r\n}",
-            "options": {
-              "raw": {
-                "language": "json"
-              }
-            }
-          },
-          "url": {
-            "raw": "{{domain}}\/{{version}}\/register.action",
-            "host": [
-              "{{domain}}"
-            ],
-            "path": [
-              "{{version}}",
-              "register.action"
-            ]
-          },
-          "api_url": "{{domain}}\/{{version}}\/register.action",
-          "contentType": "application\/json",
-          "description": "接口描述"
-        },
-        "response": [
-          {
-            "name": "注册接口",
-            "originalRequest": {
-              "method": "POST",
-              "header": [],
-              "body": {
-                "mode": "raw",
-                "raw": "{\r\n    \"email\":\"zihuang2010@gmail.com\",\r\n    \"nick_name\":\"gaoqiaoxue\",\r\n    \"password\":\"1234567\",\r\n    \"repassword\":\"1234567\",\r\n    \"is_agree_agreement\":1\r\n}",
-                "options": {
-                  "raw": {
-                    "language": "json"
-                  }
-                }
-              },
-              "url": {
-                "raw": "{{domain}}\/{{version}}\/register.action",
-                "host": [
-                  "{{domain}}"
-                ],
-                "path": [
-                  "{{version}}",
-                  "register.action"
-                ]
-              }
-            },
-            "status": "OK",
-            "code": 200,
-            "_postman_previewlanguage": "json",
-            "header": [
-              {
-                "key": "Server",
-                "value": "nginx\/1.19.2"
-              },
-              {
-                "key": "Date",
-                "value": "Mon, 30 Nov 2020 12:03:33 GMT"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application\/json; charset=utf-8"
-              },
-              {
-                "key": "Transfer-Encoding",
-                "value": "chunked"
-              },
-              {
-                "key": "Connection",
-                "value": "keep-alive"
-              },
-              {
-                "key": "X-Powered-By",
-                "value": "PHP\/7.4.12"
-              },
-              {
-                "key": "Access-Control-Allow-Credentials",
-                "value": "true"
-              },
-              {
-                "key": "Access-Control-Max-Age",
-                "value": "1800"
-              },
-              {
-                "key": "Access-Control-Allow-Methods",
-                "value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
-              },
-              {
-                "key": "Access-Control-Allow-Headers",
-                "value": "Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-CSRF-TOKEN, X-Requested-With"
-              },
-              {
-                "key": "Access-Control-Allow-Origin",
-                "value": "*"
-              }
-            ],
-            "cookie": [],
-            "body": "{\n    \"errorCode\": \"SVCAPI_FNT_0000000\",\n    \"errorMessage\": \"Success\",\n    \"responseResult\": {\n        \"data\": {\n            \"token\": \"token:11cglru_dfccd7534a6b6a7aa6d147cb64732abe-2_1606737813\",\n            \"user\": {\n                \"email\": \"zih****2010@gmail.com\",\n                \"nick_name\": \"gaoqiaoxue\",\n                \"portrait\": \"https:\/\/img.cdn.apipost.cn\/user\/default\/default-portrait.png\",\n                \"reg_dtime\": \"2020-11-30 20:03:33\",\n                \"login_dtime\": \"2020-11-30 20:03:33\"\n            },\n            \"team_id\": \"2\",\n            \"project_id\": \"2\"\n        }\n    }\n}"
-          }
-        ]
-      }
-    ]
   }
 ]

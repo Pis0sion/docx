@@ -2,13 +2,7 @@
 
 require "./vendor/autoload.php";
 
-$oArr = '{
-    "errorCode": "SVCAPI_FNT_0000000",
-    "errorMessage": "Success",
-    "responseResult": {
-        "result": "退出成功"
-    }
-}';
+$oArr = file_get_contents("./postman.json");
 
 $inputArr = json_decode($oArr, true);
 
@@ -16,7 +10,7 @@ $inputArr = json_decode($oArr, true);
 // 递归
 function recursionArr(array $arrDatum, ?string $keyString): array
 {
-    static $re = [];
+    $re = [];
     foreach ($arrDatum as $key => $value) {
         $handleKey = $key;
         if (!empty($keyString)) {
@@ -27,7 +21,8 @@ function recursionArr(array $arrDatum, ?string $keyString): array
             }
         }
         if (is_array($value)) {
-            recursionArr($value, $handleKey);
+            $re[$handleKey] = new stdClass();
+            $re = array_merge($re, recursionArr($value, $handleKey));
             continue;
         }
         $re[$handleKey] = $value;
@@ -37,4 +32,20 @@ function recursionArr(array $arrDatum, ?string $keyString): array
 
 $result = recursionArr($inputArr, null);
 
-var_dump($result);
+/**
+ * @param array $inputArr
+ * @return array
+ */
+function archiving(array $inputArr): array
+{
+    $retResult = [];
+    foreach ($inputArr as $key => $input) {
+        $ret['key'] = $key;
+        $ret['value'] = $input;
+        $ret['type'] = gettype($input);
+        $ret['description'] = "暂无描述";
+        $retResult[] = $ret;
+    }
+    return $retResult;
+}
+

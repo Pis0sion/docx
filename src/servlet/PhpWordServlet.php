@@ -64,7 +64,7 @@ class PhpWordServlet
     protected function setAccessPermissionsForDocuments()
     {
         $documentProtection = $this->phpWord->getSettings()->getDocumentProtection();
-        $documentProtection->setEditing(DocProtect::READ_ONLY);
+        $documentProtection->setEditing(DocProtect::NONE);
         $documentProtection->setPassword("123456");
     }
 
