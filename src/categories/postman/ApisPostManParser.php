@@ -3,13 +3,14 @@
 
 namespace Pis0sion\Docx\categories\postman;
 
+use Pis0sion\Docx\layer\IParserInterface;
 use stdClass;
 
 /**
  * Class ApisPostManParser
  * @package Pis0sion\Docx\categories\postman
  */
-class ApisPostManParser
+class ApisPostManParser implements IParserInterface
 {
     /**
      * 解析字段并且生成文档
@@ -32,7 +33,7 @@ class ApisPostManParser
         // 获取接口数据
         $postmanApis = $postmanArr['item'];
         $projectVars = [];
-        $module_name = "默认项目列表";
+        $module_name = ProjectDefaultList;
         $module_list = [];
         // 对数据进行分类
         foreach ($postmanApis as $postmanApi) {
@@ -71,16 +72,16 @@ class ApisPostManParser
                 $apiRequest = &$moduleApi['request'];
                 $apiRequest['api_url'] = $moduleApi['request']['url']['raw'];
                 $apiRequest['contentType'] = "application/json";
-                $apiRequest['description'] = "接口描述";
+                $apiRequest['description'] = ApiDefaultDescription;
 
                 $apiResponse = &$moduleApi['response'];
                 $apiResponse['body'] = [];
-                $apiResponse['raw'] = "";
+                $apiResponse['raw'] = SuccessPostManRaw;
 
                 if (count($moduleApi['response']) == true) {
                     $apiResponseArr = $this->obtainResponse2Success($moduleApi['response']);
                     $apiResponse['body'] = $apiResponseArr['body'] ?? [];
-                    $apiResponse['raw'] = $apiResponseArr['raw'] ?? "{}";
+                    $apiResponse['raw'] = $apiResponseArr['raw'] ?? SuccessPostManRaw;
                 }
             }
         }
@@ -96,11 +97,13 @@ class ApisPostManParser
     {
         $successRespond = [];
         foreach ($successResponseArr as $successResponse) {
-            if (isset($successResponse['code']) && $successResponse['code'] == 200) {
-                $successRespond['raw'] = $successResponse['body'] ?? '{}';
+            if (isset($successResponse['code']) && $successResponse['code'] == SuccessPostManCode) {
+                $successRespond['raw'] = $successResponse['body'] ?? SuccessPostManRaw;
                 // 根据 raw 获取body
                 $obtainDatum = json_decode($successRespond['raw'], true);
-                $successRespond['body'] = $this->organizeDatum2Kv($this->recursionArr($obtainDatum, null));
+                if (json_last_error() == JSON_ERROR_NONE) {
+                    $successRespond['body'] = $this->organizeDatum2Kv($this->recursionArr($obtainDatum, null));
+                }
                 break;
             }
         }
@@ -148,7 +151,7 @@ class ApisPostManParser
             $ret['key'] = $key;
             $ret['value'] = is_object($input) ? "Object" : $input;
             $ret['type'] = gettype($input);
-            $ret['description'] = "暂无描述";
+            $ret['description'] = EmptyDescriptions;
             $retResult[] = $ret;
         }
         return $retResult;

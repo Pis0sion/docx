@@ -18,7 +18,10 @@
     "autoload": {
         "psr-4": {
             "Pis0sion\\Docx\\": "src"
-        }
+        },
+        "files": [
+            "resources/description.php"
+        ]
     },
     "repositories": {
         "packagist": {
