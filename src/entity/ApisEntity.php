@@ -62,7 +62,7 @@ class ApisEntity extends AbsBaseEntity
                     $section->addTextBreak();
                     if (!empty($apiList['request']['raws'])) {
                         $this->renderText($section, "请求示例：");
-                        $this->renderRawPrettyJson($section, $apiList['request']['raws'],'EEDEEE');
+                        $this->renderRawPrettyJson($section, $apiList['request']['raws'], '4b5661', '#2eff5e');
                         $section->addTextBreak();
                     }
                     $responseBody = $apiList['response']['body'];
@@ -104,7 +104,7 @@ class ApisEntity extends AbsBaseEntity
         $textRun = $section->addTextRun(['indentation' => ['left' => 480]]);
         $textRun->addText($apiType);
         if (!empty($text)) {
-            $textRun->addText($text, ['italic' => true, 'underline' => Font::UNDERLINE_SINGLE]);
+            $textRun->addText($text, ['italic' => true]);
         }
     }
 
@@ -113,8 +113,9 @@ class ApisEntity extends AbsBaseEntity
      * @param Section $section
      * @param string|null $prettyDatum
      * @param string $bgColor
+     * @param string $fontColor
      */
-    protected function renderRawPrettyJson(Section $section, ?string $prettyDatum, string $bgColor = 'DDEDFB')
+    protected function renderRawPrettyJson(Section $section, ?string $prettyDatum, string $bgColor = 'DDEDFB', string $fontColor = 'black')
     {
         $TableCell = $section->addTable([
             'layout' => Table::LAYOUT_FIXED,
@@ -127,7 +128,7 @@ class ApisEntity extends AbsBaseEntity
             'bgColor' => $bgColor,
         ]);
         $textRun = $cell->addTextRun(['lineHeight' => 1.2]);
-        $result = " <div style='font-size: 13px;color: black;' >" . nl2br($prettyDatum) . "</div> ";
+        $result = " <div style='font-size: 13px;color: {$fontColor};' >" . nl2br($prettyDatum) . "</div> ";
         Html::addHtml($textRun, $result, false, false);
     }
 

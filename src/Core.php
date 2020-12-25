@@ -15,6 +15,19 @@ use SplObjectStorage;
 class Core
 {
     /**
+     * @var array
+     */
+    protected $entitiesArr = [
+        'src/entity/ApisEntity.php',
+        'src/entity/DescriptionEntity.php',
+        'src/entity/AppendixEntity.php',
+        'src/entity/ExportEntity.php',
+        'src/entity/IntroductionEntity.php',
+        'src/entity/ManualEntity.php',
+        'src/entity/ProductionEntity.php',
+    ];
+
+    /**
      * @var SplObjectStorage
      */
     protected $objectStorage;
@@ -33,9 +46,8 @@ class Core
      */
     protected function initialize(Section $section)
     {
-        $entitiesArr = glob("./src/entity/*.php");
         $sortAttr = [];
-        foreach ($entitiesArr as $entity) {
+        foreach ($this->entitiesArr as $entity) {
             $className = $this->getClassName($entity);
             $entityObj = new $className($section);
             $sortAttr[$entityObj->priority] = $entityObj;

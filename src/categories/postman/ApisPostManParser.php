@@ -3,6 +3,7 @@
 
 namespace Pis0sion\Docx\categories\postman;
 
+use Inhere\Console\Exception\ConsoleException;
 use Pis0sion\Docx\layer\IParserInterface;
 use stdClass;
 
@@ -20,7 +21,10 @@ class ApisPostManParser implements IParserInterface
     public function parse2RenderDocx(string $postmanJson): array
     {
         $postmanArr = json_decode($postmanJson, true);
-        return $this->organizeProjectVars2Specifications($this->arrange2ClassifyApis($postmanArr));
+        if (json_last_error() == JSON_ERROR_NONE) {
+            return $this->organizeProjectVars2Specifications($this->arrange2ClassifyApis($postmanArr));
+        }
+        throw  new ConsoleException(json_last_error_msg());
     }
 
     /**
@@ -120,6 +124,7 @@ class ApisPostManParser implements IParserInterface
         $re = [];
         foreach ($arrDatum as $key => $value) {
             $handleKey = $key;
+            // TODO：如果存在空的数组或者[1,2,3]
             if (!empty($keyString)) {
                 if (!is_int($key)) {
                     $handleKey = $keyString . "." . $handleKey;

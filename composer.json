@@ -5,7 +5,8 @@
     "require": {
         "php": ">=7.2",
         "phpoffice/phpword": "^0.17.0",
-      "ext-json": "*"
+      "ext-json": "*",
+        "inhere/console": "^3.1"
     },
     "license": "MIT",
     "authors": [
