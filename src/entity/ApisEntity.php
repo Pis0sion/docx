@@ -127,7 +127,7 @@ class ApisEntity extends AbsBaseEntity
             'bgColor' => $bgColor,
         ]);
         $textRun = $cell->addTextRun(['lineHeight' => 1.2]);
-        $result = " <div style='font-size: 12px;color: black;' >" . nl2br($prettyDatum) . "</div> ";
+        $result = " <div style='font-size: 13px;color: black;' >" . nl2br($prettyDatum) . "</div> ";
         Html::addHtml($textRun, $result, false, false);
     }
 

@@ -89,7 +89,7 @@ $section->addPageBreak();
 (new TocServlet($section))->setTOC();
 
 // 获取json数据
-$postmanJson = file_get_contents("./postman.json");
+$postmanJson = file_get_contents("./burg.json");
 
 $projectVars = (new ApisPostManParser())->parse2RenderDocx($postmanJson);
 
