@@ -24,7 +24,7 @@ class ApisPostManParser implements IParserInterface
         if (json_last_error() == JSON_ERROR_NONE) {
             return $this->organizeProjectVars2Specifications($this->arrange2ClassifyApis($postmanArr));
         }
-        throw  new ConsoleException(json_last_error_msg());
+        throw new ConsoleException(json_last_error_msg());
     }
 
     /**
@@ -124,7 +124,6 @@ class ApisPostManParser implements IParserInterface
         $re = [];
         foreach ($arrDatum as $key => $value) {
             $handleKey = $key;
-            // TODO：如果存在空的数组或者[1,2,3]
             if (!empty($keyString)) {
                 if (!is_int($key)) {
                     $handleKey = $keyString . "." . $handleKey;
@@ -138,6 +137,12 @@ class ApisPostManParser implements IParserInterface
                 $re = array_merge($re, $this->recursionArr($value, $handleKey));
                 continue;
             }
+
+            // TODO：这里面需要区分 array object
+            if (is_int($key) && !empty($keyString)) {
+                $value = [];
+            }
+
             $re[$handleKey] = $value;
         }
         return $re;
@@ -153,7 +158,15 @@ class ApisPostManParser implements IParserInterface
         $retResult = [];
         foreach ($inputArr as $key => $input) {
             $ret['key'] = $key;
-            $ret['value'] = is_object($input) ? "Object" : $input;
+            if (is_object($input))
+            {
+                $ret['value'] = "Object";
+            } elseif (is_array($input))
+            {
+                $ret['value'] = "Array";
+            } else {
+                $ret['value'] = $input;
+            }
             $ret['type'] = gettype($input);
             $ret['description'] = EmptyDescriptions;
             $retResult[] = $ret;
