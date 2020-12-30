@@ -127,9 +127,26 @@ class ApisEntity extends AbsBaseEntity
             'valign' => 'center',
             'bgColor' => $bgColor,
         ]);
-        $textRun = $cell->addTextRun(['lineHeight' => 1.2]);
-        $result = " <div style='font-size: 13px;color: {$fontColor};' >" . nl2br($prettyDatum) . "</div> ";
-        Html::addHtml($textRun, $result, false, false);
+        //$textRun = $cell->addTextRun(['lineHeight' => 1.2]);
+        // 转化为p标签
+        $prettyString = $this->prettyStringJson($prettyDatum);
+        $result = "<div style='font-size: 13px;color: {$fontColor};'>" . $prettyString . "</div>";
+        Html::addHtml($cell, $result, false, false);
     }
 
+    /**
+     * 美化json字符串
+     * @param string $prettyJson
+     * @return string
+     */
+    protected function prettyStringJson(string $prettyJson): string
+    {
+        $prettyString = "";
+        $token = strtok($prettyJson, "\r\n");
+        while ($token != false) {
+            $prettyString .= "<p>$token</p>";
+            $token = strtok("\r\n");
+        }
+        return $prettyString;
+    }
 }

@@ -34,6 +34,66 @@ const ContentTypeMap = [
     'xml' => 'application/xml',
 ];
 
+// version format
+const VersionFormatter = [
+    '日期' => 1800,
+    '版本' => 1500,
+    '说明' => 4000,
+    '作者' => 1500,
+];
+
+// versions
+const ProjectVersion = [
+    [
+        'param' => "2020/4/8",
+        'namely' => "V0.0.1",
+        'isBool' => "新增文档",
+        'desc' => "老詹",
+    ],
+    [
+        'param' => "2020/4/10",
+        'namely' => "V0.0.2",
+        'isBool' => "格式调整及描述修改",
+        'desc' => "小张",
+    ],
+    [
+        'param' => "2020/5/8",
+        'namely' => "V1.0.0",
+        'isBool' => "新增鉴权",
+        'desc' => "小张、老詹",
+    ],
+    [
+        'param' => "2020/5/11",
+        'namely' => "V1.0.1",
+        'isBool' => "修改鉴权",
+        'desc' => "小张、老詹",
+    ],
+    [
+        'param' => "",
+        'namely' => "",
+        'isBool' => "",
+        'desc' => "",
+    ],
+    [
+        'param' => "",
+        'namely' => "",
+        'isBool' => "",
+        'desc' => "",
+    ],
+    [
+        'param' => "",
+        'namely' => "",
+        'isBool' => "",
+        'desc' => "",
+    ],
+    [
+        'param' => "",
+        'namely' => "",
+        'isBool' => "",
+        'desc' => "",
+    ],
+];
+
 
 if (!function_exists("halt")) {
     function halt(array $parameters)
