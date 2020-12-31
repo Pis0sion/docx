@@ -158,11 +158,9 @@ class ApisPostManParser implements IParserInterface
         $retResult = [];
         foreach ($inputArr as $key => $input) {
             $ret['key'] = $key;
-            if (is_object($input))
-            {
+            if (is_object($input)) {
                 $ret['value'] = "Object";
-            } elseif (is_array($input))
-            {
+            } elseif (is_array($input)) {
                 $ret['value'] = "Array";
             } else {
                 $ret['value'] = $input;
@@ -187,7 +185,7 @@ class ApisPostManParser implements IParserInterface
                 $module_list[] = $apiVar;
                 continue;
             }
-            $module_list = array_merge($this->multiLevelAcquisition($apiVar['item']));
+            $module_list = $this->multiLevelAcquisition($apiVar['item']);
         }
         return $module_list;
     }

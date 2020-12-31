@@ -34,6 +34,56 @@ const ContentTypeMap = [
     'xml' => 'application/xml',
 ];
 
+// default parameter formatter  postman
+const DefaultParamFormatter = [
+    '参数名称' => 2000,
+    '示例值' => 1800,
+    '类型' => 1200,
+    '参数说明' => 3000,
+];
+
+
+// eolinker
+
+// Eolinker Parameters
+const EolinkerDefaultMethod = "post";
+
+// Eolinker default request
+const EolinkerDefaultContentType = "application/x-www-form-urlencoded";
+
+// Eolinker parameters
+const EolinkerParamFormatter = [
+    '参数名称' => 2000,
+    '类型' => 1200,
+    '必填' => 1200,
+    '参数说明' => 3600,
+];
+
+// eolinker param type
+const EolinkerParamTypeMapping = [
+    0 => 'string',
+    3 => 'integer',
+];
+
+// eolinker method type
+const EolinkerMethodsMapping = [
+    0 => "post",
+    1 => "get",
+    2 => "put",
+    3 => "delete",
+    4 => "head",
+    5 => "options",
+    6 => "patch",
+];
+
+// eolinker content type
+const EolinkerContentTypeMapping = [
+    0 => "application/x-www-form-urlencoded",
+    1 => "raw",
+    2 => "application/json",
+    3 => "application/xml",
+];
+
 // version format
 const VersionFormatter = [
     '日期' => 1800,

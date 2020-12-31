@@ -4,6 +4,7 @@
 namespace Pis0sion\Docx\servlet;
 
 use PhpOffice\PhpWord\Element\Section;
+use PhpOffice\PhpWord\SimpleType\Jc;
 
 /**
  * Class CoverServlet
@@ -32,14 +33,33 @@ class CoverServlet
     {
         $header = $this->section->addHeader();
         $header->firstPage();
-        $coverTable = $this->section->addTable();
-        $coverRow = $coverTable->addRow(6000);
-        $coverRow->addCell(10000, ['valign' => 'center'])->addText("项目接口文档", ['size' => 32, 'color' => 'black'], ['align' => 'center']);;
-        $this->section->addTextBreak(15);
-        $coverAuthor = $this->section->addTable();
-        $AuthorRow = $coverAuthor->addRow(400);
-        $AuthorRow->addCell(10000, ['valign' => 'center'])->addText("某某网络有限公司", ['size' => 12, 'color' => '4F81BD'], ['align' => 'right']);
-        $TimeRow = $coverAuthor->addRow(400);
-        $TimeRow->addCell(10000, ['valign' => 'center'])->addText("2020/12/30", ['size' => 12, 'color' => '4F81BD'], ['align' => 'right']);
+
+        $projectBox = $this->section->addTextBox(
+            array(
+                'alignment' => Jc::CENTER,
+                'width' => 400,
+                'height' => 350,
+                'borderColor' => '#FFFFFF',
+                'valign' => 'center',
+            )
+        );
+        $projectBox->addTextBreak(8);
+        $projectBox->addText('项目接口文档', ['size' => 32, 'color' => 'black'], ['align' => 'center']);
+
+        $this->section->addTextBreak();
+
+        $authorBox = $this->section->addTextBox(
+            array(
+                'alignment' => Jc::CENTER,
+                'width' => 400,
+                'height' => 250,
+                'borderColor' => '#FFFFFF',
+                'valign' => 'center',
+            )
+        );
+
+        $authorBox->addTextBreak(8);
+        $authorBox->addText("某某网络有限公司", ['size' => 12, 'color' => '4F81BD'], ['align' => 'right']);
+        $authorBox->addText("2020/12/30", ['size' => 12, 'color' => '4F81BD'], ['align' => 'right']);
     }
 }

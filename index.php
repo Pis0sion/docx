@@ -1,5 +1,6 @@
 <?php
 
+use Pis0sion\Docx\categories\eolinker\ApisEolinkerParser;
 use Pis0sion\Docx\categories\postman\ApisPostManParser;
 use Pis0sion\Docx\Core;
 use Pis0sion\Docx\servlet\CoverServlet;
@@ -35,8 +36,11 @@ $section->addPageBreak();
 // 创建目录
 (new TocServlet($section))->setTOC();
 // 获取json数据
-$postmanJson = file_get_contents("./json/html.json");
-$projectVars = (new ApisPostManParser())->parse2RenderDocx($postmanJson);
+//$postmanJson = file_get_contents("./json/burg.json");
+//$projectVars = (new ApisPostManParser())->parse2RenderDocx($postmanJson);
+
+$eolinkerJson = file_get_contents("./json/bao.json");
+$projectVars = (new ApisEolinkerParser())->parse2RenderDocx($eolinkerJson);
 
 $apis = [
     "apis" => $projectVars,
