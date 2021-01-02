@@ -35,16 +35,23 @@ $section->addPageBreak();
 
 // 创建目录
 (new TocServlet($section))->setTOC();
+//  TODO: postman
 // 获取json数据
-//$postmanJson = file_get_contents("./json/burg.json");
-//$projectVars = (new ApisPostManParser())->parse2RenderDocx($postmanJson);
+$postmanJson = file_get_contents("./json/burg.json");
+$projectVars = (new ApisPostManParser())->parse2RenderDocx($postmanJson);
 
-$eolinkerJson = file_get_contents("./json/bao.json");
-$projectVars = (new ApisEolinkerParser())->parse2RenderDocx($eolinkerJson);
+//  TODO: eolinker
+//$eolinkerJson = file_get_contents("./json/bao.json");
+//$projectVars = (new ApisEolinkerParser())->parse2RenderDocx($eolinkerJson);
+
+//  TODO: apipost
+
+//  TODO: apifox
 
 $apis = [
     "apis" => $projectVars,
 ];
+
 // 生成文档
 (new Core())->run($section, $apis);
 

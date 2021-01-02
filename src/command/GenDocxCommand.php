@@ -8,14 +8,15 @@ use Inhere\Console\Command;
 use Inhere\Console\Exception\ConsoleException;
 use Inhere\Console\IO\Input;
 use Inhere\Console\IO\Output;
-use Pis0sion\Docx\categories\postman\ApisPostManParser;
 use Pis0sion\Docx\Core;
+use Pis0sion\Docx\factory\ConvertorFactory;
 use Pis0sion\Docx\servlet\CoverServlet;
 use Pis0sion\Docx\servlet\FooterServlet;
 use Pis0sion\Docx\servlet\HeaderServlet;
 use Pis0sion\Docx\servlet\PhpWordServlet;
 use Pis0sion\Docx\servlet\TableServlet;
 use Pis0sion\Docx\servlet\TocServlet;
+use Throwable;
 
 /**
  * Class GenDocxCommand
@@ -23,6 +24,7 @@ use Pis0sion\Docx\servlet\TocServlet;
  */
 class GenDocxCommand extends Command
 {
+
     /**
      * @var string
      */
@@ -55,12 +57,8 @@ class GenDocxCommand extends Command
         // TODO: Implement execute() method.
         $inputJson = $input->getArg('inputJson');
         $outDocx = $input->getArg('outDocx');
-        $apiTools = $input->getOpt('tools', 'postman');
-
-        if (trim($apiTools) != 'postman') {
-            throw new ConsoleException('not support api tools');
-        }
-
+        // 默认postman
+        $apiTools = trim($input->getOpt('tools', 'postman'));
         // 实例化 PhpWord 对象
         $phpWordServlet = new PhpWordServlet();
         // 初始化
@@ -78,13 +76,16 @@ class GenDocxCommand extends Command
         // 版本内容
         (new TableServlet($section))->run(VersionFormatter, ProjectVersion);
         $section->addPageBreak();
-
         // 创建目录
         (new TocServlet($section))->setTOC();
-
         // 获取json数据
-        $postmanJson = file_get_contents($inputJson);
-        $projectVars = (new ApisPostManParser())->parse2RenderDocx($postmanJson);
+        $convertJson = file_get_contents($inputJson);
+        // 抛异常
+        try {
+            $projectVars = (new ConvertorFactory())->createConvertor($apiTools)->parse2RenderDocx($convertJson);
+        } catch (Throwable $throwable) {
+            throw new ConsoleException($throwable->getMessage());
+        }
 
         $apis = [
             "apis" => $projectVars,

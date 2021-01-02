@@ -44,7 +44,7 @@ class CoverServlet
             )
         );
         $projectBox->addTextBreak(8);
-        $projectBox->addText('项目接口文档', ['size' => 32, 'color' => 'black'], ['align' => 'center']);
+        $projectBox->addText('项目接口文档', ['size' => 38, 'color' => 'black'], ['align' => 'center']);
 
         $this->section->addTextBreak();
 
