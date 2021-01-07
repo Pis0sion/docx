@@ -1,0 +1,6134 @@
+{
+  "apifox": "1.0.0",
+  "info": {
+    "name": "zihuang2010 的项目",
+    "description": ""
+  },
+  "apiCollection": [
+    {
+      "name": "ceshi",
+      "items": [
+        {
+          "name": "ceshi",
+          "items": [
+            {
+              "name": "ceshi",
+              "items": [
+                {
+                  "name": "ceshi",
+                  "api": {
+                    "id": "4096007",
+                    "method": "get",
+                    "path": "/",
+                    "parameters": {
+                      "path": [],
+                      "query": [],
+                      "cookie": [],
+                      "header": []
+                    },
+                    "responses": [
+                      {
+                        "id": "1448615",
+                        "name": "成功",
+                        "code": 200,
+                        "jsonSchema": {
+                          "type": "object",
+                          "description": "",
+                          "properties": {},
+                          "required": []
+                        }
+                      },
+                      {
+                        "id": "1448616",
+                        "name": "失败",
+                        "code": 200,
+                        "jsonSchema": {
+                          "type": "object",
+                          "properties": {
+                            "errorCode": {
+                              "type": "string"
+                            },
+                            "errorMessage": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "errorCode",
+                            "errorMessage"
+                          ]
+                        }
+                      }
+                    ],
+                    "requestBody": {
+                      "type": "none",
+                      "parameters": []
+                    },
+                    "tags": [],
+                    "cases": [
+                      {
+                        "name": "成功",
+                        "responseId": 1448615,
+                        "parameters": {
+                          "path": [],
+                          "query": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "requestBody": {
+                          "parameters": []
+                        },
+                        "preRequestScript": "",
+                        "afterRequestScript": ""
+                      }
+                    ],
+                    "mocks": []
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "单一接口",
+          "api": {
+            "id": "4096006",
+            "method": "get",
+            "path": "/www.gaoqiaoxue.com/index",
+            "parameters": {
+              "path": [],
+              "query": [
+                {
+                  "name": "name",
+                  "required": true,
+                  "description": "sina",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448614",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "none",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448614,
+                "parameters": {
+                  "path": [],
+                  "query": [
+                    {
+                      "name": "name",
+                      "value": "",
+                      "enable": true
+                    }
+                  ],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "会员中心(token)",
+      "items": [
+        {
+          "name": "个人中心",
+          "api": {
+            "id": "4096008",
+            "method": "post",
+            "path": "/index/user/center",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448617",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "",
+                      "properties": {
+                        "id": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "phone": {
+                          "type": "string",
+                          "description": "手机号"
+                        },
+                        "nickname": {
+                          "type": "string",
+                          "description": "昵称"
+                        },
+                        "credit1": {
+                          "type": "string",
+                          "description": "余额"
+                        },
+                        "credit2": {
+                          "type": "string",
+                          "description": "金币"
+                        },
+                        "is_lock": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "lock_remark": {
+                          "type": "string",
+                          "description": ""
+                        },
+                        "has_trade_password": {
+                          "type": "number",
+                          "description": "是否设定交易密码 0否 1是"
+                        },
+                        "avatar_img": {
+                          "type": "string",
+                          "description": "头像"
+                        },
+                        "credit1_text": {
+                          "type": "string",
+                          "description": "余额字段名称"
+                        },
+                        "credit2_text": {
+                          "type": "string",
+                          "description": "金币字段名称"
+                        },
+                        "is_merch": {
+                          "type": "number",
+                          "description": "是否是商家 0否 1是"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "phone",
+                        "nickname",
+                        "credit1",
+                        "credit2",
+                        "is_lock",
+                        "lock_remark",
+                        "has_trade_password",
+                        "avatar_img",
+                        "credit1_text",
+                        "credit2_text",
+                        "is_merch"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448617,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "修改头像昵称",
+          "api": {
+            "id": "4096009",
+            "method": "post",
+            "path": "/index/user/changeInfo",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448618",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448619",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "avatar",
+                  "required": true,
+                  "description": "头像（图片id）",
+                  "type": "text"
+                },
+                {
+                  "name": "nickname",
+                  "required": true,
+                  "description": "昵称",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448618,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "avatar",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "nickname",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "修改支付密码",
+          "api": {
+            "id": "4096010",
+            "method": "post",
+            "path": "/index/user/changeTradePassword",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448620",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448621",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "oldpassword",
+                  "required": true,
+                  "description": "原始密码",
+                  "type": "text"
+                },
+                {
+                  "name": "password",
+                  "required": true,
+                  "description": "新密码",
+                  "type": "text"
+                },
+                {
+                  "name": "quepassword",
+                  "required": true,
+                  "description": "确认密码",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448620,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "oldpassword",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "password",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "quepassword",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "修改登录密码",
+          "api": {
+            "id": "4096011",
+            "method": "post",
+            "path": "/index/user/changePassword",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448622",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448623",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "oldpassword",
+                  "required": true,
+                  "description": "原始密码",
+                  "type": "text"
+                },
+                {
+                  "name": "password",
+                  "required": true,
+                  "description": "新密码",
+                  "type": "text"
+                },
+                {
+                  "name": "quepassword",
+                  "required": true,
+                  "description": "确认密码",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448622,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "oldpassword",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "password",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "quepassword",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "关于我们",
+          "api": {
+            "id": "4096012",
+            "method": "post",
+            "path": "/index/login/about",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448624",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448624,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "加速器",
+          "api": {
+            "id": "4096013",
+            "method": "post",
+            "path": "/index/user/accelerator",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448625",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "",
+                      "properties": {
+                        "number": {
+                          "type": "number",
+                          "description": "加速器个数"
+                        },
+                        "tips": {
+                          "type": "string",
+                          "description": "提示信息"
+                        },
+                        "remain_time": {
+                          "type": "string",
+                          "description": "剩余有效时间  秒"
+                        }
+                      },
+                      "required": [
+                        "number",
+                        "tips",
+                        "remain_time"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448625,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "忘记交易密码",
+          "api": {
+            "id": "4096014",
+            "method": "post",
+            "path": "/index/user/forgetTradePassword",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448626",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448627",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "phone",
+                  "required": true,
+                  "description": "手机号",
+                  "type": "text"
+                },
+                {
+                  "name": "code",
+                  "required": true,
+                  "description": "验证码",
+                  "type": "text"
+                },
+                {
+                  "name": "password",
+                  "required": true,
+                  "description": "新密码",
+                  "type": "text"
+                },
+                {
+                  "name": "quepassword",
+                  "required": true,
+                  "description": "确认密码",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448626,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "phone",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "code",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "password",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "quepassword",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "意见反馈",
+          "api": {
+            "id": "4096015",
+            "method": "post",
+            "path": "/index/user/feedback",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448628",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448629",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "type_id",
+                  "required": true,
+                  "description": "类型id",
+                  "type": "text"
+                },
+                {
+                  "name": "content",
+                  "required": true,
+                  "description": "反馈内容",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448628,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "type_id",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "content",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "意见反馈类型",
+          "api": {
+            "id": "4096016",
+            "method": "post",
+            "path": "/index/user/feedbackType",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448630",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "array",
+                      "description": "",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number",
+                            "description": "id"
+                          },
+                          "content": {
+                            "type": "string",
+                            "description": "类型"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448630,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "更换手机号",
+          "api": {
+            "id": "4096017",
+            "method": "post",
+            "path": "/index/user/changePhone",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448631",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448632",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "phone",
+                  "required": true,
+                  "description": "新手机号",
+                  "type": "text"
+                },
+                {
+                  "name": "code",
+                  "required": true,
+                  "description": "验证码",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448631,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "phone",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "code",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "确认使用加速器",
+          "api": {
+            "id": "4096018",
+            "method": "post",
+            "path": "/index/user/useAcc",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448633",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448633,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "设置交易密码",
+          "api": {
+            "id": "4096019",
+            "method": "post",
+            "path": "/index/user/setTradePassword",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448634",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448635",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "password",
+                  "required": true,
+                  "description": "密码",
+                  "type": "text"
+                },
+                {
+                  "name": "quepassword",
+                  "required": true,
+                  "description": "确认密码",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448634,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "password",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "quepassword",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "退出登录",
+          "api": {
+            "id": "4096020",
+            "method": "post",
+            "path": "/index/login/logout",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448636",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448636,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "商品、下单",
+      "items": [
+        {
+          "name": "免费领取",
+          "api": {
+            "id": "4096021",
+            "method": "post",
+            "path": "/index/order/getForFree",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448637",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448638",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "goods_id",
+                  "required": true,
+                  "description": "商品id",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448637,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "goods_id",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "商品详情",
+          "api": {
+            "id": "4096022",
+            "method": "post",
+            "path": "/index/goods/detail",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448639",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "",
+                      "properties": {
+                        "id": {
+                          "type": "number",
+                          "description": "商品id"
+                        },
+                        "merch_id": {
+                          "type": "number",
+                          "description": "店铺id"
+                        },
+                        "name": {
+                          "type": "string",
+                          "description": "商品名称"
+                        },
+                        "type": {
+                          "type": "number",
+                          "description": "类型 1商品 2券"
+                        },
+                        "thumb": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "images": {
+                          "type": "string",
+                          "description": ""
+                        },
+                        "price": {
+                          "type": "string",
+                          "description": "价格"
+                        },
+                        "old_price": {
+                          "type": "string",
+                          "description": "原价"
+                        },
+                        "detail": {
+                          "type": "string",
+                          "description": "详情"
+                        },
+                        "sales": {
+                          "type": "number",
+                          "description": "销量"
+                        },
+                        "merch": {
+                          "type": "object",
+                          "description": "店铺信息",
+                          "properties": {
+                            "id": {
+                              "type": "number",
+                              "description": "店铺id"
+                            },
+                            "shop_name": {
+                              "type": "string",
+                              "description": "店铺名称"
+                            },
+                            "map": {
+                              "type": "string",
+                              "description": "经纬度"
+                            },
+                            "map_address": {
+                              "type": "string",
+                              "description": "地址"
+                            },
+                            "tel": {
+                              "type": "string",
+                              "description": "联系电话"
+                            },
+                            "business_time": {
+                              "type": "string",
+                              "description": "营业时间"
+                            },
+                            "logo_path": {
+                              "type": "string",
+                              "description": "店铺logo"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "shop_name",
+                            "map",
+                            "map_address",
+                            "tel",
+                            "business_time",
+                            "logo_path"
+                          ]
+                        },
+                        "thumb_path": {
+                          "type": "string",
+                          "description": "商品缩略图"
+                        },
+                        "images_path": {
+                          "type": "array",
+                          "description": "商品图片",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "can_buy": {
+                          "type": "number",
+                          "description": "是否可购买 0否 1是"
+                        },
+                        "can_buy_num": {
+                          "type": "number",
+                          "description": "可购买数量 -1不限制 "
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "merch_id",
+                        "name",
+                        "type",
+                        "thumb",
+                        "images",
+                        "price",
+                        "old_price",
+                        "detail",
+                        "sales",
+                        "merch",
+                        "thumb_path",
+                        "images_path",
+                        "can_buy",
+                        "can_buy_num"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "goods_id",
+                  "required": true,
+                  "description": "商品id",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448639,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "goods_id",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "确认订单",
+          "api": {
+            "id": "4096023",
+            "method": "post",
+            "path": "/index/order/confirmOrder",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448640",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448641",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "goods_id",
+                  "required": true,
+                  "description": "商品id",
+                  "type": "text"
+                },
+                {
+                  "name": "number",
+                  "required": true,
+                  "description": "数量",
+                  "type": "text"
+                },
+                {
+                  "name": "is_deduct",
+                  "required": true,
+                  "description": "是否使用金币抵扣",
+                  "type": "text"
+                },
+                {
+                  "name": "remark",
+                  "required": true,
+                  "description": "买家备注",
+                  "type": "text"
+                },
+                {
+                  "name": "pay_type",
+                  "required": true,
+                  "description": "1支付宝 2 微信 3 余额",
+                  "type": "text"
+                },
+                {
+                  "name": "trade_password",
+                  "required": true,
+                  "description": "支付密码 余额支付时填写",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448640,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "goods_id",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "number",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "is_deduct",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "remark",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "pay_type",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "trade_password",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "确认订单页面",
+          "api": {
+            "id": "4096024",
+            "method": "post",
+            "path": "/index/order/confirmOrderPage",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448642",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "",
+                      "properties": {
+                        "goods": {
+                          "type": "object",
+                          "description": "商品",
+                          "properties": {
+                            "id": {
+                              "type": "number",
+                              "description": "商品id"
+                            },
+                            "name": {
+                              "type": "string",
+                              "description": "商品名称"
+                            },
+                            "thumb": {
+                              "type": "number",
+                              "description": ""
+                            },
+                            "price": {
+                              "type": "string",
+                              "description": "价格"
+                            },
+                            "thumb_path": {
+                              "type": "string",
+                              "description": "图片"
+                            },
+                            "can_buy_num": {
+                              "type": "number",
+                              "description": "可以购买数量 -1 不限制"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "name",
+                            "thumb",
+                            "price",
+                            "thumb_path",
+                            "can_buy_num"
+                          ]
+                        },
+                        "number": {
+                          "type": "string",
+                          "description": "数量"
+                        },
+                        "credit1": {
+                          "type": "string",
+                          "description": "余额"
+                        },
+                        "is_deduct": {
+                          "type": "number",
+                          "description": "是否使用金币抵扣"
+                        },
+                        "deductPrice": {
+                          "type": "number",
+                          "description": "金币抵扣金额"
+                        },
+                        "deductCredit2": {
+                          "type": "number",
+                          "description": "抵扣金币数"
+                        },
+                        "totalPrice": {
+                          "type": "number",
+                          "description": "支付价格"
+                        }
+                      },
+                      "required": [
+                        "goods",
+                        "number",
+                        "credit1",
+                        "is_deduct",
+                        "deductPrice",
+                        "deductCredit2",
+                        "totalPrice"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "goods_id",
+                  "required": true,
+                  "description": "商品id",
+                  "type": "text"
+                },
+                {
+                  "name": "number",
+                  "required": true,
+                  "description": "数量 默认1",
+                  "type": "text"
+                },
+                {
+                  "name": "is_deduct",
+                  "required": true,
+                  "description": "是否使用金币抵扣",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448642,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "goods_id",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "number",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "is_deduct",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "评价列表",
+          "api": {
+            "id": "4096025",
+            "method": "post",
+            "path": "/index/goods/evaluate",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448643",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "",
+                      "properties": {
+                        "total": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "per_page": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "current_page": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "last_page": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "data": {
+                          "type": "array",
+                          "description": "",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number",
+                                "description": ""
+                              },
+                              "uid": {
+                                "type": "number",
+                                "description": ""
+                              },
+                              "content": {
+                                "type": "string",
+                                "description": "评价内容"
+                              },
+                              "score": {
+                                "type": "number",
+                                "description": ""
+                              },
+                              "create_time": {
+                                "type": "string",
+                                "description": "评价时间"
+                              },
+                              "user": {
+                                "type": "object",
+                                "description": "评价用户信息",
+                                "properties": {
+                                  "id": {
+                                    "type": "number",
+                                    "description": ""
+                                  },
+                                  "avatar": {
+                                    "type": "string",
+                                    "description": ""
+                                  },
+                                  "nickname": {
+                                    "type": "string",
+                                    "description": "昵称"
+                                  },
+                                  "avatar_img": {
+                                    "type": "string",
+                                    "description": "头像"
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "avatar",
+                                  "nickname",
+                                  "avatar_img"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "required": [
+                        "total",
+                        "per_page",
+                        "current_page",
+                        "last_page",
+                        "data"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "adv_id",
+                  "required": true,
+                  "description": "广告id",
+                  "type": "text"
+                },
+                {
+                  "name": "page",
+                  "required": true,
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "name": "psize",
+                  "required": true,
+                  "description": "",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448643,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "adv_id",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "page",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "psize",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "商家",
+      "items": [
+        {
+          "name": "商家核销订单",
+          "api": {
+            "id": "4096026",
+            "method": "post",
+            "path": "/index/merch/doVerify",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448644",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448645",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "verify_code",
+                  "required": true,
+                  "description": "核销码",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448644,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "verify_code",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "商家端数据统计",
+          "api": {
+            "id": "4096027",
+            "method": "post",
+            "path": "/index/merch/statistics",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448646",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "",
+                      "properties": {
+                        "credit": {
+                          "type": "string",
+                          "description": "钱包余额（元）"
+                        },
+                        "credit_freeze": {
+                          "type": "string",
+                          "description": "冻结资金（元）"
+                        },
+                        "today_order": {
+                          "type": "number",
+                          "description": "今日订单总流水（元）"
+                        },
+                        "today_order_settled": {
+                          "type": "number",
+                          "description": "今日结算订单金额（元）"
+                        },
+                        "today_adv_fee": {
+                          "type": "number",
+                          "description": "今日结算广告费（元）"
+                        },
+                        "today_views": {
+                          "type": "number",
+                          "description": "今日有效阅览量"
+                        },
+                        "today_valid_time": {
+                          "type": "number",
+                          "description": "今日有效阅览时间（秒）"
+                        },
+                        "order": {
+                          "type": "number",
+                          "description": "订单总金额（元）"
+                        },
+                        "order_settled": {
+                          "type": "number",
+                          "description": "订单结算总金额（元）"
+                        },
+                        "adv_fee": {
+                          "type": "number",
+                          "description": "广告费结算总额（元）"
+                        },
+                        "views": {
+                          "type": "number",
+                          "description": "总有效阅览量"
+                        },
+                        "valid_time": {
+                          "type": "number",
+                          "description": "总有效阅读时间（秒）"
+                        }
+                      },
+                      "required": [
+                        "credit",
+                        "credit_freeze",
+                        "today_order",
+                        "today_order_settled",
+                        "today_adv_fee",
+                        "today_views",
+                        "today_valid_time",
+                        "order",
+                        "order_settled",
+                        "adv_fee",
+                        "views",
+                        "valid_time"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448646,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "我的订单",
+      "items": [
+        {
+          "name": "去支付",
+          "api": {
+            "id": "4096033",
+            "method": "post",
+            "path": "/index/user_order/pay",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448653",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448654",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "order_id",
+                  "required": true,
+                  "description": "订单id",
+                  "type": "text"
+                },
+                {
+                  "name": "pay_type",
+                  "required": true,
+                  "description": "1支付宝支付 2微信支付 3余额支付",
+                  "type": "text"
+                },
+                {
+                  "name": "trade_password",
+                  "required": true,
+                  "description": "交易密码 余额支付必填",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448653,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "order_id",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "pay_type",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "trade_password",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "去支付页面",
+          "api": {
+            "id": "4096034",
+            "method": "post",
+            "path": "/index/user_order/payPage",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448655",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "",
+                      "properties": {
+                        "order": {
+                          "type": "object",
+                          "description": "",
+                          "properties": {
+                            "id": {
+                              "type": "number",
+                              "description": "订单id"
+                            },
+                            "sn": {
+                              "type": "string",
+                              "description": "单号"
+                            },
+                            "pay_price": {
+                              "type": "string",
+                              "description": "支付价格"
+                            },
+                            "pay_type": {
+                              "type": "number",
+                              "description": "支付方式"
+                            },
+                            "status": {
+                              "type": "number",
+                              "description": ""
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "sn",
+                            "pay_price",
+                            "pay_type",
+                            "status"
+                          ]
+                        },
+                        "credit1": {
+                          "type": "string",
+                          "description": "余额"
+                        }
+                      },
+                      "required": [
+                        "order",
+                        "credit1"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "order_id",
+                  "required": true,
+                  "description": "",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448655,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "order_id",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "去核销",
+          "api": {
+            "id": "4096035",
+            "method": "post",
+            "path": "/index/user_order/verify",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448656",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448657",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "order_id",
+                  "required": true,
+                  "description": "",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448656,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "order_id",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "去评价",
+          "api": {
+            "id": "4096036",
+            "method": "post",
+            "path": "/index/user_order/evaluate",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448658",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448659",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "order_id",
+                  "required": true,
+                  "description": "订单id",
+                  "type": "text"
+                },
+                {
+                  "name": "content",
+                  "required": true,
+                  "description": "评价内容",
+                  "type": "text"
+                },
+                {
+                  "name": "score",
+                  "required": true,
+                  "description": "评分",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448658,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "order_id",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "content",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "score",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "取消订单",
+          "api": {
+            "id": "4096037",
+            "method": "post",
+            "path": "/index/user_order/cancel",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448660",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448661",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "order_id",
+                  "required": true,
+                  "description": "订单id",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448660,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "order_id",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "检查订单是否核销",
+          "api": {
+            "id": "4096038",
+            "method": "post",
+            "path": "/index/user_order/isVerify",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448662",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448663",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "order_id",
+                  "required": true,
+                  "description": "",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448662,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "order_id",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "订单列表",
+          "api": {
+            "id": "4096039",
+            "method": "post",
+            "path": "/index/user_order/lists",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448664",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "",
+                      "properties": {
+                        "total": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "per_page": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "current_page": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "last_page": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "data": {
+                          "type": "array",
+                          "description": "",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number",
+                                "description": "id"
+                              },
+                              "merch_id": {
+                                "type": "number",
+                                "description": ""
+                              },
+                              "uid": {
+                                "type": "number",
+                                "description": ""
+                              },
+                              "sn": {
+                                "type": "string",
+                                "description": "订单编号"
+                              },
+                              "status": {
+                                "type": "number",
+                                "description": "状态 -1 已取消 0待付款 1待核销 2待评价 3已评价 4已失效"
+                              },
+                              "status_text": {
+                                "type": "string",
+                                "description": "状态描述"
+                              },
+                              "merch": {
+                                "type": "object",
+                                "description": "商家",
+                                "properties": {
+                                  "id": {
+                                    "type": "number",
+                                    "description": ""
+                                  },
+                                  "shop_name": {
+                                    "type": "string",
+                                    "description": "商家名称"
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "shop_name"
+                                ]
+                              },
+                              "order_goods": {
+                                "type": "array",
+                                "description": "商品",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "goods_id": {
+                                      "type": "number",
+                                      "description": ""
+                                    },
+                                    "price": {
+                                      "type": "string",
+                                      "description": "商品价格"
+                                    },
+                                    "number": {
+                                      "type": "number",
+                                      "description": "数量"
+                                    },
+                                    "thumb_path": {
+                                      "type": "string",
+                                      "description": "商品图片"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "required": [
+                        "total",
+                        "per_page",
+                        "current_page",
+                        "last_page",
+                        "data"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "tag",
+                  "required": true,
+                  "description": "0全部 1待付款 2待核销 3已完成",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448664,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "tag",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "订单详情",
+          "api": {
+            "id": "4096040",
+            "method": "post",
+            "path": "/index/user_order/detail",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448665",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "",
+                      "properties": {
+                        "id": {
+                          "type": "number",
+                          "description": "订单id"
+                        },
+                        "merch_id": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "uid": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "sn": {
+                          "type": "string",
+                          "description": "订单编号"
+                        },
+                        "status": {
+                          "type": "number",
+                          "description": "订单状态"
+                        },
+                        "pay_price": {
+                          "type": "string",
+                          "description": "支付价格"
+                        },
+                        "pay_credit2": {
+                          "type": "string",
+                          "description": "抵扣金币"
+                        },
+                        "credit2_dis": {
+                          "type": "string",
+                          "description": "金币抵扣价格"
+                        },
+                        "create_time": {
+                          "type": "string",
+                          "description": "下单时间"
+                        },
+                        "pay_time": {
+                          "type": "string",
+                          "description": "支付时间"
+                        },
+                        "verify_time": {
+                          "type": "string",
+                          "description": "核销时间"
+                        },
+                        "status_text": {
+                          "type": "string",
+                          "description": "状态描述"
+                        },
+                        "merch": {
+                          "type": "object",
+                          "description": "店铺信息",
+                          "properties": {
+                            "id": {
+                              "type": "number",
+                              "description": "商家id"
+                            },
+                            "logo": {
+                              "type": "number",
+                              "description": ""
+                            },
+                            "shop_name": {
+                              "type": "string",
+                              "description": "商家名称"
+                            },
+                            "map": {
+                              "type": "string",
+                              "description": "经纬度"
+                            },
+                            "map_address": {
+                              "type": "string",
+                              "description": "地址"
+                            },
+                            "business_time": {
+                              "type": "string",
+                              "description": "营业时间"
+                            },
+                            "logo_path": {
+                              "type": "string",
+                              "description": "logo"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "logo",
+                            "shop_name",
+                            "map",
+                            "map_address",
+                            "business_time",
+                            "logo_path"
+                          ]
+                        },
+                        "order_goods": {
+                          "type": "array",
+                          "description": "商品信息",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "goods_id": {
+                                "type": "number",
+                                "description": "id"
+                              },
+                              "price": {
+                                "type": "string",
+                                "description": "价格"
+                              },
+                              "number": {
+                                "type": "number",
+                                "description": "数量"
+                              },
+                              "thumb_path": {
+                                "type": "string",
+                                "description": "商品图片"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "merch_id",
+                        "uid",
+                        "sn",
+                        "status",
+                        "pay_price",
+                        "pay_credit2",
+                        "credit2_dis",
+                        "create_time",
+                        "pay_time",
+                        "verify_time",
+                        "status_text",
+                        "merch",
+                        "order_goods"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "order_id",
+                  "required": true,
+                  "description": "订单id",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448665,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "order_id",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "广告",
+      "items": [
+        {
+          "name": "广告详情",
+          "api": {
+            "id": "4096028",
+            "method": "post",
+            "path": "/index/adv/detail",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448647",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "",
+                      "properties": {
+                        "detail": {
+                          "type": "object",
+                          "description": "广告详情",
+                          "properties": {
+                            "id": {
+                              "type": "number",
+                              "description": ""
+                            },
+                            "merch_id": {
+                              "type": "number",
+                              "description": ""
+                            },
+                            "title": {
+                              "type": "string",
+                              "description": "标题"
+                            },
+                            "content": {
+                              "type": "string",
+                              "description": "内容"
+                            },
+                            "goods_id": {
+                              "type": "number",
+                              "description": ""
+                            },
+                            "credit2": {
+                              "type": "string",
+                              "description": ""
+                            },
+                            "create_time": {
+                              "type": "string",
+                              "description": "发布时间"
+                            },
+                            "goods": {
+                              "type": "object",
+                              "description": "关联商品信息",
+                              "properties": {
+                                "id": {
+                                  "type": "number",
+                                  "description": "商品id"
+                                },
+                                "name": {
+                                  "type": "string",
+                                  "description": "商品名称"
+                                },
+                                "type": {
+                                  "type": "number",
+                                  "description": "商品类型 1普通 2券"
+                                },
+                                "thumb": {
+                                  "type": "number",
+                                  "description": ""
+                                },
+                                "price": {
+                                  "type": "string",
+                                  "description": "商品价格"
+                                },
+                                "thumb_path": {
+                                  "type": "string",
+                                  "description": "商品图片"
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "name",
+                                "type",
+                                "thumb",
+                                "price",
+                                "thumb_path"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "merch_id",
+                            "title",
+                            "content",
+                            "goods_id",
+                            "credit2",
+                            "create_time",
+                            "goods"
+                          ]
+                        },
+                        "coin": {
+                          "type": "object",
+                          "description": "获取金币",
+                          "properties": {
+                            "can": {
+                              "type": "number",
+                              "description": "是否可以获取金币 0不能获取 1可以获取 2已经获得"
+                            },
+                            "total": {
+                              "type": "number",
+                              "description": "总共可以获得金币数"
+                            },
+                            "speed": {
+                              "type": "number",
+                              "description": "获取速度 "
+                            },
+                            "second": {
+                              "type": "number",
+                              "description": "几秒完成"
+                            },
+                            "get": {
+                              "type": "string",
+                              "description": "用户已经获得金币数"
+                            },
+                            "get_second": {
+                              "type": "string",
+                              "description": ""
+                            },
+                            "adv_id": {
+                              "type": "number",
+                              "description": ""
+                            },
+                            "channel_id": {
+                              "type": "string",
+                              "description": ""
+                            },
+                            "acc_id": {
+                              "type": "number",
+                              "description": ""
+                            },
+                            "acc_time": {
+                              "type": "number",
+                              "description": ""
+                            },
+                            "spend_acc": {
+                              "type": "number",
+                              "description": ""
+                            }
+                          },
+                          "required": [
+                            "can",
+                            "total",
+                            "speed",
+                            "second",
+                            "get",
+                            "get_second",
+                            "adv_id",
+                            "channel_id",
+                            "acc_id",
+                            "acc_time",
+                            "spend_acc"
+                          ]
+                        },
+                        "evaluate": {
+                          "type": "object",
+                          "description": "评价",
+                          "properties": {
+                            "total": {
+                              "type": "number",
+                              "description": "总评价数"
+                            },
+                            "list": {
+                              "type": "array",
+                              "description": "评价列表",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "id": {
+                                    "type": "number",
+                                    "description": ""
+                                  },
+                                  "uid": {
+                                    "type": "number",
+                                    "description": ""
+                                  },
+                                  "content": {
+                                    "type": "string",
+                                    "description": "评价内容"
+                                  },
+                                  "score": {
+                                    "type": "number",
+                                    "description": ""
+                                  },
+                                  "create_time": {
+                                    "type": "string",
+                                    "description": "评价时间"
+                                  },
+                                  "user": {
+                                    "type": "object",
+                                    "description": "评价会员",
+                                    "properties": {
+                                      "id": {
+                                        "type": "number",
+                                        "description": ""
+                                      },
+                                      "avatar": {
+                                        "type": "string",
+                                        "description": ""
+                                      },
+                                      "nickname": {
+                                        "type": "string",
+                                        "description": "昵称"
+                                      },
+                                      "avatar_img": {
+                                        "type": "string",
+                                        "description": "头像"
+                                      }
+                                    },
+                                    "required": [
+                                      "id",
+                                      "avatar",
+                                      "nickname",
+                                      "avatar_img"
+                                    ]
+                                  },
+                                  "is_replay": {
+                                    "type": "number",
+                                    "description": "是否已回复"
+                                  },
+                                  "replay": {
+                                    "type": "string",
+                                    "description": "回复内容"
+                                  },
+                                  "replay_time": {
+                                    "type": "string",
+                                    "description": "回复时间"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "required": [
+                            "total",
+                            "list"
+                          ]
+                        },
+                        "next": {
+                          "type": "object",
+                          "description": "下一条广告信息",
+                          "properties": {
+                            "channel_id": {
+                              "type": "string",
+                              "description": "频道id"
+                            },
+                            "adv_id": {
+                              "type": "number",
+                              "description": "广告id"
+                            }
+                          },
+                          "required": [
+                            "channel_id",
+                            "adv_id"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "detail",
+                        "coin",
+                        "evaluate",
+                        "next"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "channel_id",
+                  "required": true,
+                  "description": "频道id",
+                  "type": "text"
+                },
+                {
+                  "name": "adv_id",
+                  "required": true,
+                  "description": "广告id",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448647,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "channel_id",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "adv_id",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "搜索",
+          "api": {
+            "id": "4096029",
+            "method": "post",
+            "path": "/index/adv/search",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448648",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "keywords",
+                  "required": true,
+                  "description": "关键字",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448648,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "keywords",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "获取广告金币",
+          "api": {
+            "id": "4096030",
+            "method": "post",
+            "path": "/index/adv/getCoin",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448649",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448650",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "channel_id",
+                  "required": true,
+                  "description": "频道id",
+                  "type": "text"
+                },
+                {
+                  "name": "adv_id",
+                  "required": true,
+                  "description": "广告id",
+                  "type": "text"
+                },
+                {
+                  "name": "second",
+                  "required": true,
+                  "description": "时间 秒",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448649,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "channel_id",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "adv_id",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "second",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "首页广告列表",
+          "api": {
+            "id": "4096031",
+            "method": "post",
+            "path": "/index/adv/lists",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448651",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "",
+                      "properties": {
+                        "channel_id": {
+                          "type": "number",
+                          "description": "频道id"
+                        },
+                        "list": {
+                          "type": "object",
+                          "description": "广告列表",
+                          "properties": {
+                            "total": {
+                              "type": "number",
+                              "description": "总共多少条数据"
+                            },
+                            "per_page": {
+                              "type": "string",
+                              "description": "每页多少调数据"
+                            },
+                            "current_page": {
+                              "type": "number",
+                              "description": "当前第几页"
+                            },
+                            "last_page": {
+                              "type": "number",
+                              "description": "总共多少页"
+                            },
+                            "data": {
+                              "type": "array",
+                              "description": "",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "id": {
+                                    "type": "number",
+                                    "description": "id"
+                                  },
+                                  "title": {
+                                    "type": "string",
+                                    "description": "标题"
+                                  },
+                                  "thumb": {
+                                    "type": "string",
+                                    "description": "缩略图"
+                                  },
+                                  "create_time": {
+                                    "type": "string",
+                                    "description": "创建时间"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "required": [
+                            "total",
+                            "per_page",
+                            "current_page",
+                            "last_page",
+                            "data"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "channel_id",
+                        "list"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "channel_id",
+                  "required": true,
+                  "description": "频道id  默认1",
+                  "type": "text"
+                },
+                {
+                  "name": "page",
+                  "required": true,
+                  "description": "页数 默认1",
+                  "type": "text"
+                },
+                {
+                  "name": "psize",
+                  "required": true,
+                  "description": "每页条数 默认15",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448651,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "channel_id",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "page",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "psize",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "首页频道列表",
+          "api": {
+            "id": "4096032",
+            "method": "post",
+            "path": "/index/adv/channels",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448652",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "array",
+                      "description": "",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number",
+                            "description": "频道id"
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "频道名称"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448652,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "登录注册(无token)",
+      "items": [
+        {
+          "name": "忘记密码",
+          "api": {
+            "id": "4096041",
+            "method": "post",
+            "path": "/index/login/forget",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448666",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448667",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "phone",
+                  "required": true,
+                  "description": "手机号",
+                  "type": "text"
+                },
+                {
+                  "name": "password",
+                  "required": true,
+                  "description": "新密码",
+                  "type": "text"
+                },
+                {
+                  "name": "quepassword",
+                  "required": true,
+                  "description": "确认密码",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448666,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "phone",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "password",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "quepassword",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "注册",
+          "api": {
+            "id": "4096042",
+            "method": "post",
+            "path": "/index/login/register",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448668",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "",
+                      "properties": {
+                        "token": {
+                          "type": "string",
+                          "description": "token"
+                        },
+                        "user": {
+                          "type": "object",
+                          "description": "用户信息",
+                          "properties": {
+                            "phone": {
+                              "type": "string",
+                              "description": "手机号"
+                            },
+                            "nickname": {
+                              "type": "string",
+                              "description": "昵称"
+                            },
+                            "id": {
+                              "type": "string",
+                              "description": "id"
+                            }
+                          },
+                          "required": [
+                            "phone",
+                            "nickname",
+                            "id"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "token",
+                        "user"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              },
+              {
+                "id": "1448669",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "phone",
+                  "required": true,
+                  "description": "手机号",
+                  "type": "text"
+                },
+                {
+                  "name": "password",
+                  "required": true,
+                  "description": "密码",
+                  "type": "text"
+                },
+                {
+                  "name": "quepassword",
+                  "required": true,
+                  "description": "确认密码",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448668,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "phone",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "password",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "quepassword",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "注册 第一步 验证码",
+          "api": {
+            "id": "4096043",
+            "method": "post",
+            "path": "/index/login/registerStepOne",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448670",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448671",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "phone",
+                  "required": true,
+                  "description": "手机号",
+                  "type": "text"
+                },
+                {
+                  "name": "code",
+                  "required": true,
+                  "description": "验证码",
+                  "type": "text"
+                },
+                {
+                  "name": "type",
+                  "required": true,
+                  "description": "reg  forget",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448670,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "phone",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "code",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "type",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "用户注册协议",
+          "api": {
+            "id": "4096044",
+            "method": "post",
+            "path": "/index/login/agreement",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448672",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448672,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "登录",
+          "api": {
+            "id": "4096045",
+            "method": "post",
+            "path": "/index/login/login",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448673",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "",
+                      "properties": {
+                        "token": {
+                          "type": "string",
+                          "description": "token"
+                        },
+                        "user": {
+                          "type": "object",
+                          "description": "用户信息",
+                          "properties": {
+                            "id": {
+                              "type": "number",
+                              "description": "id"
+                            },
+                            "phone": {
+                              "type": "string",
+                              "description": "手机号"
+                            },
+                            "nickname": {
+                              "type": "string",
+                              "description": "昵称"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "phone",
+                            "nickname"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "token",
+                        "user"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "phone",
+                  "required": true,
+                  "description": "手机号",
+                  "type": "text"
+                },
+                {
+                  "name": "password",
+                  "required": true,
+                  "description": "密码",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448673,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "phone",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "password",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "钱包金币",
+      "items": [
+        {
+          "name": "充值",
+          "api": {
+            "id": "4096049",
+            "method": "post",
+            "path": "/index/wallet/recharge",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448678",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448679",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "money",
+                  "required": true,
+                  "description": "充值金额",
+                  "type": "text"
+                },
+                {
+                  "name": "pay_type",
+                  "required": true,
+                  "description": "1支付宝 2微信",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448678,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "money",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "pay_type",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "提现记录",
+          "api": {
+            "id": "4096050",
+            "method": "post",
+            "path": "/index/wallet/withdrawLogs",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448680",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "",
+                      "properties": {
+                        "total": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "per_page": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "current_page": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "last_page": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "data": {
+                          "type": "array",
+                          "description": "",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number",
+                                "description": "id"
+                              },
+                              "money": {
+                                "type": "string",
+                                "description": "提现金额"
+                              },
+                              "pay_type": {
+                                "type": "string",
+                                "description": "提现方式"
+                              },
+                              "status": {
+                                "type": "string",
+                                "description": "状态"
+                              },
+                              "create_time": {
+                                "type": "string",
+                                "description": "提现时间"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "required": [
+                        "total",
+                        "per_page",
+                        "current_page",
+                        "last_page",
+                        "data"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "page",
+                  "required": true,
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "name": "psize",
+                  "required": true,
+                  "description": "",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448680,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "page",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "psize",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "提现详情",
+          "api": {
+            "id": "4096051",
+            "method": "post",
+            "path": "/index/wallet/withdrawDetail",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448681",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "",
+                      "properties": {
+                        "id": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "money": {
+                          "type": "string",
+                          "description": "提现金额"
+                        },
+                        "fee": {
+                          "type": "string",
+                          "description": "手续费"
+                        },
+                        "real_money": {
+                          "type": "string",
+                          "description": "实际到账金额"
+                        },
+                        "pay_type": {
+                          "type": "string",
+                          "description": "提现方式"
+                        },
+                        "status": {
+                          "type": "string",
+                          "description": "状态"
+                        },
+                        "create_time": {
+                          "type": "string",
+                          "description": "提现时间"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "money",
+                        "fee",
+                        "real_money",
+                        "pay_type",
+                        "status",
+                        "create_time"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "id",
+                  "required": true,
+                  "description": "提现id",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448681,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "id",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "金币兑换余额",
+          "api": {
+            "id": "4096052",
+            "method": "post",
+            "path": "/index/wallet/exchange",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448682",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448683",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "number",
+                  "required": true,
+                  "description": "兑换数",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448682,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "number",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "金币兑换余额页面信息",
+          "api": {
+            "id": "4096053",
+            "method": "post",
+            "path": "/index/wallet/exchangePageInfo",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448684",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "",
+                      "properties": {
+                        "total": {
+                          "type": "string",
+                          "description": "可兑换余额"
+                        },
+                        "tips": {
+                          "type": "string",
+                          "description": "温馨提示"
+                        },
+                        "exchange_rate": {
+                          "type": "string",
+                          "description": "兑换比例"
+                        },
+                        "exchange_min": {
+                          "type": "string",
+                          "description": "起兑金额"
+                        }
+                      },
+                      "required": [
+                        "total",
+                        "tips",
+                        "exchange_rate",
+                        "exchange_min"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448684,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "钱包、金币明细",
+          "api": {
+            "id": "4096054",
+            "method": "post",
+            "path": "/index/wallet/logs",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448685",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "",
+                      "properties": {
+                        "total": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "per_page": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "current_page": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "last_page": {
+                          "type": "number",
+                          "description": ""
+                        },
+                        "data": {
+                          "type": "array",
+                          "description": "",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number",
+                                "description": ""
+                              },
+                              "credit": {
+                                "type": "number",
+                                "description": "1余额 2金币"
+                              },
+                              "type": {
+                                "type": "number",
+                                "description": "1增 2减"
+                              },
+                              "number": {
+                                "type": "string",
+                                "description": "变更数量"
+                              },
+                              "remark": {
+                                "type": "string",
+                                "description": "备注信息"
+                              },
+                              "create_time": {
+                                "type": "string",
+                                "description": "时间"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "required": [
+                        "total",
+                        "per_page",
+                        "current_page",
+                        "last_page",
+                        "data"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "credit",
+                  "required": true,
+                  "description": "1 余额 2 金币",
+                  "type": "text"
+                },
+                {
+                  "name": "page",
+                  "required": true,
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "name": "psize",
+                  "required": true,
+                  "description": "",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448685,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "credit",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "page",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "psize",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "钱包提现",
+          "api": {
+            "id": "4096055",
+            "method": "post",
+            "path": "/index/wallet/withdraw",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448686",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448687",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "money",
+                  "required": true,
+                  "description": "提现金额",
+                  "type": "text"
+                },
+                {
+                  "name": "pay_type",
+                  "required": true,
+                  "description": "提现方式 1支付宝 2微信",
+                  "type": "text"
+                },
+                {
+                  "name": "account",
+                  "required": true,
+                  "description": "提现账户",
+                  "type": "text"
+                },
+                {
+                  "name": "real_name",
+                  "required": true,
+                  "description": "真实姓名",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448686,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "money",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "pay_type",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "account",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "real_name",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "钱包提现页面信息",
+          "api": {
+            "id": "4096056",
+            "method": "post",
+            "path": "/index/wallet/withdrawPageInfo",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448688",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "",
+                      "properties": {
+                        "total": {
+                          "type": "string",
+                          "description": "可提现余额"
+                        },
+                        "tips": {
+                          "type": "string",
+                          "description": "温馨提示"
+                        }
+                      },
+                      "required": [
+                        "total",
+                        "tips"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448688,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "通用",
+      "items": [
+        {
+          "name": "上传图片",
+          "api": {
+            "id": "4096046",
+            "method": "post",
+            "path": "/index/index/upload",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448674",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "img",
+                  "required": true,
+                  "description": "",
+                  "type": "file"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448674,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "img",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "发送短信验证码",
+          "api": {
+            "id": "4096047",
+            "method": "post",
+            "path": "/index/index/sendSms",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448675",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              {
+                "id": "1448676",
+                "name": "失败",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "mobile",
+                  "required": true,
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "name": "type",
+                  "required": true,
+                  "description": "reg注册 forget忘记密码",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448675,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "mobile",
+                      "value": "",
+                      "enable": true
+                    },
+                    {
+                      "name": "type",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "商家详情",
+          "api": {
+            "id": "4096048",
+            "method": "post",
+            "path": "/index/merch/detail",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1448677",
+                "name": "成功",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "",
+                      "properties": {
+                        "id": {
+                          "type": "number",
+                          "description": "商家id"
+                        },
+                        "shop_name": {
+                          "type": "string",
+                          "description": "商家名"
+                        },
+                        "salecate": {
+                          "type": "string",
+                          "description": "经营类目"
+                        },
+                        "map": {
+                          "type": "string",
+                          "description": "经纬度"
+                        },
+                        "map_address": {
+                          "type": "string",
+                          "description": "地址"
+                        },
+                        "tel": {
+                          "type": "string",
+                          "description": "电话"
+                        },
+                        "business_time": {
+                          "type": "string",
+                          "description": "营业时间"
+                        },
+                        "desc": {
+                          "type": "string",
+                          "description": "商家描述"
+                        },
+                        "logo_path": {
+                          "type": "string",
+                          "description": "logo"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "shop_name",
+                        "salecate",
+                        "map",
+                        "map_address",
+                        "tel",
+                        "business_time",
+                        "desc",
+                        "logo_path"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "merch_id",
+                  "required": true,
+                  "description": "商家id",
+                  "type": "text"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1448677,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "merch_id",
+                      "value": "",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        }
+      ]
+    }
+  ],
+  "schemaCollection": [
+    {
+      "name": "默认分类",
+      "items": []
+    },
+    {
+      "name": "宠物店（示例）",
+      "items": [
+        {
+          "name": "Pet",
+          "id": "#/definitions/479517",
+          "schema": {
+            "jsonSchema": {
+              "required": [
+                "name",
+                "photoUrls",
+                "id",
+                "category",
+                "tags",
+                "status"
+              ],
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "format": "int64",
+                  "minimum": 1,
+                  "maximum": 5000,
+                  "mock": {
+                    "mock": "@natural"
+                  },
+                  "description": "宠物ID编号"
+                },
+                "category": {
+                  "$ref": "#/definitions/479518",
+                  "description": "分类"
+                },
+                "name": {
+                  "type": "string",
+                  "example": "doggie",
+                  "description": "名称",
+                  "mock": {
+                    "mock": "@cword(3)"
+                  }
+                },
+                "photoUrls": {
+                  "type": "array",
+                  "xml": {
+                    "name": "photoUrl",
+                    "wrapped": true
+                  },
+                  "items": {
+                    "type": "string",
+                    "mock": {
+                      "mock": "@image"
+                    }
+                  },
+                  "description": "照片URL"
+                },
+                "tags": {
+                  "type": "array",
+                  "xml": {
+                    "name": "tag",
+                    "wrapped": true
+                  },
+                  "items": {
+                    "$ref": "#/definitions/479519"
+                  },
+                  "description": "标签"
+                },
+                "status": {
+                  "type": "string",
+                  "description": "宠物销售状态",
+                  "enum": [
+                    "available",
+                    "pending",
+                    "sold"
+                  ]
+                }
+              },
+              "xml": {
+                "name": "Pet"
+              }
+            }
+          }
+        },
+        {
+          "name": "Category",
+          "id": "#/definitions/479518",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "format": "int64",
+                  "minimum": 1,
+                  "description": "分类ID编号"
+                },
+                "name": {
+                  "type": "string",
+                  "mock": {
+                    "mock": "@cword(2)"
+                  },
+                  "description": "分类名称"
+                }
+              },
+              "xml": {
+                "name": "Category"
+              }
+            }
+          }
+        },
+        {
+          "name": "Tag",
+          "id": "#/definitions/479519",
+          "schema": {
+            "jsonSchema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "format": "int64",
+                  "minimum": 1,
+                  "description": "标签ID编号"
+                },
+                "name": {
+                  "type": "string",
+                  "mock": {
+                    "mock": "@cword(4)"
+                  },
+                  "description": "标签名称"
+                }
+              },
+              "xml": {
+                "name": "Tag"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "responseCollection": [
+    {
+      "id": "856736",
+      "name": "记录不存在（示例）",
+      "code": 404,
+      "jsonSchema": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string",
+            "mock": {
+              "mock": "Not found"
+            }
+          }
+        },
+        "required": [
+          "code",
+          "message"
+        ]
+      }
+    },
+    {
+      "id": "856737",
+      "name": "修改成功（示例）",
+      "code": 200,
+      "jsonSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "id": "856738",
+      "name": "新建成功（示例）",
+      "code": 201,
+      "jsonSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "id": "856739",
+      "name": "参数不正确（示例）",
+      "code": 401,
+      "jsonSchema": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "mock": {
+              "mock": "401"
+            }
+          },
+          "message": {
+            "type": "string",
+            "mock": {
+              "mock": "Invalid Param"
+            }
+          }
+        },
+        "required": [
+          "code",
+          "message"
+        ]
+      }
+    }
+  ],
+  "testSuiteCollection": [
+    {
+      "name": "默认分类",
+      "items": []
+    },
+    {
+      "name": "宠物店（示例）",
+      "items": [
+        {
+          "name": "测试宠物新建/修改/删除流程",
+          "description": "",
+          "cases": []
+        }
+      ]
+    }
+  ]
+}

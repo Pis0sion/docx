@@ -7,6 +7,7 @@ use Inhere\Console\Exception\ConsoleException;
 use PhpOffice\PhpWord\Element\Section;
 use PhpOffice\PhpWord\Shared\Html;
 use PhpOffice\PhpWord\Style\Table;
+use Pis0sion\Docx\categories\eolinker\ApisEolinkerParser;
 use Pis0sion\Docx\layer\AbsBaseEntity;
 use Pis0sion\Docx\servlet\TableServlet;
 
@@ -27,6 +28,7 @@ class ApisEntity extends AbsBaseEntity
     protected $toolMapping = [
         'postman' => DefaultParamFormatter,
         'Eolinker' => EolinkerParamFormatter,
+        'Apifox' => EolinkerParamFormatter,
     ];
 
     /**

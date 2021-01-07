@@ -14,13 +14,13 @@ use Pis0sion\Docx\layer\IParserInterface;
 class ApisEolinkerParser implements IParserInterface
 {
     /**
-     * @param string $postmanJson
+     * @param string $eolinkerJson
      * @return array
      */
-    public function parse2RenderDocx(string $postmanJson): array
+    public function parse2RenderDocx(string $eolinkerJson): array
     {
         // TODO: Implement parse2RenderDocx() method.
-        $eolinkerArr = json_decode($postmanJson, true);
+        $eolinkerArr = json_decode($eolinkerJson, true);
         if (json_last_error() == JSON_ERROR_NONE) {
             return $this->organizeProjectVars2Specifications($this->arrange2ClassifyApis($eolinkerArr));
         }

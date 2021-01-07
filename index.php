@@ -1,5 +1,6 @@
 <?php
 
+use Pis0sion\Docx\categories\apifox\ApisApiFoxParser;
 use Pis0sion\Docx\categories\eolinker\ApisEolinkerParser;
 use Pis0sion\Docx\categories\postman\ApisPostManParser;
 use Pis0sion\Docx\Core;
@@ -37,7 +38,7 @@ $section->addPageBreak();
 (new TocServlet($section))->setTOC();
 //  TODO: postman
 // 获取json数据
-$postmanJson = file_get_contents("./json/burg.json");
+$postmanJson = file_get_contents("./json/collection.json");
 $projectVars = (new ApisPostManParser())->parse2RenderDocx($postmanJson);
 
 //  TODO: eolinker
@@ -47,6 +48,8 @@ $projectVars = (new ApisPostManParser())->parse2RenderDocx($postmanJson);
 //  TODO: apipost
 
 //  TODO: apifox
+//$apifoxJson = file_get_contents("./json/apifox.json");
+//$projectVars = (new ApisApiFoxParser())->parse2RenderDocx($apifoxJson);
 
 $apis = [
     "apis" => $projectVars,

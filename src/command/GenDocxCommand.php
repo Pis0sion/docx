@@ -5,18 +5,9 @@ namespace Pis0sion\Docx\command;
 
 
 use Inhere\Console\Command;
-use Inhere\Console\Exception\ConsoleException;
 use Inhere\Console\IO\Input;
 use Inhere\Console\IO\Output;
-use Pis0sion\Docx\Core;
-use Pis0sion\Docx\factory\ConvertorFactory;
-use Pis0sion\Docx\servlet\CoverServlet;
-use Pis0sion\Docx\servlet\FooterServlet;
-use Pis0sion\Docx\servlet\HeaderServlet;
-use Pis0sion\Docx\servlet\PhpWordServlet;
-use Pis0sion\Docx\servlet\TableServlet;
-use Pis0sion\Docx\servlet\TocServlet;
-use Throwable;
+use Pis0sion\Docx\factory\CreateDocxFactory;
 
 /**
  * Class GenDocxCommand
@@ -50,52 +41,14 @@ class GenDocxCommand extends Command
     /**
      * @param Input $input
      * @param Output $output
-     * @return int|mixed
      */
     protected function execute($input, $output)
     {
-        // TODO: Implement execute() method.
         $inputJson = $input->getArg('inputJson');
         $outDocx = $input->getArg('outDocx');
         // 默认postman
         $apiTools = trim($input->getOpt('tools', 'postman'));
-        // 实例化 PhpWord 对象
-        $phpWordServlet = new PhpWordServlet();
-        // 初始化
-        $phpWordServlet->init();
-        // 创建封面
-        $cover = $phpWordServlet->newSection();
-        (new CoverServlet($cover))->createCover();
-        // 创建页面
-        // 设置页面边框大小颜色
-        $section = $phpWordServlet->newSection(['borderColor' => '161616', 'borderSize' => 6]);
-        // 创建页眉页脚
-        (new HeaderServlet($section->addHeader()))->setHeader();
-        (new FooterServlet($section->addFooter()))->setFooter();
-
-        // 版本内容
-        (new TableServlet($section))->run(VersionFormatter, ProjectVersion);
-        $section->addPageBreak();
-        // 创建目录
-        (new TocServlet($section))->setTOC();
-        // 获取json数据
-        $convertJson = file_get_contents($inputJson);
-        // 抛异常
-        try {
-            $projectVars = (new ConvertorFactory())->createConvertor($apiTools)->parse2RenderDocx($convertJson);
-        } catch (Throwable $throwable) {
-            throw new ConsoleException($throwable->getMessage());
-        }
-
-        $apis = [
-            "apis" => $projectVars,
-        ];
-        // 生成文档
-        (new Core())->run($section, $apis);
-        // 保存文件
-        $phpWordServlet->saveAs($outDocx);
-
-        $output->write("generate docx successful");
-        return 0;
+        $resultResponse = (new CreateDocxFactory())->run($inputJson, $outDocx, $apiTools);
+        $output->json($resultResponse);
     }
 }

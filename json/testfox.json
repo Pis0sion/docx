@@ -1,0 +1,2094 @@
+{
+  "apifox": "1.0.0",
+  "info": {
+    "name": "test 项目",
+    "description": ""
+  },
+  "apiCollection": [
+    {
+      "name": "默认分类",
+      "items": [
+        {
+          "name": "用户登录接口",
+          "api": {
+            "id": "4097080",
+            "method": "post",
+            "path": "/api/v1/login.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451093",
+                "name": "用户登录接口",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "object",
+                      "properties": {
+                        "authToken": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "authToken"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "application/json",
+              "sampleValue": "{\r\n    \"mobile\":\"18637366580\",\r\n    \"password\":1234567\r\n}",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451093,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "data": "{\r\n    \"mobile\":\"18637366580\",\r\n    \"password\":1234567\r\n}",
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "项目基本信息接口",
+          "api": {
+            "id": "4097081",
+            "method": "post",
+            "path": "/api/v1/project/info.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451094",
+                "name": "项目基本信息接口",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "object",
+                      "properties": {
+                        "project_info": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "project_name": {
+                              "type": "string"
+                            },
+                            "desc": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "integer"
+                            },
+                            "create_time": {
+                              "type": "string"
+                            },
+                            "versions": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "id": {
+                                    "type": "integer"
+                                  },
+                                  "project_version": {
+                                    "type": "string"
+                                  },
+                                  "plan_time": {
+                                    "type": "integer"
+                                  },
+                                  "create_time": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "project_version",
+                                  "plan_time",
+                                  "create_time"
+                                ]
+                              }
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "project_name",
+                            "desc",
+                            "status",
+                            "create_time",
+                            "versions"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "project_info"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "application/json",
+              "sampleValue": "{\r\n    \"project_id\":1\r\n}",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451094,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "data": "{\r\n    \"project_id\":1\r\n}",
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "创建项目的版本",
+          "api": {
+            "id": "4097082",
+            "method": "post",
+            "path": "/api/v1/create/version.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451095",
+                "name": "创建项目的版本",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "application/json",
+              "sampleValue": "{\r\n    \"project_id\":1,\r\n    \"project_version\":\"v4.1\",\r\n    \"plan_time\":\"2020/12/5\"\r\n}",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451095,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "data": "{\r\n    \"project_id\":1,\r\n    \"project_version\":\"v4.1\",\r\n    \"plan_time\":\"2020/12/5\"\r\n}",
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "获取项目下的开发人员列表",
+          "api": {
+            "id": "4097083",
+            "method": "post",
+            "path": "/api/v1/project/developers.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451096",
+                "name": "获取项目下的开发人员列表",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "object",
+                      "properties": {
+                        "developers": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "integer"
+                              },
+                              "user_name": {
+                                "type": "string"
+                              },
+                              "mobile": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "required": [
+                        "developers"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "application/json",
+              "sampleValue": "{\r\n    \"project_id\":1\r\n}",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451096,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "data": "{\r\n    \"project_id\":1\r\n}",
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "创建项目需求或者bug",
+          "api": {
+            "id": "4097084",
+            "method": "post",
+            "path": "/api/v1/create/demand.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451097",
+                "name": "创建项目需求或者bug",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "application/json",
+              "sampleValue": "{\r\n    \"project_id\":1,\r\n    \"version_id\":2,\r\n    \"desc\":\"ceshi desc\",\r\n    \"type\":1,\r\n    \"priority\":2\r\n}",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451097,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "data": "{\r\n    \"project_id\":1,\r\n    \"version_id\":2,\r\n    \"desc\":\"ceshi desc\",\r\n    \"type\":1,\r\n    \"priority\":2\r\n}",
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "上传图片",
+          "api": {
+            "id": "4097085",
+            "method": "post",
+            "path": "/api/v1/upload/image.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451098",
+                "name": "上传图片",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "object",
+                      "properties": {
+                        "imagePath": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "imagePath"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              },
+              {
+                "id": "1451099",
+                "name": "上传图片",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "object",
+                      "properties": {
+                        "multiPath": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "required": [
+                        "multiPath"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "multipart/form-data",
+              "parameters": [
+                {
+                  "name": "file",
+                  "required": true,
+                  "description": "",
+                  "type": "file"
+                }
+              ]
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451098,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "parameters": [
+                    {
+                      "name": "file",
+                      "enable": true
+                    }
+                  ]
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "获取用户信息接口",
+          "api": {
+            "id": "4097086",
+            "method": "post",
+            "path": "/api/v1/user/info.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451100",
+                "name": "获取用户信息接口",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "object",
+                      "properties": {
+                        "userEntity": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "user_name": {
+                              "type": "string"
+                            },
+                            "mobile": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "integer"
+                            },
+                            "create_time": {
+                              "type": "string"
+                            },
+                            "delete_time": {
+                              "type": "integer"
+                            },
+                            "role_id": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "user_name",
+                            "mobile",
+                            "status",
+                            "create_time",
+                            "delete_time",
+                            "role_id"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "userEntity"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "none"
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451100,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {},
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "分配需求给工作人员接口",
+          "api": {
+            "id": "4097087",
+            "method": "post",
+            "path": "/api/v1/assign/demand.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451101",
+                "name": "分配需求给工作人员接口",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "application/json",
+              "sampleValue": "{\r\n    \"project_id\":1,\r\n    \"demand_id\":2,\r\n    \"user_ids\":[1,2,3],\r\n    \"plan_time\":12121212,\r\n    \"start_time\":\"2020/12/6\"\r\n}",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451101,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "data": "{\r\n    \"project_id\":1,\r\n    \"demand_id\":2,\r\n    \"user_ids\":[1,2,3],\r\n    \"plan_time\":12121212,\r\n    \"start_time\":\"2020/12/6\"\r\n}",
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "认领接口",
+          "api": {
+            "id": "4097088",
+            "method": "post",
+            "path": "/api/v1//claim/demand.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451102",
+                "name": "认领接口",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "application/json",
+              "sampleValue": "{\r\n    \"project_id\":1,\r\n    \"demand_id\":27,\r\n    \"user_ids\":[],\r\n    \"plan_time\":12121212,\r\n    \"start_time\":\"2020/12/6\"\r\n}",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451102,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "data": "{\r\n    \"project_id\":1,\r\n    \"demand_id\":27,\r\n    \"user_ids\":[],\r\n    \"plan_time\":12121212,\r\n    \"start_time\":\"2020/12/6\"\r\n}",
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "提交测试接口",
+          "api": {
+            "id": "4097089",
+            "method": "post",
+            "path": "/api/v1/submit/demand/test.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451103",
+                "name": "提交测试接口",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              },
+              {
+                "id": "1451104",
+                "name": "提交测试接口",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "application/json",
+              "sampleValue": "{\r\n    \"project_id\":1,\r\n    \"demand_id\":26\r\n}",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451103,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "data": "{\r\n    \"project_id\":1,\r\n    \"demand_id\":26\r\n}",
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "添加开发协助人员接口",
+          "api": {
+            "id": "4097090",
+            "method": "post",
+            "path": "/api/v1/ask/demand/help.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451105",
+                "name": "添加开发协助人员接口",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "application/json",
+              "sampleValue": "{\r\n    \"project_id\":1,\r\n    \"demand_id\":6,\r\n    \"user_ids\":[7,8]\r\n}",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451105,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "data": "{\r\n    \"project_id\":1,\r\n    \"demand_id\":6,\r\n    \"user_ids\":[7,8]\r\n}",
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "转移给其他工作人员",
+          "api": {
+            "id": "4097091",
+            "method": "post",
+            "path": "/api/v1/transfer/demand/other.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451106",
+                "name": "转移给其他工作人员",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "application/json",
+              "sampleValue": "{\r\n    \"project_id\":1,\r\n    \"demand_id\":3,\r\n    \"user_id\":4\r\n}",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451106,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "data": "{\r\n    \"project_id\":1,\r\n    \"demand_id\":3,\r\n    \"user_id\":4\r\n}",
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "测试打回开发重做接口",
+          "api": {
+            "id": "4097092",
+            "method": "post",
+            "path": "/api/v1/callback/demand/wait.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451107",
+                "name": "测试打回开发重做接口",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "application/json",
+              "sampleValue": "{\r\n    \"project_id\":1,\r\n    \"demand_id\":2,\r\n    \"reason\":\"ceshi\",\r\n    \"images\":\"fsafsfdfdsfs\"\r\n}",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451107,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "data": "{\r\n    \"project_id\":1,\r\n    \"demand_id\":2,\r\n    \"reason\":\"ceshi\",\r\n    \"images\":\"fsafsfdfdsfs\"\r\n}",
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "测试通过，提交初审接口",
+          "api": {
+            "id": "4097093",
+            "method": "post",
+            "path": "/api/v1/through/demand/wait.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451108",
+                "name": "测试通过，提交初审接口",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "application/json",
+              "sampleValue": "{\r\n    \"project_id\":1,\r\n    \"demand_id\":3\r\n}",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451108,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "data": "{\r\n    \"project_id\":1,\r\n    \"demand_id\":3\r\n}",
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "初审未通过，打回操作接口",
+          "api": {
+            "id": "4097094",
+            "method": "post",
+            "path": "/api/v1/callback/demand/review.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451109",
+                "name": "初审未通过，打回操作接口",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "application/json",
+              "sampleValue": "{\r\n    \"project_id\":1,\r\n    \"demand_id\":3\r\n}",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451109,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "data": "{\r\n    \"project_id\":1,\r\n    \"demand_id\":3\r\n}",
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "初审通过接口",
+          "api": {
+            "id": "4097095",
+            "method": "post",
+            "path": "/api/v1/through/demand/review.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451110",
+                "name": "初审通过接口",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "application/json",
+              "sampleValue": "{\r\n    \"project_id\":1,\r\n    \"demand_id\":3\r\n}",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451110,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "data": "{\r\n    \"project_id\":1,\r\n    \"demand_id\":3\r\n}",
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "查询功能点或者缺陷的列表",
+          "api": {
+            "id": "4097096",
+            "method": "post",
+            "path": "/api/v1/demands/view.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451111",
+                "name": "查询功能点或者缺陷的列表",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "object",
+                      "properties": {
+                        "list": {
+                          "type": "object",
+                          "properties": {
+                            "total": {
+                              "type": "integer"
+                            },
+                            "per_page": {
+                              "type": "integer"
+                            },
+                            "current_page": {
+                              "type": "string"
+                            },
+                            "last_page": {
+                              "type": "integer"
+                            },
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "id": {
+                                    "type": "integer"
+                                  },
+                                  "project_id": {
+                                    "type": "integer"
+                                  },
+                                  "version_id": {
+                                    "type": "integer"
+                                  },
+                                  "parent_id": {
+                                    "type": "integer"
+                                  },
+                                  "plan_time": {
+                                    "type": "integer"
+                                  },
+                                  "start_time": {
+                                    "type": "null"
+                                  },
+                                  "create_time": {
+                                    "type": "string"
+                                  },
+                                  "creator_name": {
+                                    "type": "string"
+                                  },
+                                  "contents": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "content": {
+                                          "type": "string"
+                                        },
+                                        "images": {
+                                          "type": "null"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "handlers": {
+                                    "type": "array",
+                                    "items": {}
+                                  },
+                                  "type_name": {
+                                    "type": "string"
+                                  },
+                                  "priority_name": {
+                                    "type": "string"
+                                  },
+                                  "process_name": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "required": [
+                            "total",
+                            "per_page",
+                            "current_page",
+                            "last_page",
+                            "data"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "list"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              },
+              {
+                "id": "1451112",
+                "name": "查询功能点或者缺陷的列表",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "object",
+                      "properties": {
+                        "list": {
+                          "type": "object",
+                          "properties": {
+                            "total": {
+                              "type": "integer"
+                            },
+                            "per_page": {
+                              "type": "integer"
+                            },
+                            "current_page": {
+                              "type": "string"
+                            },
+                            "last_page": {
+                              "type": "integer"
+                            },
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "id": {
+                                    "type": "integer"
+                                  },
+                                  "project_id": {
+                                    "type": "integer"
+                                  },
+                                  "version_id": {
+                                    "type": "integer"
+                                  },
+                                  "parent_id": {
+                                    "type": "integer"
+                                  },
+                                  "plan_time": {
+                                    "type": "integer"
+                                  },
+                                  "start_time": {
+                                    "type": "null"
+                                  },
+                                  "create_time": {
+                                    "type": "string"
+                                  },
+                                  "creator_name": {
+                                    "type": "string"
+                                  },
+                                  "contents": {
+                                    "type": "array",
+                                    "items": {}
+                                  },
+                                  "handlers": {
+                                    "type": "array",
+                                    "items": {}
+                                  },
+                                  "type_name": {
+                                    "type": "string"
+                                  },
+                                  "priority_name": {
+                                    "type": "string"
+                                  },
+                                  "process_name": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "project_id",
+                                  "version_id",
+                                  "parent_id",
+                                  "plan_time",
+                                  "start_time",
+                                  "create_time",
+                                  "creator_name",
+                                  "contents",
+                                  "handlers",
+                                  "type_name",
+                                  "priority_name",
+                                  "process_name"
+                                ]
+                              }
+                            }
+                          },
+                          "required": [
+                            "total",
+                            "per_page",
+                            "current_page",
+                            "last_page",
+                            "data"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "list"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              },
+              {
+                "id": "1451113",
+                "name": "查询功能点或者缺陷的列表",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "object",
+                      "properties": {
+                        "list": {
+                          "type": "object",
+                          "properties": {
+                            "total": {
+                              "type": "integer"
+                            },
+                            "per_page": {
+                              "type": "string"
+                            },
+                            "current_page": {
+                              "type": "string"
+                            },
+                            "last_page": {
+                              "type": "integer"
+                            },
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "id": {
+                                    "type": "integer"
+                                  },
+                                  "project_id": {
+                                    "type": "integer"
+                                  },
+                                  "version_id": {
+                                    "type": "integer"
+                                  },
+                                  "parent_id": {
+                                    "type": "integer"
+                                  },
+                                  "plan_time": {
+                                    "type": "integer"
+                                  },
+                                  "start_time": {
+                                    "type": "null"
+                                  },
+                                  "create_time": {
+                                    "type": "string"
+                                  },
+                                  "creator_name": {
+                                    "type": "string"
+                                  },
+                                  "contents": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "content": {
+                                          "type": "string"
+                                        },
+                                        "images": {
+                                          "type": "null"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "handlers": {
+                                    "type": "array",
+                                    "items": {}
+                                  },
+                                  "type_name": {
+                                    "type": "string"
+                                  },
+                                  "priority_name": {
+                                    "type": "string"
+                                  },
+                                  "process_name": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "required": [
+                            "total",
+                            "per_page",
+                            "current_page",
+                            "last_page",
+                            "data"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "list"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "application/json",
+              "sampleValue": "{\r\n    \"project_id\":1,\r\n    \"version_id\":2,\r\n    \"page\":1\r\n}",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451111,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "data": "{\r\n    \"project_id\":1,\r\n    \"version_id\":2,\r\n    \"page\":1\r\n}",
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "分类统计接口",
+          "api": {
+            "id": "4097097",
+            "method": "post",
+            "path": "/api/v1/demands/statistic.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451114",
+                "name": "分类统计接口",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "object",
+                      "properties": {
+                        "totalCount": {
+                          "type": "integer"
+                        },
+                        "pointCount": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "typeID": {
+                                "type": [
+                                  "string",
+                                  "integer"
+                                ]
+                              },
+                              "typeName": {
+                                "type": "string"
+                              },
+                              "count": {
+                                "type": "integer"
+                              }
+                            },
+                            "required": [
+                              "typeID",
+                              "typeName",
+                              "count"
+                            ]
+                          }
+                        },
+                        "stageCount": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "processID": {
+                                "type": "integer"
+                              },
+                              "processName": {
+                                "type": "string"
+                              },
+                              "count": {
+                                "type": "integer"
+                              }
+                            },
+                            "required": [
+                              "processID",
+                              "processName",
+                              "count"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "totalCount",
+                        "pointCount",
+                        "stageCount"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              },
+              {
+                "id": "1451115",
+                "name": "分类统计接口",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "object",
+                      "properties": {
+                        "pointCount": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": [
+                                  "string",
+                                  "integer"
+                                ]
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "count": {
+                                "type": "integer"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "name",
+                              "count"
+                            ]
+                          }
+                        },
+                        "stageCount": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "integer"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "count": {
+                                "type": "integer"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "name",
+                              "count"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "pointCount",
+                        "stageCount"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "application/json",
+              "sampleValue": "{\r\n    \"project_id\":1,\r\n    \"version_id\":2\r\n}",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451114,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "data": "{\r\n    \"project_id\":1,\r\n    \"version_id\":2\r\n}",
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "开发统计正在处理的数目接口",
+          "api": {
+            "id": "4097098",
+            "method": "post",
+            "path": "/api/v1/develop/statistic.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451116",
+                "name": "开发统计正在处理的数目接口",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "object",
+                      "properties": {
+                        "developCounts": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "user_id": {
+                                "type": "integer"
+                              },
+                              "count": {
+                                "type": "integer"
+                              },
+                              "user_name": {
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
+                              },
+                              "notCount": {
+                                "type": "integer"
+                              }
+                            },
+                            "required": [
+                              "user_id",
+                              "count",
+                              "user_name",
+                              "notCount"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "developCounts"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              },
+              {
+                "id": "1451117",
+                "name": "开发统计正在处理的数目接口",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "object",
+                      "properties": {
+                        "developCount": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "user_id": {
+                                "type": "integer"
+                              },
+                              "count": {
+                                "type": "integer"
+                              },
+                              "user_name": {
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "user_id",
+                              "count",
+                              "user_name"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "developCount"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "application/json",
+              "sampleValue": "{\r\n    \"project_id\":1,\r\n    \"version_id\":2\r\n}",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451116,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "data": "{\r\n    \"project_id\":1,\r\n    \"version_id\":2\r\n}",
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        },
+        {
+          "name": "获取某个功能或者缺陷的开发人员接口",
+          "api": {
+            "id": "4097099",
+            "method": "post",
+            "path": "/api/v1/demands/developer.action",
+            "parameters": {
+              "path": [],
+              "query": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "1451118",
+                "name": "获取某个功能或者缺陷的开发人员接口",
+                "code": 200,
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "errorCode": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "responseResult": {
+                      "type": "object",
+                      "properties": {
+                        "details": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "user_id": {
+                                "type": "integer"
+                              },
+                              "user_name": {
+                                "type": "string"
+                              },
+                              "statusAlias": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "user_id",
+                              "user_name",
+                              "statusAlias"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "details"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "errorCode",
+                    "errorMessage",
+                    "responseResult"
+                  ]
+                }
+              }
+            ],
+            "requestBody": {
+              "type": "application/json",
+              "sampleValue": "{\r\n    \"project_id\":1,\r\n    \"version_id\":2,\r\n    \"demand_id\":27\r\n}",
+              "parameters": []
+            },
+            "tags": [],
+            "cases": [
+              {
+                "name": "成功",
+                "responseId": 1451118,
+                "parameters": {
+                  "path": [],
+                  "query": [],
+                  "cookie": [],
+                  "header": []
+                },
+                "requestBody": {
+                  "data": "{\r\n    \"project_id\":1,\r\n    \"version_id\":2,\r\n    \"demand_id\":27\r\n}",
+                  "parameters": []
+                },
+                "preRequestScript": "",
+                "afterRequestScript": ""
+              }
+            ],
+            "mocks": []
+          }
+        }
+      ]
+    }
+  ],
+  "schemaCollection": [
+    {
+      "name": "默认分类",
+      "items": []
+    }
+  ],
+  "responseCollection": [],
+  "testSuiteCollection": [
+    {
+      "name": "默认分类",
+      "items": []
+    }
+  ]
+}
